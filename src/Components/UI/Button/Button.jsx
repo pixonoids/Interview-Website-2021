@@ -1,8 +1,9 @@
 import React from 'react'
-import classes from "./Button.module.css";
+import "./Button.css";
 const Button = (props) => {
+
     return (
-        <button className={classes.button} type="submit">{props.text}</button>
+        <button className={`button ${props.type}`} type="submit">{props.text}</button>
     )
 }
 

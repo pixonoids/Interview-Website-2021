@@ -4,17 +4,17 @@ import Heading from '../UI/Heading/Heading'
 import InputBox from "../UI/input/InputBox"
 import ColumnCon from "../UI/Container/ColumnCon"
 import RowCon from "../UI/Container/RowCon"
-import classes from "./user.module.css"
+import classes from "./upload.module.css"
 import Button from '../UI/Button/Button'
 
-const User = () => {
+const Upload = () => {
     return (
-        <ParentCon backgroundURL={"./images/4.svg"}>
+        <ParentCon backgroundURL={"./images/1.svg"}>
         <ColumnCon> 
-        <Heading text={"Personal Information"} />
-        <InputBox placeholder={"First Name"} />
-        <InputBox placeholder={"Last Name"} />
-        <RowCon className={classes.container}>
+        <Heading text={"Upload Documents"} />
+        <InputBox placeholder={"Your CV Here"} />
+        
+        <RowCon>
         <Button type="solid" text={"Back"} />
         <Button type="hollow" text={"Next"} />
         </RowCon>
@@ -24,5 +24,7 @@ const User = () => {
         </ColumnCon>
 
         </ParentCon>
-    )}
-export default User
+    )
+}
+
+export default Upload

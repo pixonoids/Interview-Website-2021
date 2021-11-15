@@ -3,3 +3,9 @@
     flex-direction: column;
     justify-content: space-evenly;
 }
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    width: 22vw;
+
+}
