@@ -7,16 +7,21 @@ import RowCon from "../UI/Container/RowCon";
 import Button from "../UI/Button/Button";
 import Dropdown from "../UI/Dropdown/Dropdown";
 import Radio from "../UI/Radio/Radio";
+import Area from "../UI/Area/Area";
 
-const Dept = () => {
+const Why = () => {
   return (
     <ParentCon backgroundURL={"./images/11.svg"}>
       <ColumnCon>
-        <Heading text={"Department for Application"} />
-        <Radio />
+        <Heading text={"Why Pixonoids?"} />
+        <Area
+          placeholder={
+            "We want to know what makes you join pixo (more than 50 words)"
+          }
+        />
         <RowCon>
           <Button type="solid" text={"Back"} />
-          <Button type="hollow" text={"Next"} />
+          <Button type="hollow" text={"Finish"} />
         </RowCon>
       </ColumnCon>
       <ColumnCon>three.js</ColumnCon>
@@ -24,4 +29,4 @@ const Dept = () => {
   );
 };
 
-export default Dept;
+export default Why;

@@ -1,0 +1,28 @@
+.area {
+  height: 50%;
+  width: 60vw;
+  border: 2px solid white;
+  outline: none;
+  background-color: rgba(216, 191, 216, 0.199);
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 15px;
+  padding: 1rem;
+}
+.area:focus {
+  animation: 2s glow 1s infinite linear;
+}
+@keyframes glow {
+  100% {
+    box-shadow: 0px 0px 10px white;
+  }
+  50% {
+    box-shadow: none;
+  }
+  0% {
+    box-shadow: 0px 0px 10px white;
+  }
+}
+.area::placeholder {
+  color: rgba(255, 255, 255, 0.753);
+}

@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@import url(//db.onlinewebfonts.com/c/f1a22f6f15d272c7aa56da8b2c91f5e5?family=Circular+Std+Black);
+@import url(//db.onlinewebfonts.com/c/961a181da27e7cbc072ec2fb5bbfe2a9?family=Circular+Std+Bold);
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Circular Std Black", "Roboto", "sans-serif";
+  background-color: rgb(148, 7, 73);
+  color: white;
+}
+
+/* Main page css */
+.page-box {
+  display: flex;
+  margin: auto;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/*success message main div*/
+.success-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.success-message i {
+  font-size: 5rem;
+  color: white;
+}
+.success-message h1 {
+  font-size: 5rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 900;
+}
+/* form completion heading css */
+.para {
+  font-size: 2rem;
+  padding: 0.7rem;
+  margin-top: -20px;
+}
+/* information box css */
+.info-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 40vh;
+  width: 80vw;
+}
+/* left whatsapp info part */
+.whatsapp-group-info {
+  display: flex;
+  flex-direction: row;
+  width: 30vw;
+  height: 35vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.whatsapp-group-info h1 {
+  font-size: 3rem;
+}
+/* for any queries part */
+.other-info {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  height: 30vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.query {
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+}
+/* the main footer div */
+footer {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  height: 15vh;
+}
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+/* pixonoids of footer */
+.pixo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  padding: 1rem;
+}
+/* social links */
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.icon-box-insta,
+.icon-box-yt,
+.icon-box-linkedin,
+.icon-box-facebook {
+  padding: 0.5rem;
+  border-radius: 0.9rem;
+  margin: 0.1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.links a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+}
