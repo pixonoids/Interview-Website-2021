@@ -11,7 +11,7 @@ import Area from "../UI/Area/Area";
 
 const Priority = () => {
   return (
-    <ParentCon backgroundURL={"./images/11.svg"}>
+    <ParentCon backgroundURL={"./images/10.svg"}>
       <ColumnCon>
         <Heading text={"Club Priority"} />
         <Area

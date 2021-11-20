@@ -1,27 +1,50 @@
 .dropdown {
-    width: 40vw;
-   
-    position: relative;
+  width: 40vw;
+
+  position: relative;
 }
 .dropdown-btn {
-    background-color: rgba(255, 255, 255, 0.342);
-    padding: 10px;
-    font-weight: 900;
-    user-select: none;
-    cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.342);
+  border-radius: 15px;
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px;
+  font-weight: 900;
+  user-select: none;
+  cursor: pointer;
 }
 .dropdown-content {
-    background-color: white;
-    z-index: 10;
-    width: 100%;
-    height: 400%;
-    position: absolute;
-    top: 110%;
-    overflow-y: scroll;
-} 
+  background-color: rgba(255, 255, 255, 0.842);
+
+  border-radius: 15px;
+  color: grey;
+  z-index: 10;
+  width: 100%;
+  height: 400%;
+  position: absolute;
+  top: 110%;
+  overflow-y: scroll;
+}
 .dropdown-item {
-    padding: 10px;
+  padding: 10px;
 }
 .dropdown-item:hover {
-    background-color: rgb(156, 73, 73);
+  background-color: rgba(68, 68, 68, 0.466);
 }
+.dropdown-content::-webkit-scrollbar {
+  width: 10px;
+}
+.dropdown-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0);
+}
+.dropdown-content::-webkit-scrollbar-thumb {
+  background: rgb(180, 180, 180);
+  border-radius: 15px;
+}
+.dropdown-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Handle */
+
+/* Handle on hover */

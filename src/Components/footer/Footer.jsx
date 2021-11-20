@@ -32,29 +32,29 @@ export default function Footer() {
       </div>
       <footer>
         <div className="footer-content">
-          <div className="pixo">PIXONOIDS</div>
+          <div className="pixo"> PIXONOIDS © 2K22</div>
           <div className="links">
             <div className="icon-box-insta">
-              <a href="https://www.instagram.com/pixonoids/" target="_blank">
+              <a href="https://www.instagram.com/pixonoids/" target="blank">
                 <i className="fab fa-instagram"></i>
               </a>
             </div>
             <div className="icon-box-yt">
               {" "}
-              <a href="https://www.youtube.com/c/pixonoids" target="_blank">
+              <a href="https://www.youtube.com/c/pixonoids" target="blank">
                 <i className="fab fa-youtube"></i>
               </a>
             </div>
             <div className="icon-box-linkedin">
               <a
                 href="https://www.linkedin.com/company/pixonoids/"
-                target="_blank"
+                target="blank"
               >
                 <i className="fab fa-linkedin"></i>
               </a>
             </div>
             <div className="icon-box-facebook">
-              <a href="#" target="_blank">
+              <a href="www.google.com" target="blank">
                 <i className="fab fa-facebook"></i>
               </a>
             </div>

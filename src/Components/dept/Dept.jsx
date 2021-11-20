@@ -10,7 +10,7 @@ import Radio from "../UI/Radio/Radio";
 
 const Dept = () => {
   return (
-    <ParentCon backgroundURL={"./images/11.svg"}>
+    <ParentCon backgroundURL={"./images/6.svg"}>
       <ColumnCon>
         <Heading text={"Department for Application"} />
         <Radio />
