@@ -1,4 +1,125 @@
 /* Main page css */
+:root {
+  --color-green: rgb(24, 252, 252);
+  --color-white: #fff;
+  --curve: cubic-bezier(0.42, 0, 0.275, 1.155);
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.star {
+  position: absolute;
+  animation: grow 2s infinite;
+  fill: var(--color-green);
+  opacity: 0;
+}
+.star:nth-child(1) {
+  width: 12px;
+  height: 12px;
+  left: 12px;
+  top: 16px;
+}
+.star:nth-child(2) {
+  width: 18px;
+  height: 18px;
+  left: 168px;
+  top: 84px;
+}
+.star:nth-child(3) {
+  width: 10px;
+  height: 10px;
+  left: 32px;
+  top: 162px;
+}
+.star:nth-child(4) {
+  width: 20px;
+  height: 20px;
+  left: 82px;
+  top: -12px;
+}
+.star:nth-child(5) {
+  width: 14px;
+  height: 14px;
+  left: 125px;
+  top: 162px;
+}
+.star:nth-child(6) {
+  width: 10px;
+  height: 10px;
+  left: 16px;
+  top: 16px;
+}
+.star:nth-child(1) {
+  animation-delay: 1.5s;
+}
+.star:nth-child(2) {
+  animation-delay: 3s;
+}
+.star:nth-child(3) {
+  animation-delay: 4.5s;
+}
+.star:nth-child(4) {
+  animation-delay: 6s;
+}
+.star:nth-child(5) {
+  animation-delay: 7.5s;
+}
+.star:nth-child(6) {
+  animation-delay: 9s;
+}
+.checkmark {
+  position: relative;
+  padding: 25px;
+  animation: checkmark 5m var(--curve) both;
+  /* margin-top: -20px; */
+}
+.checkmark__check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate3d(-50%, -50%, 0);
+  fill: var(--color-white);
+}
+.checkmark__background {
+  fill: var(--color-green);
+  animation: rotate 25s linear both infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes grow {
+  0%,
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes checkmark {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  10%,
+  50%,
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .page-box {
   display: flex;
   margin: auto;
@@ -7,11 +128,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(148, 7, 73);
+  background: #0676e6;
+  background: -webkit-linear-gradient(top left, #0676e6, #021c79);
+  background: -moz-linear-gradient(top left, #0676e6, #021c79);
+  background: linear-gradient(to bottom right, #0676e6, #021c79);
+
   color: white;
 }
-/*success message main div*/
-.success-message {
+/success message main div/ .success-message {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -30,7 +154,7 @@
 }
 /* form completion heading css */
 .para {
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding: 0.7rem;
   margin-top: -20px;
 }
@@ -44,14 +168,20 @@
   width: 80vw;
 }
 /* left whatsapp info part */
+.all_updates {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
 .whatsapp-group-info {
   display: flex;
   flex-direction: row;
-  width: 30vw;
+  width: 28vw;
   white-space: normal;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   border: 2px solid white;
   background-color: #25d366;
   padding: 1rem;
@@ -59,23 +189,46 @@
   text-align: center;
   cursor: pointer;
   user-select: none;
+  margin-right: 5rem;
 }
 .whatsapp-group-info h1 {
   font-size: 3rem;
+}
+.meet {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  padding: 1rem;
+  border: 2px solid white;
+  background-color: rgb(218, 83, 83);
+  border-radius: 15px;
+}
+.meet_img {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+.meet_info {
+  font-size: 1.1rem;
 }
 /* for any queries part */
 .other-info {
   display: flex;
   flex-direction: column;
   width: 30vw;
-  height: 30vh;
+  height: 25vh;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  /* border: 2px solid white; */
+  border-radius: 15px;
 }
 .query {
   font-size: 1.5rem;
-  letter-spacing: 0.1rem;
+  margin: 1rem;
+  padding: 0.4rem;
+  letter-spacing: 0.08rem;
   font-weight: bold;
 }
 /* the main footer div */
@@ -93,13 +246,14 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  /* margin-top: -50px; */
 }
 /* pixonoids of footer */
 .pixo {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.2rem;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 /* social links */
 .links {

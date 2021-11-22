@@ -19,6 +19,10 @@ const Radio = () => {
       id: 4,
       text: "Pre-Production",
     },
+    {
+      id: 5,
+      text: "Graphics",
+    },
   ];
   const [active, setActive] = useState();
   const onClickHandler = (item) => {

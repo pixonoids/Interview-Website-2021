@@ -7,6 +7,7 @@ import RowCon from "../UI/Container/RowCon";
 import Button from "../UI/Button/Button";
 import Dropdown from "../UI/Dropdown/Dropdown";
 import Radio from "../UI/Radio/Radio";
+import Hover from "../Tilt/Hover";
 
 const Dept = () => {
   return (
@@ -19,7 +20,7 @@ const Dept = () => {
           <Button type="hollow" text={"Next"} />
         </RowCon>
       </ColumnCon>
-      <ColumnCon>three.js</ColumnCon>
+      <Hover location=".\images\tiltjs\tilt-camera.png" />
     </ParentCon>
   );
 };

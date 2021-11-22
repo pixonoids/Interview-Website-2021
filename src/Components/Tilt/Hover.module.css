@@ -1,6 +1,7 @@
 .tilt-container {
   display: flex;
   justify-content: center;
+  width: 25vw;
 }
 .tilt-container img {
   transform: scale(0.6);

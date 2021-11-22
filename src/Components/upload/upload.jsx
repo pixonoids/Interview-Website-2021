@@ -6,6 +6,7 @@ import ColumnCon from "../UI/Container/ColumnCon";
 import RowCon from "../UI/Container/RowCon";
 import classes from "./upload.module.css";
 import Button from "../UI/Button/Button";
+import Hover from "../Tilt/Hover";
 
 const Upload = () => {
   return (
@@ -19,7 +20,7 @@ const Upload = () => {
           <Button type="hollow" text={"Next"} />
         </RowCon>
       </ColumnCon>
-      <ColumnCon>three.js</ColumnCon>
+      <Hover location=".\images\tiltjs\contact.png" />
     </ParentCon>
   );
 };

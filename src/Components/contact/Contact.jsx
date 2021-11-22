@@ -5,6 +5,7 @@ import InputBox from "../UI/input/InputBox";
 import ColumnCon from "../UI/Container/ColumnCon";
 import RowCon from "../UI/Container/RowCon";
 import Button from "../UI/Button/Button";
+import Hover from "../Tilt/Hover";
 
 const Contact = () => {
   return (
@@ -17,7 +18,7 @@ const Contact = () => {
           <Button type="hollow" text={"Next"} />
         </RowCon>
       </ColumnCon>
-      <ColumnCon>three.js</ColumnCon>
+      <Hover location=".\images\tiltjs\contact2.png" />
     </ParentCon>
   );
 };

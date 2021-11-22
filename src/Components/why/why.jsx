@@ -8,6 +8,7 @@ import Button from "../UI/Button/Button";
 import Dropdown from "../UI/Dropdown/Dropdown";
 import Radio from "../UI/Radio/Radio";
 import Area from "../UI/Area/Area";
+import Hover from "../Tilt/Hover";
 
 const Why = () => {
   return (
@@ -24,7 +25,7 @@ const Why = () => {
           <Button type="hollow" text={"Finish"} />
         </RowCon>
       </ColumnCon>
-      <ColumnCon>three.js</ColumnCon>
+      <Hover location=".\images\tiltjs\pixonoid.png" />
     </ParentCon>
   );
 };

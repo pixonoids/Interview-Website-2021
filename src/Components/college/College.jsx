@@ -27,7 +27,7 @@ const College = () => {
           <Button type="hollow" text={"Next"} />
         </RowCon>
       </ColumnCon>
-      <Hover location=".\images\tiltjs\tilt-camera.png" />
+      <Hover location=".\images\tiltjs\cap.png" />
     </ParentCon>
   );
 };

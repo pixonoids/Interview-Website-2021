@@ -20,7 +20,7 @@ const Hover = (props) => {
         className="Tilt-inner"
         options={Option}
         src={props.location}
-        alt="pixo-web-hover-model-Pranjal-Easter-Egg If you are reading this than you are DoPe."
+        alt="pixo-web-hover-model-Easter-Egg If you are reading this than you are DoPe."
       ></img>
     </Tilt>
   );
