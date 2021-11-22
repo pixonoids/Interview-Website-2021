@@ -1,0 +1,13 @@
+.tilt-container {
+  display: flex;
+  justify-content: center;
+}
+.tilt-container img {
+  transform: scale(0.6);
+  opacity: 0.8;
+  transition: 300ms;
+}
+.tilt-container img:hover {
+  opacity: 1;
+  transition: 300ms;
+}

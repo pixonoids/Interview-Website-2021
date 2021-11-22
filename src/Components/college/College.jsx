@@ -7,6 +7,7 @@ import RowCon from "../UI/Container/RowCon";
 import classes from "./college.module.css";
 import Button from "../UI/Button/Button";
 import Dropdown from "../UI/Dropdown/Dropdown";
+import Hover from "../Tilt/Hover";
 
 const College = () => {
   const [selected, setSelected] = useState("Choose Your Branch");
@@ -26,7 +27,7 @@ const College = () => {
           <Button type="hollow" text={"Next"} />
         </RowCon>
       </ColumnCon>
-      <ColumnCon>three.js</ColumnCon>
+      <Hover location=".\images\tiltjs\tilt-camera.png" />
     </ParentCon>
   );
 };
