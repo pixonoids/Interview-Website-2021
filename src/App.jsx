@@ -10,20 +10,27 @@ import Upload from "./Components/upload/upload";
 import Priority from "./Components/priority/Priority";
 import Why from "./Components/why/why";
 import Footer from "./Components/footer/Footer";
+import { BrowserRouter } from "react-router-dom";
+
+import { Route, Routes } from "react-router";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Main></Main>
-      <User />
-      <College />
-      <Contact />
-      <Dept />
-      <Upload />
-      <Priority />
-      <Why />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Main />}></Route>
+          <Route path="/user" element={<User />}></Route>
+          <Route path="/college" element={<College />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/dept" element={<Dept />}></Route>
+          <Route path="/upload" element={<Upload />}></Route>
+          <Route path="/priority" element={<Priority />}></Route>
+          <Route path="/why" element={<Why />}></Route>
+          <Route path="/footer" element={<Footer />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

@@ -1,0 +1,32 @@
+.line {
+  position: absolute;
+  height: 99vh;
+  width: 3px;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  top: 50%;
+  right: 20%;
+  border-radius: 5px;
+}
+.dot {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 10%;
+  left: 50%;
+  background-color: black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot::before {
+  content: "Yajat";
+  position: absolute;
+  left: -300%;
+  color: black;
+  font-size: 0.7rem;
+  background-color: white;
+  padding: 0.3rem;
+  top: 50%;
+  transform: translate(50%, -50%);
+}

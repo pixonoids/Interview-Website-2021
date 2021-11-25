@@ -7,9 +7,11 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "history": "5",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-icons": "^4.3.1",
+    "react-router-dom": "6",
     "react-tilt": "^0.1.4",
     "solid-js": "^1.2.2"
   },
