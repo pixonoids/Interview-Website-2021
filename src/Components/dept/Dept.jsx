@@ -16,8 +16,8 @@ const Dept = () => {
         <Heading text={"Department for Application"} />
         <Radio />
         <RowCon>
-          <Button type="solid" text={"Back"} />
-          <Button type="hollow" text={"Next"} />
+          <Button type="solid" text={"Back"} to={"/contact"} />
+          <Button type="hollow" text={"Next"} to={"/upload"} />
         </RowCon>
       </ColumnCon>
       <Hover location=".\images\tiltjs\tilt-camera.png" />

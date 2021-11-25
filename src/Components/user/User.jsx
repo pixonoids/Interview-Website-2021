@@ -16,8 +16,8 @@ const User = () => {
         <InputBox placeholder={"First Name"} />
         <InputBox placeholder={"Last Name"} />
         <RowCon className={classes.container}>
-          <Button type="solid" text={"Back"} />
-          <Button type="hollow" text={"Next"} />
+          <Button type="solid" text={"Back"} to={"/"} />
+          <Button type="hollow" text={"Next"} to={"/college"} />
         </RowCon>
       </ColumnCon>
       <Hover location=".\images\tiltjs\idcard.png" />

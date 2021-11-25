@@ -14,8 +14,8 @@ const Contact = () => {
         <Heading text={"Contact Details"} />
         <InputBox placeholder={"Phone Nunber"}></InputBox>
         <RowCon>
-          <Button type="solid" text={"Back"} />
-          <Button type="hollow" text={"Next"} />
+          <Button type="solid" text={"Back"} to={"/college"} />
+          <Button type="hollow" text={"Next"} to={"/dept"} />
         </RowCon>
       </ColumnCon>
       <Hover location=".\images\tiltjs\contact2.png" />

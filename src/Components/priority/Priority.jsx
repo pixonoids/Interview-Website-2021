@@ -21,8 +21,8 @@ const Priority = () => {
           }
         />
         <RowCon>
-          <Button type="solid" text={"Back"} />
-          <Button type="hollow" text={"Next"} />
+          <Button type="solid" text={"Back"} to={"/upload"} />
+          <Button type="hollow" text={"Next"} to={"/why"} />
         </RowCon>
       </ColumnCon>
       <Hover location=".\images\tiltjs\prior.png" />

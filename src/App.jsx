@@ -11,13 +11,15 @@ import Priority from "./Components/priority/Priority";
 import Why from "./Components/why/why";
 import Footer from "./Components/footer/Footer";
 import { BrowserRouter } from "react-router-dom";
+import Loading from "./Components/loading/Loading";
 
-import { Route, Routes } from "react-router";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
       <Navbar />
+      <Loading />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />}></Route>

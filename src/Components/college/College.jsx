@@ -23,8 +23,8 @@ const College = () => {
         />
         <Dropdown selected={selected} setSelected={setSelected} />
         <RowCon>
-          <Button type="solid" text={"Back"} />
-          <Button type="hollow" text={"Next"} />
+          <Button type="solid" text={"Back"} to={"/user"} />
+          <Button type="hollow" text={"Next"} to={"/contact"} />
         </RowCon>
       </ColumnCon>
       <Hover location=".\images\tiltjs\cap.png" />

@@ -21,8 +21,8 @@ const Why = () => {
           }
         />
         <RowCon>
-          <Button type="solid" text={"Back"} />
-          <Button type="hollow" text={"Finish"} />
+          <Button type="solid" text={"Back"} to={"/priority"} />
+          <Button type="hollow" text={"Finish"} to={"/footer"} />
         </RowCon>
       </ColumnCon>
       <Hover location=".\images\tiltjs\pixonoid.png" />

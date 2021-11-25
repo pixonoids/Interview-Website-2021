@@ -16,8 +16,8 @@ const Upload = () => {
         <InputBox placeholder={"Your CV Here"} />
 
         <RowCon>
-          <Button type="solid" text={"Back"} />
-          <Button type="hollow" text={"Next"} />
+          <Button type="solid" text={"Back"} to={"/dept"} />
+          <Button type="hollow" text={"Next"} to={"/priority"} />
         </RowCon>
       </ColumnCon>
       <Hover location=".\images\tiltjs\contact.png" />

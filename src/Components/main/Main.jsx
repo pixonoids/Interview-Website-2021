@@ -14,8 +14,11 @@ const Main = () => {
             which gives you a fair chance to connect with people of akin vision
             and be a part of the team which is driven by the same vigour
           </p>
-          {/* <Button text={"Start"} to="/user" /> */}
-          <Link to="/user"> User</Link>
+
+          <Button to="/user" type="solid" text={"Start your Application"}>
+            {" "}
+            User
+          </Button>
         </div>
         <div className={classes.threejs}>
           <h1>threejs Animation here</h1>
