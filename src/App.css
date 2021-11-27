@@ -23,8 +23,9 @@
   box-sizing: border-box;
   font-family: "Circular Std Black", "Roboto", "sans-serif";
 }
-body {
-  overflow-x: hidden;
+html {
+  overflow: hidden;
+  scroll-behavior: none;
 }
 
 .scale-in-center {

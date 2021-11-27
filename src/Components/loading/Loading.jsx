@@ -5,7 +5,7 @@ const Loading = () => {
   return (
     <div className={classes["loading-container"]}>
       <img src="./images/logos/pixoblack.png" className={classes.pixo}></img>
-      Loading...
+      Loading
     </div>
   );
 };

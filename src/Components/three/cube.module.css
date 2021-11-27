@@ -1,7 +1,7 @@
-.container{
-    height: 100vh;
-    display: grid;
-    place-items: left;
-    
+.container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  scroll-behavior: none;
+  overflow: none;
 }
-
