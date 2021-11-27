@@ -14,12 +14,16 @@ import { BrowserRouter } from "react-router-dom";
 import Loading from "./Components/loading/Loading";
 
 import { Route, Routes } from "react-router-dom";
+import ThreeCube from "./Components/three/girlModel";
+import Cube from "./Components/three/cube";
 
 function App() {
   return (
     <>
       <Navbar />
       <Loading />
+      {/* <Cube/> */}
+      
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />}></Route>
