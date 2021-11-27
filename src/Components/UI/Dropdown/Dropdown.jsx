@@ -4,7 +4,20 @@ import classes from "./Dropdown.module.css";
 const Dropdown = (props) => {
   const [active, setactive] = useState(false);
   const [selected, setSelected] = useState("");
-  const options = ["ECE", "CSE", "MSE", "BCE", "FME"];
+  const options = [
+    "Computer Science & Engineering",
+    "Computer Science & Engineering(Dual Degree)",
+    "Mathematics & Computing",
+    "Electronics & Communication",
+    "Electronics & Communication(Dual Degree)",
+    "Electrical Engineering",
+    "Mechanical Engineering",
+    "Civil Engineering",
+    "Chemical Engineering",
+    "Engineering Physics",
+    "Material Science",
+    "B.Arch",
+  ];
 
   return (
     <div className={classes.dropdown}>

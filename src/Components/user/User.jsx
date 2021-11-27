@@ -16,7 +16,7 @@ const User = () => {
         <InputBox placeholder={"First Name"} />
         <InputBox placeholder={"Last Name"} />
         <RowCon className={classes.container}>
-          <Button type="solid" text={"Back"} to={"/"} />
+          <Button type="solid" text={"Back"} to={"/authen"} />
           <Button type="hollow" text={"Next"} to={"/college"} />
         </RowCon>
       </ColumnCon>

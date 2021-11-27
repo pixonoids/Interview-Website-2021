@@ -1,54 +1,106 @@
-.Freshlook-navbar {
-  display: flex;
+.nav-main {
   position: fixed;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 3%;
-  grid-template-columns: auto 1fr;
-  padding-top: 1.5rem;
-  padding: 0.5rem;
-  height: 3.5rem;
-  width: 40vw;
-  border-radius: 2rem;
-  background: rgba(255, 255, 255, 0.178);
-  box-shadow: 0 8px 32px 0 rgba(4, 16, 179, 0.37);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  margin: 1.5rem auto;
-  color: #fff;
-}
-.Navbar-content {
-  list-style-type: none;
   display: flex;
-  margin: auto;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: left;
   align-items: center;
-  color: #fff;
+  width: 100vw;
+  padding: 0.2rem;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(12.5px);
+  -webkit-backdrop-filter: blur(12.5px);
 }
-.List-items {
-  margin-left: 1rem;
+.logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0.5rem 15rem 0.5rem 0.5rem;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+li {
+  margin-left: 2rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 0.2rem;
+  cursor: pointer;
+  color: white;
 }
 .pixo {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2.75rem;
+  width: 2.75rem;
   background-image: url(./images/pixonoid.png);
   background-repeat: no-repeat;
   background-size: cover;
-
   background-position: center;
+  margin-top: -0.5rem;
+  margin-left: 0.1rem;
+  margin-right: 0.4rem;
+  padding: 0.1rem;
 }
-.pixo_name {
-  font-size: 1.5rem;
-  margin: 0.4rem 0rem 0rem 0.4rem;
-  letter-spacing: 3.1px;
-  font-weight: bolder;
+.pixo-name {
+  font-size: 1.7rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
-.List-items img {
-  height: 3rem;
-  width: 3rem;
-}
-.List-items a {
+a {
   text-decoration: none;
   color: white;
-  opacity: 0.8;
+}
+.hamburger {
+  position: absolute;
+  border: none;
+  outline: none;
+  background: transparent;
+  top: 40px;
+  font-size: 1.5rem;
+  display: none;
+  color: white;
+}
+@media screen and (max-width: 900px) {
+  .nav-main {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logo {
+    margin: 1rem 0.3rem 0rem 1rem;
+  }
+  .pixo {
+    height: 2rem;
+    width: 2rem;
+  }
+  .pixo-name {
+    font-size: 1.5rem;
+  }
+  ul {
+    flex-direction: column;
+    height: auto;
+    /* display: none; */
+  }
+  li:nth-child(1) {
+    border-top: 1px solid white;
+    margin-top: 40px;
+  }
+  li {
+    width: 80%;
+    text-align: center;
+    border-top: 1px solid white;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+  }
 }

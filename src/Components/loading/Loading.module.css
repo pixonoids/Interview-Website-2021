@@ -1,7 +1,7 @@
 .loading-container {
   width: 100vw;
   height: 100vh;
-  background-color: rgb(95, 95, 95);
+  background-color: rgb(53, 53, 53);
   display: flex;
   justify-content: center;
   flex-direction: column;

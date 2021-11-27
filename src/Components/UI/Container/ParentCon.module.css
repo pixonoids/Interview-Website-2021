@@ -8,3 +8,10 @@
   padding: 20vh 10vw;
   justify-content: space-between;
 }
+@media screen and (max-width: 420px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}

@@ -20,10 +20,11 @@ const Main = () => {
               vigour
             </p>
 
-            <Button to="/user" type="solid" text={"Start your Application"}>
-              {" "}
-              User
-            </Button>
+            <Button
+              to="/authen"
+              type="solid"
+              text={"Start your Application"}
+            ></Button>
           </div>
         </div>
         <div className={classes.threejs}>
