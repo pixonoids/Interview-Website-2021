@@ -1,14 +1,23 @@
 .main {
   height: 100vh;
   width: 100vw;
-  background-image: url(./images/3.svg);
+  /* background-image: url(./images/3.svg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
   display: flex;
-  z-index: -1;
+  z-index: 0;
   scroll-behavior: none;
   overflow: hidden;
+  position: absolute;
+  top: 0;
+}
+.videotag {
+  height: 120vh;
+
+  filter: opacity(0.9);
+
+  position: fixed;
 }
 .parent {
   display: flex;
@@ -23,8 +32,9 @@
 }
 .container h1 {
   font-size: 4rem;
-
+  text-shadow: 2px 2px 5px black;
   color: white;
+  word-spacing: 5px;
 }
 .container p {
   color: white;
@@ -32,6 +42,8 @@
   font-size: 1.5rem;
   font-weight: 300;
   opacity: 0.95;
+  text-shadow: 2px 2px 5px black;
+  margin-bottom: 3rem;
 }
 .threejs {
   border: none;

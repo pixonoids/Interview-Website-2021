@@ -9,6 +9,9 @@ import Video from "../three/three circle/video";
 const Main = () => {
   return (
     <>
+      <video className={classes.videotag} autoPlay loop muted>
+        <source src={"./video/back.mp4"} type="video/mp4" />
+      </video>
       <section className={classes.main}>
         <div className={classes.parent}>
           <div className={classes.container}>
