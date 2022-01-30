@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ParentCon from "../UI/Container/ParentCon";
 import Heading from "../UI/Heading/Heading";
 import InputBox from "../UI/input/InputBox";
@@ -9,8 +9,47 @@ import Dropdown from "../UI/Dropdown/Dropdown";
 import Radio from "../UI/Radio/Radio";
 import Area from "../UI/Area/Area";
 import Hover from "../Tilt/Hover";
+import Error from "../UI/Error/Error";
+
+import { useNavigate } from "react-router-dom";
+import { UserDataContext } from "../../Context/UserData/UserDataContext";
 
 const Why = () => {
+  //states
+  const [why, setWhy] = useState("");
+  const navigate = useNavigate();
+  const [errorState, setErrorState] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [userData, setUserData] = useContext(UserDataContext);
+  //update state functions
+  const whyHandler = (e) => {
+    setWhy(e.target.value);
+    if (e.target.value.length === 0) {
+      setErrorState(e.target.value.length === 0);
+      setErrorMessage("Cannot be Left Empty !");
+    } else {
+      setErrorState(false);
+    }
+  };
+
+  //onclick functions
+  const onClickWhy = () => {
+    if (why.length === 0) {
+      setErrorState(true);
+      setErrorMessage("Cannot be Left Empty !");
+    } else if (why.length <= 150) {
+      setErrorState(why.length <= 150);
+      setErrorMessage(`More than 150 Words ! ${150 - why.length}/150 Left`);
+    } else {
+      setUserData((data) => ({ ...data, whyPixo: why }));
+      setErrorState(false);
+      navigate("/footer");
+    }
+  };
+  //onback functions
+  const onClickBackWhy = () => {
+    navigate("/priority");
+  };
   return (
     <ParentCon backgroundURL={"./images/9.svg"}>
       <ColumnCon>
@@ -19,10 +58,23 @@ const Why = () => {
           placeholder={
             "We want to know what makes you join pixo (more than 50 words)"
           }
+          value={why}
+          onChangeHandler={whyHandler}
         />
+        {errorState && <Error errorMessage={errorMessage} />}
         <RowCon>
-          <Button type="solid" text={"Back"} to={"/priority"} />
-          <Button type="hollow" text={"Finish"} to={"/footer"} />
+          <Button
+            type="solid"
+            text={"Back"}
+            onClick={onClickBackWhy}
+            errorState={errorState}
+          />
+          <Button
+            type="hollow"
+            text={"Next"}
+            onClick={onClickWhy}
+            errorState={errorState}
+          />
         </RowCon>
       </ColumnCon>
       <Hover location=".\images\tiltjs\pixonoid.png" />

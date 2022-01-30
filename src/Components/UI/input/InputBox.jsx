@@ -1,11 +1,16 @@
 import "./InputBox.css";
-import React from 'react'
+import React, { useRef } from "react";
 
 const InputBox = (props) => {
-    return (
-        <input placeholder={props.placeholder}></input>
-    )
-}
+  return (
+    <input
+      placeholder={props.placeholder}
+      value={props.value}
+      onChange={props.onChangeHandler}
+      ref={props.refName}
+      onBlur={props.onBlurHandler}
+    ></input>
+  );
+};
 
-export default InputBox
-
+export default InputBox;

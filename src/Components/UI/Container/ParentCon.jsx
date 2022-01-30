@@ -4,7 +4,7 @@ import Particles from "react-tsparticles";
 const ParentCon = (props) => {
   return (
     <>
-      <Particles
+      {/* <Particles
         id="tsparticles"
         options={{
           background: {
@@ -89,7 +89,7 @@ const ParentCon = (props) => {
         style={{
           zIndex: -1,
         }}
-      ></Particles>
+      ></Particles> */}
       <div className={`${classes.main} scale-in-center`}>{props.children}</div>
     </>
   );

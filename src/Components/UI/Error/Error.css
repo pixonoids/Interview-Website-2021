@@ -1,0 +1,8 @@
+.error-tag {
+  background-color: rgba(0, 0, 0, 0.795);
+  color: red;
+  font-family: "Courier New", Courier, monospace;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  text-align: center;
+}

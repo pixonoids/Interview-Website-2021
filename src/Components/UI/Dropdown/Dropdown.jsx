@@ -3,13 +3,14 @@ import classes from "./Dropdown.module.css";
 
 const Dropdown = (props) => {
   const [active, setactive] = useState(false);
+
   const [selected, setSelected] = useState("");
   const options = [
     "Computer Science & Engineering",
-    "Computer Science & Engineering(Dual Degree)",
+    "Computer Science & Engineering (Dual Degree)",
     "Mathematics & Computing",
     "Electronics & Communication",
-    "Electronics & Communication(Dual Degree)",
+    "Electronics & Communication (Dual Degree)",
     "Electrical Engineering",
     "Mechanical Engineering",
     "Civil Engineering",
@@ -38,6 +39,7 @@ const Dropdown = (props) => {
               onClick={(e) => {
                 props.setSelected(data);
                 setactive(!active);
+                props.errorState(false);
               }}
             >
               {data}
