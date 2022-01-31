@@ -4,7 +4,7 @@ export const UserDataContext = React.createContext();
 
 export const UserDataProvider = (props) => {
   const [userData, setUserData] = useState({
-    id: 1,
+    googleAuth: null,
     firstName: "Pranjal",
     lastName: "Goyal",
     phoneNumber: "8929467816",

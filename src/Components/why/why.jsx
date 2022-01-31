@@ -10,11 +10,13 @@ import Radio from "../UI/Radio/Radio";
 import Area from "../UI/Area/Area";
 import Hover from "../Tilt/Hover";
 import Error from "../UI/Error/Error";
-
+import { userDb } from "../../firebase";
+import { addDoc, collection } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 
 const Why = () => {
+  const userCollectionRef = collection(userDb, "user");
   //states
   const [why, setWhy] = useState("");
   const navigate = useNavigate();
@@ -31,7 +33,18 @@ const Why = () => {
       setErrorState(false);
     }
   };
-
+  const submitHandler = async () => {
+    try {
+      await addDoc(userCollectionRef, { ...userData });
+      setErrorState(false);
+      navigate("/footer");
+      console.log("success");
+    } catch (error) {
+      console.log(error);
+      setErrorState(true);
+      setErrorMessage("Try Again or Contact Us");
+    }
+  };
   //onclick functions
   const onClickWhy = () => {
     if (why.length === 0) {
@@ -42,8 +55,7 @@ const Why = () => {
       setErrorMessage(`More than 150 Words ! ${150 - why.length}/150 Left`);
     } else {
       setUserData((data) => ({ ...data, whyPixo: why }));
-      setErrorState(false);
-      navigate("/footer");
+      submitHandler();
     }
   };
   //onback functions

@@ -26,7 +26,7 @@ const Dept = () => {
       setErrorState(true);
       setErrorMessage("Cannot be Left Empty !");
     } else {
-      setUserData((data) => ({ ...data, branchName: dept }));
+      setUserData((data) => ({ ...data, pixoDept: dept }));
       setErrorState(false);
       navigate("/upload");
     }

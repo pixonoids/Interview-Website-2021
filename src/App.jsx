@@ -19,7 +19,6 @@ function App() {
     <>
       <Navbar />
       <UserDataProvider>
-        <Loading />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Main />}></Route>

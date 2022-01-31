@@ -47,7 +47,11 @@ const College = () => {
       setErrorState(true);
       setErrorMessage("Freshers Only Allowed");
     } else {
-      setUserData((data) => ({ ...data, emailId: clgId, branch: selected }));
+      setUserData((data) => ({
+        ...data,
+        emailId: clgId,
+        branchName: selected,
+      }));
       setErrorState(false);
       navigate("/contact");
     }

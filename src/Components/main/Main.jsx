@@ -1,16 +1,20 @@
 import classes from "./main.module.css";
 import Button from "../UI/Button/Button";
 import Map from "../UI/map/Map";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ThreeCube from "../three/girlModel";
 import Cube from "../three/cube";
 import Video from "../three/three circle/video";
 
 const Main = () => {
+  const navigate = useNavigate();
+  const onClickMain = () => {
+    navigate("/authen");
+  };
   return (
     <>
       <video className={classes.videotag} autoPlay loop muted>
-        <source src={"./video/back1.mp4"} type="video/mp4" />
+        <source src={"./video/back.mp4"} type="video/mp4" />
       </video>
       <section className={classes.main}>
         <div className={classes.parent}>
@@ -24,9 +28,9 @@ const Main = () => {
             </p>
 
             <Button
-              to="/authen"
               type="solid"
               text={"Start your Application"}
+              onClick={onClickMain}
             ></Button>
           </div>
         </div>

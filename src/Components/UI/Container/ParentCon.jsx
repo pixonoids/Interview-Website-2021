@@ -4,7 +4,7 @@ import Particles from "react-tsparticles";
 const ParentCon = (props) => {
   return (
     <>
-      {/* <Particles
+      <Particles
         id="tsparticles"
         options={{
           background: {
@@ -18,11 +18,11 @@ const ParentCon = (props) => {
           interactivity: {
             events: {
               onClick: {
-                enable: true,
+                enable: false,
                 mode: "push",
               },
               onHover: {
-                enable: true,
+                enable: false,
                 mode: "repulse",
               },
               resize: true,
@@ -70,7 +70,7 @@ const ParentCon = (props) => {
                 enable: true,
                 value_area: 1000,
               },
-              value: 80,
+              value: 20,
             },
             opacity: {
               value: 0.5,
@@ -89,7 +89,7 @@ const ParentCon = (props) => {
         style={{
           zIndex: -1,
         }}
-      ></Particles> */}
+      ></Particles>
       <div className={`${classes.main} scale-in-center`}>{props.children}</div>
     </>
   );
