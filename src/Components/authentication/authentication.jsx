@@ -36,27 +36,32 @@ const Authentication = () => {
     navigate("/");
   };
   return (
-    <ParentCon backgroundURL={"./images/grey-pixo.svg"}>
-      <ColumnCon>
-        <Heading text={"Authenticate with Google"} />
-        <button
-          onClick={signInWithGoogle}
-          className={classes["login-with-google-btn"]}
-          disabled={errorState}
-        >
-          Google Auth button
-        </button>
-        {errorState && <Error errorMessage={errorMessage} />}
-
-          <Button
-            type="solid"
-            text={"Back"}
-            onClick={onClickBackAuth}
-            errorState={errorState}
-          />
-      </ColumnCon>
-      <img src="./images/tiltjs/Google_Accnt.png" alt="" className={classes.authenImage}/>
-    </ParentCon>
+    <>
+      <ParentCon backgroundURL={"./images/grey-pixo.svg"}>
+        <ColumnCon>
+          <Heading text={"Authenticate with Google"} />
+          <button
+            onClick={signInWithGoogle}
+            className={classes["login-with-google-btn"]}
+            disabled={errorState}
+          >
+            Google Auth button
+          </button>
+          {errorState && <Error errorMessage={errorMessage} />}
+            <Button
+              type="solid"
+              text={"Back"}
+              onClick={onClickBackAuth}
+              errorState={errorState}
+            />
+        </ColumnCon>
+        <img
+          src="./images/tiltjs/Google_Accnt.png"
+          alt=""
+          className={classes.authenImage}
+        />
+      </ParentCon>
+    </>
   );
 };
 export default Authentication;

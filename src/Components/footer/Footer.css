@@ -123,8 +123,10 @@
 
 .page-box {
   display: flex;
-  /* margin: auto; */
+  position: absolute;
+  top: 0;
   height: 100vh;
+  width: 100vw;
   padding-top: 20vh;
   flex-direction: column;
   justify-content: center;
@@ -134,6 +136,7 @@
   background: -moz-linear-gradient(top left, #0676e6, #021c79);
   background: linear-gradient(to bottom right, #0676e6, #021c79);
   overflow: hidden;
+  color: white;
 }
 .success-message {
   display: flex;
@@ -299,5 +302,40 @@ footer {
   text-decoration: none;
   transition: 500ms;
   color: white;
+}
+@media screen and (max-width:900px) {
+  .all_updates {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .whatsapp-group-info {
+    display: flex;
+    flex-direction: column;
+    width: 68vw;
+    height: 15vh;
+    font-size: 1.1rem;
+    padding: 2rem 0;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    margin: 0;
+  }
+  .meet {
+    display: flex;
+    flex-direction: column;
+    width: 68vw;
+    height: 18vh;
+    font-size: 0.5rem;
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    margin: 0;
+  }
+  .pixo{
+    
+  }
 }
 
