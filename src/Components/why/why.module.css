@@ -1,4 +1,12 @@
-.whyImage{
-    height: 20rem;
-    margin-top: 4rem;
+.whyImage {
+  height: 20rem;
+  margin-top: 4rem;
+}
+.topping {
+  padding: 1rem 0;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+}
+.topping span {
+  padding-left: 5px;
 }
