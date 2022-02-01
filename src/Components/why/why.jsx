@@ -50,9 +50,9 @@ const Why = () => {
     if (why.length === 0) {
       setErrorState(true);
       setErrorMessage("Cannot be Left Empty !");
-    } else if (why.length <= 150) {
-      setErrorState(why.length <= 150);
-      setErrorMessage(`More than 150 Words ! ${150 - why.length}/150 Left`);
+    } else if (why.length <= 50) {
+      setErrorState(why.length <= 50);
+      setErrorMessage(`More than 50 Words ! ${50 - why.length}/50 Left`);
     } else {
       setUserData((data) => ({ ...data, whyPixo: why }));
       submitHandler();
@@ -68,7 +68,7 @@ const Why = () => {
         <Heading text={"Why Pixonoids?"} />
         <Area
           placeholder={
-            "We want to know what makes you join pixo (more than 50 words)"
+            "We want to know what makes you join pixo."
           }
           value={why}
           onChangeHandler={whyHandler}

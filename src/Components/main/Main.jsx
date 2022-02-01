@@ -19,9 +19,9 @@ const Main = () => {
       <section className={classes.main}>
         <div className={classes.parent}>
           <div className={classes.container}>
-            <h1>Pixonoids Interview 2k21</h1>
+            <h1>Pixonoids Interview 2K22</h1>
             <p>
-              Team Pixonoids cordially invites you to the Sophomores interviews
+              Team Pixonoids cordially invites you to the Freshmen interviews
               which gives you a fair chance to connect with people of akin
               vision and be a part of the team which is driven by the same
               vigour

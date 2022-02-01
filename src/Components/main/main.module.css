@@ -14,10 +14,11 @@
 }
 .videotag {
   height: 120vh;
-
+  width: 100vw;
   filter: opacity(0.9);
-
-  position: fixed;
+  position: absolute;
+  top: -2vh;
+  left: 0vw;
 }
 .parent {
   display: flex;

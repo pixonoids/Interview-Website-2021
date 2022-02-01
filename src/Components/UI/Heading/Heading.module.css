@@ -3,3 +3,8 @@
     text-align: left;
     color: white;
 }
+@media screen and (max-width: 900px) {
+    .heading-main{
+        font-size: 2rem;
+    }
+}

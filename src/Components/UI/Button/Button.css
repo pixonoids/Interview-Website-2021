@@ -5,7 +5,7 @@
   -webkit-backdrop-filter: blur(20px);
   border-radius: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  color: white;
+  color: black;
   font-size: 1.5rem;
   letter-spacing: 2px;
   font-weight: 900;
@@ -19,7 +19,7 @@
   align-items: center;
 }
 .button:hover {
-  color: white;
+  color: black;
   opacity: 1;
   border-radius: 1.5rem;
   transition: ease-in-out 0.5s;
@@ -66,5 +66,23 @@ button[disabled] {
   }
   0% {
     transform: translateX(0px);
+  }
+}
+@media screen and (max-width: 900px) {
+  .button{
+    font-size: 1rem;
+    border-radius: 1.5rem;
+    padding: 0.2rem 1.3rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    letter-spacing: 2px;
+    font-weight: 700;
+    opacity: 0.9;
+    cursor: pointer;
+    max-width: 70px;
+    margin-top: 1rem;
+    margin-bottom: -1rem;
+  }
+  .icon-button{
+    font-size: 1.5rem;
   }
 }

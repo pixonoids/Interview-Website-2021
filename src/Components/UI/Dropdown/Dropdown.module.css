@@ -45,6 +45,9 @@
   background: #555;
 }
 
-/* Handle */
-
-/* Handle on hover */
+@media screen and (max-width:900px){
+  .dropdown {
+    width: 65vw;
+  }
+  
+}
