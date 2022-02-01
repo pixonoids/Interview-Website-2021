@@ -53,12 +53,15 @@ const Contact = () => {
     <ParentCon backgroundURL={"./images/purple-pixo.svg"}>
       <ColumnCon>
         <Heading text={"Contact Details"} />
+
+
         <InputBox
           placeholder={"Phone Number"}
           value={phoneNo}
           onChangeHandler={phoneNoHandler}
         ></InputBox>
         {errorState && <Error errorMessage={errorMessage} />}
+
 
         <RowCon>
           <Button
