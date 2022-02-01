@@ -9,11 +9,15 @@ import Upload from "./Components/upload/upload";
 import Priority from "./Components/priority/Priority";
 import Why from "./Components/why/why";
 import Footer from "./Components/footer/Footer";
-import { BrowserRouter } from "react-router-dom";
 import Loading from "./Components/loading/Loading";
 import Authentication from "./Components/authentication/authentication";
-import { Route, Routes } from "react-router-dom";
+import ErrorPage from "./Components/error/ErrorPage";
+//context dependencies
 import { UserDataProvider } from "./Context/UserData/UserDataContext";
+//router dependencies
+import { BrowserRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+
 function App() {
   return (
     <>
@@ -32,6 +36,7 @@ function App() {
             <Route path="/why" element={<Why />}></Route>
             <Route path="/footer" element={<Footer />}></Route>
             <Route path="/loading" element={<Loading />}></Route>
+            <Route path="*" element={<ErrorPage />}></Route>
           </Routes>
         </BrowserRouter>
       </UserDataProvider>

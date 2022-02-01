@@ -45,9 +45,6 @@ const User = () => {
     if (fName.length === 0 || lName.length === 0) {
       setErrorState(true);
       setErrorMessage("Cannot be Left Empty !");
-    } else if (!fName.match(/^[a-zA-Z]+$/) || !lName.match(/^[a-zA-Z]+$/)) {
-      setErrorState(true);
-      setErrorMessage("Only Letters Allowed");
     } else {
       setUserData((data) => ({ ...data, firstName: fName, lastName: lName }));
       setErrorState(false);
@@ -92,7 +89,11 @@ const User = () => {
         </RowCon>
       </ColumnCon>
 
-      <img src="/public/images/tiltjs/idcard.png" alt="" className={classes.userImage} />
+      <img
+        src="/public/images/tiltjs/idcard.png"
+        alt=""
+        className={classes.userImage}
+      />
     </ParentCon>
   );
 };
