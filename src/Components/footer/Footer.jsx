@@ -5,9 +5,9 @@ import { SiGooglemeet } from "react-icons/si";
 export default function Footer() {
   return (
     <div className="page-box">
-      <div class="checkmark">
+      <div className="checkmark">
         <svg
-          class="star"
+          className="star"
           height="19"
           viewBox="0 0 19 19"
           width="19"
@@ -16,7 +16,7 @@ export default function Footer() {
           <path d="M8.296.747c.532-.972 1.393-.973 1.925 0l2.665 4.872 4.876 2.66c.974.532.975 1.393 0 1.926l-4.875 2.666-2.664 4.876c-.53.972-1.39.973-1.924 0l-2.664-4.876L.76 10.206c-.972-.532-.973-1.393 0-1.925l4.872-2.66L8.296.746z"></path>
         </svg>
         <svg
-          class="star"
+          className="star"
           height="19"
           viewBox="0 0 19 19"
           width="19"
@@ -25,7 +25,7 @@ export default function Footer() {
           <path d="M8.296.747c.532-.972 1.393-.973 1.925 0l2.665 4.872 4.876 2.66c.974.532.975 1.393 0 1.926l-4.875 2.666-2.664 4.876c-.53.972-1.39.973-1.924 0l-2.664-4.876L.76 10.206c-.972-.532-.973-1.393 0-1.925l4.872-2.66L8.296.746z"></path>
         </svg>
         <svg
-          class="star"
+          className="star"
           height="19"
           viewBox="0 0 19 19"
           width="19"
@@ -34,7 +34,7 @@ export default function Footer() {
           <path d="M8.296.747c.532-.972 1.393-.973 1.925 0l2.665 4.872 4.876 2.66c.974.532.975 1.393 0 1.926l-4.875 2.666-2.664 4.876c-.53.972-1.39.973-1.924 0l-2.664-4.876L.76 10.206c-.972-.532-.973-1.393 0-1.925l4.872-2.66L8.296.746z"></path>
         </svg>
         <svg
-          class="star"
+          className="star"
           height="19"
           viewBox="0 0 19 19"
           width="19"
@@ -43,7 +43,7 @@ export default function Footer() {
           <path d="M8.296.747c.532-.972 1.393-.973 1.925 0l2.665 4.872 4.876 2.66c.974.532.975 1.393 0 1.926l-4.875 2.666-2.664 4.876c-.53.972-1.39.973-1.924 0l-2.664-4.876L.76 10.206c-.972-.532-.973-1.393 0-1.925l4.872-2.66L8.296.746z"></path>
         </svg>
         <svg
-          class="star"
+          className="star"
           height="19"
           viewBox="0 0 19 19"
           width="19"
@@ -52,7 +52,7 @@ export default function Footer() {
           <path d="M8.296.747c.532-.972 1.393-.973 1.925 0l2.665 4.872 4.876 2.66c.974.532.975 1.393 0 1.926l-4.875 2.666-2.664 4.876c-.53.972-1.39.973-1.924 0l-2.664-4.876L.76 10.206c-.972-.532-.973-1.393 0-1.925l4.872-2.66L8.296.746z"></path>
         </svg>
         <svg
-          class="star"
+          className="star"
           height="19"
           viewBox="0 0 19 19"
           width="19"
@@ -61,7 +61,7 @@ export default function Footer() {
           <path d="M8.296.747c.532-.972 1.393-.973 1.925 0l2.665 4.872 4.876 2.66c.974.532.975 1.393 0 1.926l-4.875 2.666-2.664 4.876c-.53.972-1.39.973-1.924 0l-2.664-4.876L.76 10.206c-.972-.532-.973-1.393 0-1.925l4.872-2.66L8.296.746z"></path>
         </svg>
         <svg
-          class="checkmark__check"
+          className="checkmark__check"
           height="36"
           viewBox="0 0 48 36"
           width="48"
@@ -70,7 +70,7 @@ export default function Footer() {
           <path d="M47.248 3.9L43.906.667a2.428 2.428 0 0 0-3.344 0l-23.63 23.09-9.554-9.338a2.432 2.432 0 0 0-3.345 0L.692 17.654a2.236 2.236 0 0 0 .002 3.233l14.567 14.175c.926.894 2.42.894 3.342.01L47.248 7.128c.922-.89.922-2.34 0-3.23"></path>
         </svg>
         <svg
-          class="checkmark__background"
+          className="checkmark__background"
           height="115"
           viewBox="0 0 120 115"
           width="120"

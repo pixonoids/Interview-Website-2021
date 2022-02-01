@@ -10,3 +10,9 @@ input::placeholder{
     color: white;
     opacity: 0.5;
 }
+@media screen and (max-width: 900px)  {
+    input{
+        font-size: 1.1rem;
+        margin: 1rem 0rem;
+    }
+}

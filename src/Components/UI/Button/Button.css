@@ -1,21 +1,25 @@
 .button {
-  width: fit-content;
   border-radius: 1.5rem;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1.4rem;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  color: white;
+  color: black;
   font-size: 1.5rem;
   letter-spacing: 2px;
   font-weight: 900;
   opacity: 0.9;
-  transition: 100ms;
   cursor: pointer;
+  max-width: 80px;
+  overflow: hidden;
+  transition: max-width 0.5s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .button:hover {
-  color: white;
+  color: black;
   opacity: 1;
   border-radius: 1.5rem;
   transition: ease-in-out 0.5s;
@@ -23,6 +27,8 @@
   transform: scale(1.07);
   box-shadow: 3px 3px 5px 0px rgba(255, 255, 255, 0.4),
     -3px -3px 5px 0px rgba(0, 0, 0, 0.493);
+  max-width: 300px;
+  transition: max-width 0.5s;
 }
 .hollow {
   background-color: transparent;
@@ -30,4 +36,53 @@
 }
 .solid {
   background: rgba(255, 255, 255, 0.2);
+}
+
+.icon-button {
+  padding-right: 1.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.text {
+  white-space: nowrap;
+}
+button:disabled,
+button[disabled] {
+  cursor: not-allowed;
+  animation: shake 500ms ease;
+  border: 3px solid red;
+}
+@keyframes shake {
+  100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-3px);
+  }
+  25% {
+    transform: translateX(3px);
+  }
+  0% {
+    transform: translateX(0px);
+  }
+}
+@media screen and (max-width: 900px) {
+  .button{
+    font-size: 1rem;
+    border-radius: 1.5rem;
+    padding: 0.2rem 1.3rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    letter-spacing: 2px;
+    font-weight: 700;
+    opacity: 0.9;
+    cursor: pointer;
+    max-width: 70px;
+    margin-top: 1rem;
+    margin-bottom: -1rem;
+  }
+  .icon-button{
+    font-size: 1.5rem;
+  }
 }

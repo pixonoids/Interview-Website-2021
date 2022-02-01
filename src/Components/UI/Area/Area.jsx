@@ -7,6 +7,8 @@ const Area = (props) => {
       <textarea
         className={classes.area}
         placeholder={props.placeholder}
+        value={props.value}
+        onChange={props.onChangeHandler}
       ></textarea>
     </>
   );

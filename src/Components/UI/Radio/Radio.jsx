@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classes from "./Radio.module.css";
 
-const Radio = () => {
+const Radio = (props) => {
   const radioItems = [
     {
       id: 1,
@@ -27,6 +27,8 @@ const Radio = () => {
   const [active, setActive] = useState();
   const onClickHandler = (item) => {
     setActive(item.id);
+    props.deptHandler(item.text);
+    props.errorHandler(false);
   };
   return (
     <div className={classes["radio-grp"]}>

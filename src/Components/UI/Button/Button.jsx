@@ -1,11 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Button.css";
+import {
+  BsFillArrowRightCircleFill,
+  BsFillArrowLeftCircleFill,
+} from "react-icons/bs";
+
 const Button = (props) => {
   return (
-    <Link className={`button ${props.type}`} to={props.to}>
-      {props.text}
-    </Link>
+    <button
+      className={`button ${props.type}`}
+      onClick={props.onClick}
+      disabled={props.text === "Next" && props.errorState}
+    >
+      {props.text === "Back" && (
+        <div className="icon-button">
+          <BsFillArrowLeftCircleFill />
+        </div>
+      )}
+      {props.text === "Next" && (
+        <div className="icon-button">
+          <BsFillArrowRightCircleFill />
+        </div>
+      )}
+      <div className="text">{props.text}</div>
+    </button>
   );
 };
 

@@ -1,11 +1,26 @@
 .flex-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 50vw;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  padding: 2rem 2rem;
 }
 .flex-row {
+  display: flex;
+  justify-content: space-around;
+}
+@media screen and (max-width: 900px) {
+  .flex-col{
+    width: 80vw;
+    height: 90vh;
+    margin-bottom: 10vh;
     display: flex;
-    justify-content: space-between;
-    width: 22vw;
-
+    flex-direction: column;
+    justify-content: center;
+  } 
 }

@@ -1,5 +1,6 @@
 .nav-main {
-  position: fixed;
+  position: absolute;
+  top: 0;
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -7,9 +8,9 @@
   width: 100vw;
   padding: 0.2rem;
   background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(12.5px);
   -webkit-backdrop-filter: blur(12.5px);
+  z-index: 1000;
 }
 .logo {
   display: flex;
