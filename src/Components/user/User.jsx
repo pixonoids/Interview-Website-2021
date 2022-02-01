@@ -6,7 +6,6 @@ import ColumnCon from "../UI/Container/ColumnCon";
 import RowCon from "../UI/Container/RowCon";
 import classes from "./user.module.css";
 import Button from "../UI/Button/Button";
-import Hover from "../Tilt/Hover";
 import Error from "../UI/Error/Error";
 import { useNavigate } from "react-router-dom";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
@@ -61,7 +60,7 @@ const User = () => {
     navigate("/authen");
   };
   return (
-    <ParentCon backgroundURL={"./images/4.svg"}>
+    <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
       <ColumnCon>
         <Heading text={"Personal Information"} />
 
@@ -93,7 +92,7 @@ const User = () => {
         </RowCon>
       </ColumnCon>
 
-      <Hover location=".\images\tiltjs\idcard.png" />
+      <img src="/public/images/tiltjs/idcard.png" alt="" className={classes.userImage} />
     </ParentCon>
   );
 };

@@ -6,7 +6,6 @@ import ColumnCon from "../UI/Container/ColumnCon";
 import RowCon from "../UI/Container/RowCon";
 import classes from "./upload.module.css";
 import Button from "../UI/Button/Button";
-import Hover from "../Tilt/Hover";
 import Error from "../UI/Error/Error";
 
 import { useNavigate } from "react-router-dom";
@@ -49,7 +48,7 @@ const Upload = () => {
     navigate("/dept");
   };
   return (
-    <ParentCon backgroundURL={"./images/1.svg"}>
+    <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
       <ColumnCon>
         <Heading text={"Upload Documents"} />
         <InputBox
@@ -74,7 +73,7 @@ const Upload = () => {
           />
         </RowCon>
       </ColumnCon>
-      <Hover location=".\images\tiltjs\contact.png" />
+      <img src="/public/images/tiltjs/contact.png" alt="" className={classes.uploadImage}/>
     </ParentCon>
   );
 };

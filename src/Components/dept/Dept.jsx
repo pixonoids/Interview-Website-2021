@@ -7,8 +7,8 @@ import RowCon from "../UI/Container/RowCon";
 import Button from "../UI/Button/Button";
 import Dropdown from "../UI/Dropdown/Dropdown";
 import Radio from "../UI/Radio/Radio";
-import Hover from "../Tilt/Hover";
 import Error from "../UI/Error/Error";
+import classes from "./Dept.module.css"
 import { useNavigate } from "react-router-dom";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 
@@ -36,7 +36,7 @@ const Dept = () => {
     navigate("/contact");
   };
   return (
-    <ParentCon backgroundURL={"./images/6.svg"}>
+    <ParentCon backgroundURL={"./images/grey-pixo.svg"}>
       <ColumnCon>
         <Heading text={"Department for Application"} />
         <Radio deptHandler={setDept} errorHandler={setErrorState} />
@@ -57,7 +57,7 @@ const Dept = () => {
           />
         </RowCon>
       </ColumnCon>
-      <Hover location=".\images\tiltjs\tilt-camera.png" />
+      <img src="/public/images/tiltjs/tilt-camera.png" alt="" className={classes.deptImage}/>
     </ParentCon>
   );
 };

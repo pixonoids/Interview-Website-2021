@@ -7,7 +7,6 @@ import RowCon from "../UI/Container/RowCon";
 import classes from "./college.module.css";
 import Button from "../UI/Button/Button";
 import Dropdown from "../UI/Dropdown/Dropdown";
-import Hover from "../Tilt/Hover";
 import Error from "../UI/Error/Error";
 
 import { useNavigate } from "react-router-dom";
@@ -61,7 +60,7 @@ const College = () => {
     navigate("/user");
   };
   return (
-    <ParentCon backgroundURL={"./images/2.svg"}>
+    <ParentCon backgroundURL={"./images/yellow-pixo.svg"}>
       <ColumnCon>
         <Heading text={"College Information"} />
         <InputBox
@@ -93,7 +92,7 @@ const College = () => {
           />
         </RowCon>
       </ColumnCon>
-      <Hover location=".\images\tiltjs\cap.png" />
+      <img src="/public/images/tiltjs/cap.png" alt="" className={classes.collegeImage}/>
     </ParentCon>
   );
 };

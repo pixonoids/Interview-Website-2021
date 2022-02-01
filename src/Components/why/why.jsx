@@ -8,12 +8,12 @@ import Button from "../UI/Button/Button";
 import Dropdown from "../UI/Dropdown/Dropdown";
 import Radio from "../UI/Radio/Radio";
 import Area from "../UI/Area/Area";
-import Hover from "../Tilt/Hover";
 import Error from "../UI/Error/Error";
 import { userDb } from "../../firebase";
 import { addDoc, collection } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
+import classes from "./why.module.css";
 
 const Why = () => {
   const userCollectionRef = collection(userDb, "user");
@@ -63,7 +63,7 @@ const Why = () => {
     navigate("/priority");
   };
   return (
-    <ParentCon backgroundURL={"./images/9.svg"}>
+    <ParentCon backgroundURL={"./images/yellow-pixo.svg"}>
       <ColumnCon>
         <Heading text={"Why Pixonoids?"} />
         <Area
@@ -89,7 +89,7 @@ const Why = () => {
           />
         </RowCon>
       </ColumnCon>
-      <Hover location=".\images\tiltjs\pixonoid.png" />
+      <img src="/public/images/tiltjs/pixonoid.png" className={classes.whyImage} alt=""/>
     </ParentCon>
   );
 };

@@ -36,7 +36,7 @@ const Authentication = () => {
     navigate("/");
   };
   return (
-    <ParentCon backgroundURL={"./images/8.svg"}>
+    <ParentCon backgroundURL={"./images/grey-pixo.svg"}>
       <ColumnCon>
         <Heading text={"Authenticate with Google"} />
         <button
@@ -48,15 +48,14 @@ const Authentication = () => {
         </button>
         {errorState && <Error errorMessage={errorMessage} />}
 
-        <RowCon>
           <Button
             type="solid"
             text={"Back"}
             onClick={onClickBackAuth}
             errorState={errorState}
           />
-        </RowCon>
       </ColumnCon>
+      <img src="/public/images/tiltjs/Google_Accnt.png" alt="" className={classes.authenImage}/>
     </ParentCon>
   );
 };

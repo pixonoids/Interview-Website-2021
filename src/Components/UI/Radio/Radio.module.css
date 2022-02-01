@@ -1,21 +1,22 @@
 .radio-grp {
   display: flex;
   flex-wrap: wrap;
-  width: 50vw;
+  width: 45vw;
+  height: 25vh;
   align-content: space-between;
   justify-content: center;
 }
 .radio {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
-  margin: 1rem 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0.5rem;
   background-color: rgba(255, 255, 255, 0.74);
-  width: 15vw;
+  width: 13vw;
   text-align: left;
   flex-basis: 45%;
   border-radius: 15px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
   color: grey;
   opacity: 0.8;

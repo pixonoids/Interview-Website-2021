@@ -9,6 +9,7 @@
 *:after {
   box-sizing: border-box;
 }
+
 .star {
   position: absolute;
   animation: grow 2s infinite;
@@ -122,7 +123,7 @@
 
 .page-box {
   display: flex;
-  margin: auto;
+  /* margin: auto; */
   height: 100vh;
   padding-top: 20vh;
   flex-direction: column;
@@ -132,10 +133,9 @@
   background: -webkit-linear-gradient(top left, #0676e6, #021c79);
   background: -moz-linear-gradient(top left, #0676e6, #021c79);
   background: linear-gradient(to bottom right, #0676e6, #021c79);
-
-  color: white;
+  overflow: hidden;
 }
-/success message main div/ .success-message {
+.success-message {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -300,3 +300,4 @@ footer {
   transition: 500ms;
   color: white;
 }
+
