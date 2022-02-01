@@ -75,7 +75,7 @@ const Contact = () => {
           />
         </RowCon>
       </ColumnCon>
-      <img src="/public/images/tiltjs/contact2.png" alt="" className={classes.contactImage}/>
+      <img src="./images/tiltjs/contact2.png" alt="" className={classes.contactImage}/>
     </ParentCon>
   );
 };

@@ -73,7 +73,7 @@ const Upload = () => {
           />
         </RowCon>
       </ColumnCon>
-      <img src="/public/images/tiltjs/contact.png" alt="" className={classes.uploadImage}/>
+      <img src="./images/tiltjs/contact.png" alt="" className={classes.uploadImage}/>
     </ParentCon>
   );
 };
