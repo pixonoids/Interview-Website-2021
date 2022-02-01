@@ -74,7 +74,7 @@ const Priority = () => {
           />
         </RowCon>
       </ColumnCon>
-      <img src="/public/images/tiltjs/prior.png" alt="" className={classes.priorityImage}/>
+      <img src="./images/tiltjs/prior.png" alt="" className={classes.priorityImage}/>
     </ParentCon>
   );
 };

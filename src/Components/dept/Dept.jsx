@@ -57,7 +57,7 @@ const Dept = () => {
           />
         </RowCon>
       </ColumnCon>
-      <img src="/public/images/tiltjs/tilt-camera.png" alt="" className={classes.deptImage}/>
+      <img src="./images/tiltjs/tilt-camera.png" alt="" className={classes.deptImage}/>
     </ParentCon>
   );
 };

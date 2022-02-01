@@ -92,7 +92,7 @@ const User = () => {
         </RowCon>
       </ColumnCon>
 
-      <img src="/public/images/tiltjs/idcard.png" alt="" className={classes.userImage} />
+      <img src="./images/tiltjs/idcard.png" alt="" className={classes.userImage} />
     </ParentCon>
   );
 };

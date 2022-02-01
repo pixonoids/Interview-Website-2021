@@ -92,7 +92,7 @@ const College = () => {
           />
         </RowCon>
       </ColumnCon>
-      <img src="/public/images/tiltjs/cap.png" alt="" className={classes.collegeImage}/>
+      <img src="./images/tiltjs/cap.png" alt="" className={classes.collegeImage}/>
     </ParentCon>
   );
 };

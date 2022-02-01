@@ -68,7 +68,7 @@ const Why = () => {
         <Heading text={"Why Pixonoids?"} />
         <Area
           placeholder={
-            "We want to know what makes you join pixo."
+            "We want to know what makes you join pixo"
           }
           value={why}
           onChangeHandler={whyHandler}
@@ -89,7 +89,7 @@ const Why = () => {
           />
         </RowCon>
       </ColumnCon>
-      <img src="/public/images/tiltjs/pixonoid.png" className={classes.whyImage} alt=""/>
+      <img src="./images/tiltjs/pixonoid.png" className={classes.whyImage} alt=""/>
     </ParentCon>
   );
 };

@@ -55,7 +55,7 @@ const Authentication = () => {
             errorState={errorState}
           />
       </ColumnCon>
-      <img src="/public/images/tiltjs/Google_Accnt.png" alt="" className={classes.authenImage}/>
+      <img src="./images/tiltjs/Google_Accnt.png" alt="" className={classes.authenImage}/>
     </ParentCon>
   );
 };
