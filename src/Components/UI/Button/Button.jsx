@@ -22,7 +22,7 @@ const Button = (props) => {
           <BsFillArrowRightCircleFill />
         </div>
       )}
-      <div class="text">{props.text}</div>
+      <div className="text">{props.text}</div>
     </button>
   );
 };

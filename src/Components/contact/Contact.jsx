@@ -5,8 +5,8 @@ import InputBox from "../UI/input/InputBox";
 import ColumnCon from "../UI/Container/ColumnCon";
 import RowCon from "../UI/Container/RowCon";
 import Button from "../UI/Button/Button";
-import Hover from "../Tilt/Hover";
 import Error from "../UI/Error/Error";
+import classes from "./Contact.module.css"
 import { useNavigate } from "react-router-dom";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 
@@ -50,15 +50,18 @@ const Contact = () => {
     navigate("/college");
   };
   return (
-    <ParentCon backgroundURL={"./images/12.svg"}>
+    <ParentCon backgroundURL={"./images/purple-pixo.svg"}>
       <ColumnCon>
         <Heading text={"Contact Details"} />
+
+
         <InputBox
-          placeholder={"Phone Nunber"}
+          placeholder={"Phone Number"}
           value={phoneNo}
           onChangeHandler={phoneNoHandler}
         ></InputBox>
         {errorState && <Error errorMessage={errorMessage} />}
+
 
         <RowCon>
           <Button
@@ -75,7 +78,7 @@ const Contact = () => {
           />
         </RowCon>
       </ColumnCon>
-      <Hover location=".\images\tiltjs\contact2.png" />
+      <img src="./images/tiltjs/contact2.png" alt="" className={classes.contactImage}/>
     </ParentCon>
   );
 };

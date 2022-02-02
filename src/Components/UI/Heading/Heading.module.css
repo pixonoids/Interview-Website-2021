@@ -1,5 +1,10 @@
 .heading-main {
-    font-size: 3.5rem;
+    font-size: 3rem;
     text-align: left;
     color: white;
+}
+@media screen and (max-width: 900px) {
+    .heading-main{
+        font-size: 2rem;
+    }
 }

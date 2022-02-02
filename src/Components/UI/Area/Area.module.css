@@ -1,6 +1,6 @@
 .area {
   height: 50%;
-  width: 60vw;
+  width: 45vw;
   border: 2px solid white;
   outline: none;
   background-color: rgba(216, 191, 216, 0.199);
@@ -14,4 +14,14 @@
 }
 .area::placeholder {
   color: rgba(255, 255, 255, 0.753);
+}
+@media screen and (max-width:900px){
+  .area {
+    height: 30vh;
+    width: 65vw;
+    font-size: 1rem;
+    border-radius: 15px;
+    /* padding: 1rem; */
+    margin: 1rem 0;
+  }
 }

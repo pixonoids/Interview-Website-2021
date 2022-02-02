@@ -8,9 +8,8 @@ import Button from "../UI/Button/Button";
 import Dropdown from "../UI/Dropdown/Dropdown";
 import Radio from "../UI/Radio/Radio";
 import Area from "../UI/Area/Area";
-import Hover from "../Tilt/Hover";
 import Error from "../UI/Error/Error";
-
+import classes from "./Priority.module.css"
 import { useNavigate } from "react-router-dom";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 
@@ -48,7 +47,7 @@ const Priority = () => {
     navigate("/upload");
   };
   return (
-    <ParentCon backgroundURL={"./images/10.svg"}>
+    <ParentCon backgroundURL={"./images/purple-pixo.svg"}>
       <ColumnCon>
         <Heading text={"Club Priority"} />
         <Area
@@ -75,7 +74,7 @@ const Priority = () => {
           />
         </RowCon>
       </ColumnCon>
-      <Hover location=".\images\tiltjs\prior.png" />
+      <img src="./images/tiltjs/prior.png" alt="" className={classes.priorityImage}/>
     </ParentCon>
   );
 };
