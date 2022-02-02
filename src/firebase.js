@@ -3,13 +3,16 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 //user env files
-const firebaseConfig = {apiKey: "AIzaSyAjmAt8XEXvnO5zss9K1xKUNhpILzMRjic",
-authDomain: "login-b7f31.firebaseapp.com",
-projectId: "login-b7f31",
-storageBucket: "login-b7f31.appspot.com",
-messagingSenderId: "926142934820",
-appId: "1:926142934820:web:258c9a327ba8154e2f4db1",
-measurementId: "G-FCMJR3RPT0",};
+const firebaseConfig = {
+  apiKey: "AIzaSyCJ3ACEfWFUUEu0Sza2juILNVlLhyTWd3E",
+  authDomain: "pixo-noids.firebaseapp.com",
+  databaseURL: "https://pixo-noids-default-rtdb.firebaseio.com",
+  projectId: "pixo-noids",
+  storageBucket: "pixo-noids.appspot.com",
+  messagingSenderId: "814103856939",
+  appId: "1:814103856939:web:104731301a5a0367ca276e",
+  measurementId: "G-H4XCWF9KCR",
+};
 
 //service intialize
 const app = initializeApp(firebaseConfig);
