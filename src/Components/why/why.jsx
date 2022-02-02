@@ -35,6 +35,7 @@ const Why = () => {
   const submitHandler = async () => {
     try {
       await addDoc(userCollectionRef, { ...userData });
+      await setUserData((data) => ({ ...data, whyPixo: why }));
       setErrorState(false);
       navigate("/footer");
       console.log("success");
