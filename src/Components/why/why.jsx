@@ -13,7 +13,7 @@ import { UserDataContext } from "../../Context/UserData/UserDataContext";
 import classes from "./why.module.css";
 
 const Why = () => {
-  const userCollectionRef = collection(userDb, "user");
+  const userCollectionRef = collection(userDb, "userInterview");
   //states
   const [why, setWhy] = useState("");
   const [checked, setChecked] = useState(false);
@@ -73,9 +73,7 @@ const Why = () => {
       <ColumnCon>
         <Heading text={"Why Pixonoids?"} />
         <Area
-
           placeholder={"We want to know what makes you join pixo."}
-
           value={why}
           onChangeHandler={whyHandler}
         />
@@ -113,8 +111,11 @@ const Why = () => {
         </RowCon>
       </ColumnCon>
 
-      <img src="./images/tiltjs/pixonoid.png" className={classes.whyImage} alt=""/>
-
+      <img
+        src="./images/tiltjs/pixonoid.png"
+        className={classes.whyImage}
+        alt=""
+      />
     </ParentCon>
   );
 };
