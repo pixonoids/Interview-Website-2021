@@ -3,6 +3,7 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 //user env files
+
 const firebaseConfig = {
   apiKey: "AIzaSyCJ3ACEfWFUUEu0Sza2juILNVlLhyTWd3E",
   authDomain: "pixo-noids.firebaseapp.com",
