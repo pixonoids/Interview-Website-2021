@@ -22,7 +22,9 @@ const College = (props) => {
   //user Session management system
   useEffect(() => {
     setClgId(window.sessionStorage.getItem("emailId"));
-    setSelected(window.sessionStorage.getItem("branchName"));
+    setSelected(
+      window.sessionStorage.getItem("branchName") || "Choose Your Branch"
+    );
   }, []);
   //update state functions
   const clgIdHandler = (e) => {
