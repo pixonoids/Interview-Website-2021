@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import ParentCon from "../UI/Container/ParentCon";
 import Heading from "../UI/Heading/Heading";
 import ColumnCon from "../UI/Container/ColumnCon";
@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 import classes from "./why.module.css";
 
-const Why = () => {
+const Why = (props) => {
   const userCollectionRef = collection(userDb, "userInterview");
   //states
   const [why, setWhy] = useState("");
@@ -21,10 +21,23 @@ const Why = () => {
   const [errorState, setErrorState] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [userData, setUserData] = useContext(UserDataContext);
+  const today = new Date();
   //update state functions
   const whyHandler = (e) => {
     setWhy(e.target.value);
-    setUserData((data) => ({ ...data, whyPixo: why }));
+    setUserData((data) => ({
+      ...data,
+      whyPixo: why,
+      timeStamp: `${
+        today.getFullYear() +
+        "-" +
+        (today.getMonth() + 1) +
+        "-" +
+        today.getDate()
+      } ${
+        today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
+      }`,
+    }));
     if (e.target.value.length === 0) {
       setErrorState(e.target.value.length === 0);
       setErrorMessage("Cannot be Left Empty !");
@@ -35,9 +48,9 @@ const Why = () => {
   const submitHandler = async () => {
     try {
       await addDoc(userCollectionRef, { ...userData });
-      await setUserData((data) => ({ ...data, whyPixo: why }));
       setErrorState(false);
-      navigate("/footer");
+      navigate("/success");
+      window.sessionStorage.clear();
       console.log("success");
     } catch (error) {
       console.log(error);
@@ -54,9 +67,9 @@ const Why = () => {
     if (why.length === 0) {
       setErrorState(true);
       setErrorMessage("Cannot be Left Empty !");
-    } else if (why.length <= 50) {
-      setErrorState(why.length <= 50);
-      setErrorMessage(`More than 50 Words ! ${50 - why.length}/50 Left`);
+    } else if (why.length <= 10) {
+      setErrorState(why.length <= 10);
+      setErrorMessage(`More than 50 Words ! ${10 - why.length}/50 Left`);
     } else if (!checked) {
       setErrorState(true);
       setErrorMessage(`You must Accept the Terms `);
@@ -66,7 +79,7 @@ const Why = () => {
   };
   //onback functions
   const onClickBackWhy = () => {
-    navigate("/priority");
+    props.page("priority");
   };
   return (
     <ParentCon backgroundURL={"./images/yellow-pixo.svg"}>

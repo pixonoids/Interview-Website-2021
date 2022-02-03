@@ -1,22 +1,21 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import ParentCon from "../UI/Container/ParentCon";
 import Heading from "../UI/Heading/Heading";
-import InputBox from "../UI/input/InputBox";
 import ColumnCon from "../UI/Container/ColumnCon";
 import RowCon from "../UI/Container/RowCon";
 import Button from "../UI/Button/Button";
-import Dropdown from "../UI/Dropdown/Dropdown";
 import Radio from "../UI/Radio/Radio";
 import Error from "../UI/Error/Error";
-import classes from "./Dept.module.css"
-import { useNavigate } from "react-router-dom";
+import classes from "./Dept.module.css";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 
-const Dept = () => {
+const Dept = (props) => {
   const [dept, setDept] = useState("");
+  //user Session management system
+  useEffect(() => {
+    setDept(window.sessionStorage.getItem("pixoDept"));
+  }, []);
   //states
-  const navigate = useNavigate();
-
   const [errorState, setErrorState] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [userData, setUserData] = useContext(UserDataContext);
@@ -28,12 +27,15 @@ const Dept = () => {
     } else {
       setUserData((data) => ({ ...data, pixoDept: dept }));
       setErrorState(false);
-      navigate("/upload");
+      props.page("upload");
+      window.sessionStorage.setItem("currentPage", "upload");
+      window.sessionStorage.setItem("pixoDept", dept);
     }
   };
   //onback functions
   const onClickBackDept = () => {
-    navigate("/contact");
+    props.page("contact");
+    window.sessionStorage.setItem("currentPage", "contact");
   };
   return (
     <ParentCon backgroundURL={"./images/grey-pixo.svg"}>
@@ -57,7 +59,11 @@ const Dept = () => {
           />
         </RowCon>
       </ColumnCon>
-      <img src="./images/tiltjs/tilt-camera.png" alt="" className={classes.deptImage}/>
+      <img
+        src="./images/tiltjs/tilt-camera.png"
+        alt=""
+        className={classes.deptImage}
+      />
     </ParentCon>
   );
 };

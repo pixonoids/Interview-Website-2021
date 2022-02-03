@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import ParentCon from "../UI/Container/ParentCon";
 import Heading from "../UI/Heading/Heading";
 import ColumnCon from "../UI/Container/ColumnCon";
@@ -11,20 +11,30 @@ import { userAuth } from "../../firebase";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
-const Authentication = () => {
+const Authentication = (props) => {
   const navigate = useNavigate();
   const provider = new GoogleAuthProvider();
   const [errorState, setErrorState] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [userData, setUserData] = useContext(UserDataContext);
-
+  useEffect(() => {
+    if (window.sessionStorage.getItem("googleAuth")) {
+      props.page("user");
+      window.sessionStorage.setItem("currentPage", "user");
+    } else {
+      props.page("authen");
+      window.sessionStorage.setItem("currentPage", "authen");
+    }
+  }, []);
   //auth declaraion
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(userAuth, provider);
       setUserData((data) => ({ ...data, googleAuth: true }));
       setErrorState(false);
-      navigate("/user");
+      props.page("user");
+      window.sessionStorage.setItem("currentPage", "user");
+      window.sessionStorage.setItem("googleAuth", true);
     } catch (error) {
       console.log(error);
       setErrorState(true);
@@ -48,12 +58,12 @@ const Authentication = () => {
             Google Auth button
           </button>
           {errorState && <Error errorMessage={errorMessage} />}
-            <Button
-              type="solid"
-              text={"Back"}
-              onClick={onClickBackAuth}
-              errorState={errorState}
-            />
+          <Button
+            type="solid"
+            text={"Back"}
+            onClick={onClickBackAuth}
+            errorState={errorState}
+          />
         </ColumnCon>
         <img
           src="./images/tiltjs/Google_Accnt.png"

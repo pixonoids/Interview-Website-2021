@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import ParentCon from "../UI/Container/ParentCon";
 import Heading from "../UI/Heading/Heading";
 import InputBox from "../UI/input/InputBox";
@@ -6,17 +6,19 @@ import ColumnCon from "../UI/Container/ColumnCon";
 import RowCon from "../UI/Container/RowCon";
 import Button from "../UI/Button/Button";
 import Error from "../UI/Error/Error";
-import classes from "./Contact.module.css"
-import { useNavigate } from "react-router-dom";
+import classes from "./Contact.module.css";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 
-const Contact = () => {
+const Contact = (props) => {
   //states
-  const navigate = useNavigate();
   const [phoneNo, setPhoneNo] = useState("");
   const [errorState, setErrorState] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [userData, setUserData] = useContext(UserDataContext);
+  //user Session management system
+  useEffect(() => {
+    setPhoneNo(window.sessionStorage.getItem("phoneNumber"));
+  }, []);
   //update state functions
   const phoneNoHandler = (e) => {
     setPhoneNo(e.target.value);
@@ -42,18 +44,20 @@ const Contact = () => {
       setUserData((data) => ({ ...data, phoneNumber: phoneNo }));
       setErrorState(false);
       console.log(userData);
-      navigate("/dept");
+      props.page("dept");
+      window.sessionStorage.setItem("currentPage", "dept");
+      window.sessionStorage.setItem("phoneNumber", phoneNo);
     }
   };
   //onback functions
   const onClickBackPhone = () => {
-    navigate("/college");
+    props.page("college");
+    window.sessionStorage.setItem("currentPage", "college");
   };
   return (
     <ParentCon backgroundURL={"./images/purple-pixo.svg"}>
       <ColumnCon>
         <Heading text={"Contact Details"} />
-
 
         <InputBox
           placeholder={"Phone Number"}
@@ -61,7 +65,6 @@ const Contact = () => {
           onChangeHandler={phoneNoHandler}
         ></InputBox>
         {errorState && <Error errorMessage={errorMessage} />}
-
 
         <RowCon>
           <Button
@@ -78,7 +81,11 @@ const Contact = () => {
           />
         </RowCon>
       </ColumnCon>
-      <img src="./images/tiltjs/contact2.png" alt="" className={classes.contactImage}/>
+      <img
+        src="./images/tiltjs/contact2.png"
+        alt=""
+        className={classes.contactImage}
+      />
     </ParentCon>
   );
 };
