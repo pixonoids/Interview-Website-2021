@@ -21,7 +21,7 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(
-    window.sessionStorage.getItem("currentPage")
+    window.sessionStorage.getItem("currentPage") || "authen"
   );
   useEffect(() => {
     window.sessionStorage.setItem("currentPage", "authen");

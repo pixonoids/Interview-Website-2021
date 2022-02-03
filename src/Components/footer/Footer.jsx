@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Footer.css";
 import { SiGooglemeet } from "react-icons/si";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const navigate = useNavigate();
+  let [rickroll, setRickRoll] = useState(0);
   return (
     <div className="page-box">
       <div className="checkmark">
@@ -92,7 +95,17 @@ export default function Footer() {
             <p>Join the whatsapp group for further updates.</p>
           </div>
           <br />
-          <div className="meet">
+          <a
+            className="meet"
+            href={
+              rickroll >= 7 && "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            }
+            target="blank"
+            onClick={() => {
+              setRickRoll((rickroll = rickroll + 1));
+              console.log(rickroll);
+            }}
+          >
             <div>
               <SiGooglemeet className="meet_img" />
             </div>
@@ -101,7 +114,7 @@ export default function Footer() {
               Interviews will be held via Google Meet. (link will be shared
               later on)
             </div>
-          </div>
+          </a>
         </div>
       </div>
       <footer>

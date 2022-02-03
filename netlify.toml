@@ -2,3 +2,7 @@
   from = "/*"
   to = "/error"
   status = 200
+  [[redirects]]
+  from = "/register"
+  to = "/register"
+  status = 200

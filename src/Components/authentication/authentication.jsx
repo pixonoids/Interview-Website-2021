@@ -24,6 +24,7 @@ const Authentication = (props) => {
     } else {
       props.page("authen");
       window.sessionStorage.setItem("currentPage", "authen");
+      console.log("working as fuck");
     }
   }, []);
   //auth declaraion
