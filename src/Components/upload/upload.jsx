@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import ParentCon from "../UI/Container/ParentCon";
 import Heading from "../UI/Heading/Heading";
 import InputBox from "../UI/input/InputBox";
@@ -7,17 +7,18 @@ import RowCon from "../UI/Container/RowCon";
 import classes from "./upload.module.css";
 import Button from "../UI/Button/Button";
 import Error from "../UI/Error/Error";
-
-import { useNavigate } from "react-router-dom";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 
-const Upload = () => {
+const Upload = (props) => {
   //states
   const [upload, setUpload] = useState("");
-  const navigate = useNavigate();
   const [errorState, setErrorState] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [userData, setUserData] = useContext(UserDataContext);
+  //user Session management system
+  useEffect(() => {
+    setUpload(window.sessionStorage.getItem("uploadUrl"));
+  }, []);
   //update state functions
   const uploadHandler = (e) => {
     setUpload(e.target.value);
@@ -40,12 +41,15 @@ const Upload = () => {
     } else {
       setUserData((data) => ({ ...data, uploadUrl: upload }));
       setErrorState(false);
-      navigate("/priority");
+      props.page("priority");
+      window.sessionStorage.setItem("currentPage", "priority");
+      window.sessionStorage.setItem("uploadUrl", upload);
     }
   };
   //onback functions
   const onClickBackUpload = () => {
-    navigate("/dept");
+    props.page("dept");
+    window.sessionStorage.setItem("currentPage", "dept");
   };
   return (
     <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
@@ -73,7 +77,11 @@ const Upload = () => {
           />
         </RowCon>
       </ColumnCon>
-      <img src="./images/tiltjs/contact.png" alt="" className={classes.uploadImage}/>
+      <img
+        src="./images/tiltjs/contact.png"
+        alt=""
+        className={classes.uploadImage}
+      />
     </ParentCon>
   );
 };

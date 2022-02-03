@@ -1,25 +1,25 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import ParentCon from "../UI/Container/ParentCon";
 import Heading from "../UI/Heading/Heading";
 import InputBox from "../UI/input/InputBox";
 import ColumnCon from "../UI/Container/ColumnCon";
 import RowCon from "../UI/Container/RowCon";
 import Button from "../UI/Button/Button";
-import Dropdown from "../UI/Dropdown/Dropdown";
-import Radio from "../UI/Radio/Radio";
 import Area from "../UI/Area/Area";
 import Error from "../UI/Error/Error";
-import classes from "./Priority.module.css"
-import { useNavigate } from "react-router-dom";
+import classes from "./Priority.module.css";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 
-const Priority = () => {
+const Priority = (props) => {
   //states
   const [prior, setPrior] = useState("");
-  const navigate = useNavigate();
   const [errorState, setErrorState] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [userData, setUserData] = useContext(UserDataContext);
+  //user Session management system
+  useEffect(() => {
+    setPrior(window.sessionStorage.getItem("clubPrioity"));
+  }, []);
   //update state functions
   const priorHandler = (e) => {
     setPrior(e.target.value);
@@ -39,12 +39,15 @@ const Priority = () => {
     } else {
       setUserData((data) => ({ ...data, clubPriority: prior }));
       setErrorState(false);
-      navigate("/why");
+      props.page("why");
+      window.sessionStorage.setItem("currentPage", "why");
+      window.sessionStorage.setItem("clubPrioity", prior);
     }
   };
   //onback functions
   const onClickBackPrior = () => {
-    navigate("/upload");
+    props.page("upload");
+    window.sessionStorage.setItem("currentPage", "upload");
   };
   return (
     <ParentCon backgroundURL={"./images/purple-pixo.svg"}>
@@ -74,7 +77,11 @@ const Priority = () => {
           />
         </RowCon>
       </ColumnCon>
-      <img src="./images/tiltjs/prior.png" alt="" className={classes.priorityImage}/>
+      <img
+        src="./images/tiltjs/prior.png"
+        alt=""
+        className={classes.priorityImage}
+      />
     </ParentCon>
   );
 };

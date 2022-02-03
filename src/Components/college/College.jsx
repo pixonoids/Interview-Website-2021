@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import ParentCon from "../UI/Container/ParentCon";
 import Heading from "../UI/Heading/Heading";
 import InputBox from "../UI/input/InputBox";
@@ -8,21 +8,22 @@ import classes from "./college.module.css";
 import Button from "../UI/Button/Button";
 import Dropdown from "../UI/Dropdown/Dropdown";
 import Error from "../UI/Error/Error";
-
-import { useNavigate } from "react-router-dom";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 
-const College = () => {
+const College = (props) => {
   //states
   const [selected, setSelected] = useState("Choose Your Branch");
-  const navigate = useNavigate();
   const [clgId, setClgId] = useState("");
   const [branchName, setBranchName] = useState("");
 
   const [errorState, setErrorState] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [userData, setUserData] = useContext(UserDataContext);
-
+  //user Session management system
+  useEffect(() => {
+    setClgId(window.sessionStorage.getItem("emailId"));
+    setSelected(window.sessionStorage.getItem("branchName"));
+  }, []);
   //update state functions
   const clgIdHandler = (e) => {
     setClgId(e.target.value);
@@ -52,12 +53,16 @@ const College = () => {
         branchName: selected,
       }));
       setErrorState(false);
-      navigate("/contact");
+      props.page("contact");
+      window.sessionStorage.setItem("currentPage", "contact");
+      window.sessionStorage.setItem("emailId", clgId);
+      window.sessionStorage.setItem("branchName", selected);
     }
   };
   //onback functions
   const onClickBackCollege = () => {
-    navigate("/user");
+    props.page("user");
+    window.sessionStorage.setItem("currentPage", "user");
   };
   return (
     <ParentCon backgroundURL={"./images/yellow-pixo.svg"}>
@@ -92,7 +97,11 @@ const College = () => {
           />
         </RowCon>
       </ColumnCon>
-      <img src="./images/tiltjs/cap.png" alt="" className={classes.collegeImage}/>
+      <img
+        src="./images/tiltjs/cap.png"
+        alt=""
+        className={classes.collegeImage}
+      />
     </ParentCon>
   );
 };

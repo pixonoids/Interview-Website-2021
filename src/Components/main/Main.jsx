@@ -9,7 +9,7 @@ import Video from "../three/three circle/video";
 const Main = () => {
   const navigate = useNavigate();
   const onClickMain = () => {
-    navigate("/authen");
+    navigate("/register");
   };
   return (
     <>

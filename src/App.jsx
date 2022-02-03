@@ -17,8 +17,15 @@ import { UserDataProvider } from "./Context/UserData/UserDataContext";
 //router dependencies
 import { BrowserRouter } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [currentPage, setCurrentPage] = useState(
+    window.sessionStorage.getItem("currentPage")
+  );
+  useEffect(() => {
+    window.sessionStorage.setItem("currentPage", "authen");
+  }, []);
   return (
     <>
       <Navbar />
@@ -26,15 +33,37 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Main />}></Route>
-            <Route path="/authen" element={<Authentication />}></Route>
-            <Route path="/user" element={<User />}></Route>
-            <Route path="/college" element={<College />}></Route>
-            <Route path="/contact" element={<Contact />}></Route>
-            <Route path="/dept" element={<Dept />}></Route>
-            <Route path="/upload" element={<Upload />}></Route>
-            <Route path="/priority" element={<Priority />}></Route>
-            <Route path="/why" element={<Why />}></Route>
-            <Route path="/footer" element={<Footer />}></Route>
+            <Route
+              path="/register"
+              element={
+                <>
+                  {currentPage === "authen" && (
+                    <Authentication page={setCurrentPage} />
+                  )}
+                  {currentPage === "user" && <User page={setCurrentPage} />}
+                  {currentPage === "college" && (
+                    <College page={setCurrentPage} />
+                  )}
+                  {currentPage === "contact" && (
+                    <Contact page={setCurrentPage} />
+                  )}
+                  {currentPage === "dept" && <Dept page={setCurrentPage} />}
+                  {currentPage === "upload" && <Upload page={setCurrentPage} />}
+                  {currentPage === "priority" && (
+                    <Priority page={setCurrentPage} />
+                  )}
+                  {currentPage === "why" && <Why page={setCurrentPage} />}
+                </>
+              }
+            ></Route>
+            <Route path="/success" element={<Footer />}></Route>
+            {/* <Route path="/college" element={}></Route>
+            <Route path="/contact" element={}></Route>
+            <Route path="/dept" element={}></Route>
+            <Route path="/upload" element={}></Route>
+            <Route path="/priority" element={}></Route>
+            <Route path="/why" element={}></Route>
+            <Route path="/footer" element={}></Route> */}
             <Route path="/loading" element={<Loading />}></Route>
             <Route path="*" element={<ErrorPage />}></Route>
           </Routes>

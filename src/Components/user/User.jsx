@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import ParentCon from "../UI/Container/ParentCon";
 import Heading from "../UI/Heading/Heading";
 import InputBox from "../UI/input/InputBox";
@@ -9,15 +9,21 @@ import Button from "../UI/Button/Button";
 import Error from "../UI/Error/Error";
 import { useNavigate } from "react-router-dom";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
-const User = () => {
+const User = (props) => {
   //states
-  const navigate = useNavigate();
+
   const [fName, setFirstName] = useState("");
   const [lName, setLastName] = useState("");
 
   const [errorState, setErrorState] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [userData, setUserData] = useContext(UserDataContext);
+  const navigate = useNavigate();
+  //user Session management system
+  useEffect(() => {
+    setFirstName(window.sessionStorage.getItem("fName"));
+    setLastName(window.sessionStorage.getItem("lName"));
+  }, []);
   //update state functions
   const firstNameHandler = (e) => {
     setFirstName(e.target.value);
@@ -48,13 +54,17 @@ const User = () => {
     } else {
       setUserData((data) => ({ ...data, firstName: fName, lastName: lName }));
       setErrorState(false);
-      navigate("/college");
+      props.page("college");
+      window.sessionStorage.setItem("currentPage", "college");
+      window.sessionStorage.setItem("fName", fName);
+      window.sessionStorage.setItem("lName", lName);
     }
   };
   //onback functions
   const onClickBackPersonal = () => {
-    console.log("i got back clicked");
-    navigate("/authen");
+    props.page("authen");
+    window.sessionStorage.setItem("currentPage", "authen");
+    navigate("/");
   };
   return (
     <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
@@ -89,9 +99,11 @@ const User = () => {
         </RowCon>
       </ColumnCon>
 
-
-      <img src="./images/tiltjs/idcard.png" alt="" className={classes.userImage} />
-
+      <img
+        src="./images/tiltjs/idcard.png"
+        alt=""
+        className={classes.userImage}
+      />
     </ParentCon>
   );
 };
