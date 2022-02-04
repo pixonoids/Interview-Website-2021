@@ -6,6 +6,8 @@ import ColumnCon from "../UI/Container/ColumnCon";
 import RowCon from "../UI/Container/RowCon";
 import classes from "./college.module.css";
 import Button from "../UI/Button/Button";
+import Loading from "../loading/Loading";
+
 import Dropdown from "../UI/Dropdown/Dropdown";
 import Error from "../UI/Error/Error";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
@@ -15,12 +17,15 @@ const College = (props) => {
   const [selected, setSelected] = useState("Choose Your Branch");
   const [clgId, setClgId] = useState("");
   const [branchName, setBranchName] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const [errorState, setErrorState] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [userData, setUserData] = useContext(UserDataContext);
   //user Session management system
   useEffect(() => {
+    setTimeout(() => setLoading(false), 2000);
+
     setClgId(window.sessionStorage.getItem("emailId"));
     setSelected(
       window.sessionStorage.getItem("branchName") || "Choose Your Branch"
@@ -67,44 +72,50 @@ const College = (props) => {
     window.sessionStorage.setItem("currentPage", "user");
   };
   return (
-    <ParentCon backgroundURL={"./images/yellow-pixo.svg"}>
-      <ColumnCon>
-        <Heading text={"College Information"} />
-        <InputBox
-          placeholder={
-            "College Email Id                                     @nith.ac.in"
-          }
-          value={clgId}
-          onChangeHandler={clgIdHandler}
-        />
-        <Dropdown
-          selected={selected}
-          setSelected={setSelected}
-          errorState={setErrorState}
-        />
-        {errorState && <Error errorMessage={errorMessage} />}
+    <>
+      {loading ? (
+        <Loading load={loading} />
+      ) : (
+        <ParentCon backgroundURL={"./images/yellow-pixo.svg"}>
+          <ColumnCon>
+            <Heading text={"College Information"} />
+            <InputBox
+              placeholder={
+                "College Email Id                                     @nith.ac.in"
+              }
+              value={clgId}
+              onChangeHandler={clgIdHandler}
+            />
+            <Dropdown
+              selected={selected}
+              setSelected={setSelected}
+              errorState={setErrorState}
+            />
+            {errorState && <Error errorMessage={errorMessage} />}
 
-        <RowCon>
-          <Button
-            type="solid"
-            text={"Back"}
-            onClick={onClickBackCollege}
-            errorState={errorState}
+            <RowCon>
+              <Button
+                type="solid"
+                text={"Back"}
+                onClick={onClickBackCollege}
+                errorState={errorState}
+              />
+              <Button
+                type="hollow"
+                text={"Next"}
+                onClick={onClickCollege}
+                errorState={errorState}
+              />
+            </RowCon>
+          </ColumnCon>
+          <img
+            src="./images/tiltjs/cap.png"
+            alt=""
+            className={classes.collegeImage}
           />
-          <Button
-            type="hollow"
-            text={"Next"}
-            onClick={onClickCollege}
-            errorState={errorState}
-          />
-        </RowCon>
-      </ColumnCon>
-      <img
-        src="./images/tiltjs/cap.png"
-        alt=""
-        className={classes.collegeImage}
-      />
-    </ParentCon>
+        </ParentCon>
+      )}
+    </>
   );
 };
 

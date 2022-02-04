@@ -23,7 +23,9 @@ function App() {
   const [currentPage, setCurrentPage] = useState(
     window.sessionStorage.getItem("currentPage") || "authen"
   );
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
+    setTimeout(() => setLoading(false), 10000);
     window.sessionStorage.setItem("currentPage", "authen");
   }, []);
   return (
@@ -32,7 +34,10 @@ function App() {
       <UserDataProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Main />}></Route>
+            <Route
+              path="/"
+              element={loading ? <Loading load={loading} /> : <Main />}
+            ></Route>
             <Route
               path="/register"
               element={
@@ -64,7 +69,6 @@ function App() {
             <Route path="/priority" element={}></Route>
             <Route path="/why" element={}></Route>
             <Route path="/footer" element={}></Route> */}
-            <Route path="/loading" element={<Loading />}></Route>
             <Route path="*" element={<ErrorPage />}></Route>
           </Routes>
         </BrowserRouter>

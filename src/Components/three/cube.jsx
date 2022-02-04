@@ -97,6 +97,7 @@ function Cube() {
         };
         world();
       },
+      //consoleerror function
       function (xhr) {
         console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
       },
@@ -104,7 +105,13 @@ function Cube() {
         console.log(error);
       }
     );
+    //resize canvas function
+    window.addEventListener("resize", function () {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
 
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
     // Lights
 
     const pointLight = new THREE.PointLight(0xffffff, 0.1);
