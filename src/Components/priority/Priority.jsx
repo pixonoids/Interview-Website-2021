@@ -7,6 +7,8 @@ import RowCon from "../UI/Container/RowCon";
 import Button from "../UI/Button/Button";
 import Area from "../UI/Area/Area";
 import Error from "../UI/Error/Error";
+import Loading from "../loading/Loading";
+
 import classes from "./Priority.module.css";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 
@@ -16,8 +18,12 @@ const Priority = (props) => {
   const [errorState, setErrorState] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [userData, setUserData] = useContext(UserDataContext);
+  const [loading, setLoading] = useState(true);
+
   //user Session management system
   useEffect(() => {
+    setTimeout(() => setLoading(false), 2000);
+
     setPrior(window.sessionStorage.getItem("clubPrioity"));
   }, []);
   //update state functions
@@ -50,39 +56,45 @@ const Priority = (props) => {
     window.sessionStorage.setItem("currentPage", "upload");
   };
   return (
-    <ParentCon backgroundURL={"./images/purple-pixo.svg"}>
-      <ColumnCon>
-        <Heading text={"Club Priority"} />
-        <Area
-          placeholder={
-            "If you applying for multiple club then we need to know your priority.."
-          }
-          value={prior}
-          onChangeHandler={priorHandler}
-        />
-        {errorState && <Error errorMessage={errorMessage} />}
+    <>
+      {loading ? (
+        <Loading load={loading} />
+      ) : (
+        <ParentCon backgroundURL={"./images/purple-pixo.svg"}>
+          <ColumnCon>
+            <Heading text={"Club Priority"} />
+            <Area
+              placeholder={
+                "If you applying for multiple club then we need to know your priority.."
+              }
+              value={prior}
+              onChangeHandler={priorHandler}
+            />
+            {errorState && <Error errorMessage={errorMessage} />}
 
-        <RowCon>
-          <Button
-            type="solid"
-            text={"Back"}
-            onClick={onClickBackPrior}
-            errorState={errorState}
+            <RowCon>
+              <Button
+                type="solid"
+                text={"Back"}
+                onClick={onClickBackPrior}
+                errorState={errorState}
+              />
+              <Button
+                type="hollow"
+                text={"Next"}
+                onClick={onClickPrior}
+                errorState={errorState}
+              />
+            </RowCon>
+          </ColumnCon>
+          <img
+            src="./images/tiltjs/prior.png"
+            alt=""
+            className={classes.priorityImage}
           />
-          <Button
-            type="hollow"
-            text={"Next"}
-            onClick={onClickPrior}
-            errorState={errorState}
-          />
-        </RowCon>
-      </ColumnCon>
-      <img
-        src="./images/tiltjs/prior.png"
-        alt=""
-        className={classes.priorityImage}
-      />
-    </ParentCon>
+        </ParentCon>
+      )}
+    </>
   );
 };
 

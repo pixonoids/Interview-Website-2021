@@ -6,17 +6,23 @@ import ColumnCon from "../UI/Container/ColumnCon";
 import RowCon from "../UI/Container/RowCon";
 import classes from "./upload.module.css";
 import Button from "../UI/Button/Button";
+import Loading from "../loading/Loading";
+
 import Error from "../UI/Error/Error";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 
 const Upload = (props) => {
   //states
   const [upload, setUpload] = useState("");
+  const [loading, setLoading] = useState(true);
+
   const [errorState, setErrorState] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [userData, setUserData] = useContext(UserDataContext);
   //user Session management system
   useEffect(() => {
+    setTimeout(() => setLoading(false), 2000);
+
     setUpload(window.sessionStorage.getItem("uploadUrl"));
   }, []);
   //update state functions
@@ -52,37 +58,43 @@ const Upload = (props) => {
     window.sessionStorage.setItem("currentPage", "dept");
   };
   return (
-    <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
-      <ColumnCon>
-        <Heading text={"Upload Documents"} />
-        <InputBox
-          placeholder={"Google Drive Share Link Here"}
-          value={upload}
-          onChangeHandler={uploadHandler}
-        />
-        {errorState && <Error errorMessage={errorMessage} />}
+    <>
+      {loading ? (
+        <Loading load={loading} />
+      ) : (
+        <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
+          <ColumnCon>
+            <Heading text={"Upload Documents"} />
+            <InputBox
+              placeholder={"Google Drive Share Link Here"}
+              value={upload}
+              onChangeHandler={uploadHandler}
+            />
+            {errorState && <Error errorMessage={errorMessage} />}
 
-        <RowCon>
-          <Button
-            type="solid"
-            text={"Back"}
-            onClick={onClickBackUpload}
-            errorState={errorState}
+            <RowCon>
+              <Button
+                type="solid"
+                text={"Back"}
+                onClick={onClickBackUpload}
+                errorState={errorState}
+              />
+              <Button
+                type="hollow"
+                text={"Next"}
+                onClick={onClickUpload}
+                errorState={errorState}
+              />
+            </RowCon>
+          </ColumnCon>
+          <img
+            src="./images/tiltjs/contact.png"
+            alt=""
+            className={classes.uploadImage}
           />
-          <Button
-            type="hollow"
-            text={"Next"}
-            onClick={onClickUpload}
-            errorState={errorState}
-          />
-        </RowCon>
-      </ColumnCon>
-      <img
-        src="./images/tiltjs/contact.png"
-        alt=""
-        className={classes.uploadImage}
-      />
-    </ParentCon>
+        </ParentCon>
+      )}
+    </>
   );
 };
 

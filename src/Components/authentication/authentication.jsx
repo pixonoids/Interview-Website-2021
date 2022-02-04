@@ -6,6 +6,7 @@ import RowCon from "../UI/Container/ColumnCon";
 import classes from "./authentication.module.css";
 import Button from "../UI/Button/Button";
 import Error from "../UI/Error/Error";
+import Loading from "../loading/Loading";
 import { useNavigate } from "react-router-dom";
 import { userAuth } from "../../firebase";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
@@ -17,14 +18,15 @@ const Authentication = (props) => {
   const [errorState, setErrorState] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [userData, setUserData] = useContext(UserDataContext);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
+    setTimeout(() => setLoading(false), 2000);
     if (window.sessionStorage.getItem("googleAuth")) {
       props.page("user");
       window.sessionStorage.setItem("currentPage", "user");
     } else {
       props.page("authen");
       window.sessionStorage.setItem("currentPage", "authen");
-      console.log("working as fuck");
     }
   }, []);
   //auth declaraion
@@ -48,30 +50,34 @@ const Authentication = (props) => {
   };
   return (
     <>
-      <ParentCon backgroundURL={"./images/grey-pixo.svg"}>
-        <ColumnCon>
-          <Heading text={"Authenticate with Google"} />
-          <button
-            onClick={signInWithGoogle}
-            className={classes["login-with-google-btn"]}
-            disabled={errorState}
-          >
-            Google Auth button
-          </button>
-          {errorState && <Error errorMessage={errorMessage} />}
-          <Button
-            type="solid"
-            text={"Back"}
-            onClick={onClickBackAuth}
-            errorState={errorState}
+      {loading ? (
+        <Loading load={loading} />
+      ) : (
+        <ParentCon backgroundURL={"./images/grey-pixo.svg"}>
+          <ColumnCon>
+            <Heading text={"Authenticate with Google"} />
+            <button
+              onClick={signInWithGoogle}
+              className={classes["login-with-google-btn"]}
+              disabled={errorState}
+            >
+              Google Auth button
+            </button>
+            {errorState && <Error errorMessage={errorMessage} />}
+            <Button
+              type="solid"
+              text={"Back"}
+              onClick={onClickBackAuth}
+              errorState={errorState}
+            />
+          </ColumnCon>
+          <img
+            src="./images/tiltjs/Google_Accnt.png"
+            alt=""
+            className={classes.authenImage}
           />
-        </ColumnCon>
-        <img
-          src="./images/tiltjs/Google_Accnt.png"
-          alt=""
-          className={classes.authenImage}
-        />
-      </ParentCon>
+        </ParentCon>
+      )}
     </>
   );
 };

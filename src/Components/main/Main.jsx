@@ -2,9 +2,7 @@ import classes from "./main.module.css";
 import Button from "../UI/Button/Button";
 import Map from "../UI/map/Map";
 import { useNavigate } from "react-router-dom";
-import ThreeCube from "../three/girlModel";
 import Cube from "../three/cube";
-import Video from "../three/three circle/video";
 
 const Main = () => {
   const navigate = useNavigate();

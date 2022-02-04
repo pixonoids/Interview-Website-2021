@@ -6,6 +6,8 @@ import RowCon from "../UI/Container/RowCon";
 import Button from "../UI/Button/Button";
 import Area from "../UI/Area/Area";
 import Error from "../UI/Error/Error";
+import Loading from "../loading/Loading";
+
 import { userDb } from "../../firebase";
 import { addDoc, collection } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
@@ -19,9 +21,14 @@ const Why = (props) => {
   const [checked, setChecked] = useState(false);
   const navigate = useNavigate();
   const [errorState, setErrorState] = useState(false);
+  const [loading, setLoading] = useState(true);
+
   const [errorMessage, setErrorMessage] = useState("");
   const [userData, setUserData] = useContext(UserDataContext);
   const today = new Date();
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2000);
+  }, []);
   //update state functions
   const whyHandler = (e) => {
     setWhy(e.target.value);
@@ -82,54 +89,60 @@ const Why = (props) => {
     props.page("priority");
   };
   return (
-    <ParentCon backgroundURL={"./images/yellow-pixo.svg"}>
-      <ColumnCon>
-        <Heading text={"Why Pixonoids?"} />
-        <Area
-          placeholder={"We want to know what makes you join pixo."}
-          value={why}
-          onChangeHandler={whyHandler}
-        />
-        {errorState && <Error errorMessage={errorMessage} />}
-        <div className={classes.topping}>
-          <input
-            type="checkbox"
-            name="anti-ragging"
-            value="No aniti Ragging"
-            checked={checked}
-            onChange={checkHandler}
-            className={classes.check}
-          />
-          <span>
-            I thereby confirm that I am giving the interviews as per my own
-            goodwill and I will be solely responsible for whatever happens in
-            the interviews and will not pose any anti-ragging threats to the
-            interviewers.
-          </span>
-        </div>
+    <>
+      {loading ? (
+        <Loading load={loading} />
+      ) : (
+        <ParentCon backgroundURL={"./images/yellow-pixo.svg"}>
+          <ColumnCon>
+            <Heading text={"Why Pixonoids?"} />
+            <Area
+              placeholder={"We want to know what makes you join pixo."}
+              value={why}
+              onChangeHandler={whyHandler}
+            />
+            {errorState && <Error errorMessage={errorMessage} />}
+            <div className={classes.topping}>
+              <input
+                type="checkbox"
+                name="anti-ragging"
+                value="No aniti Ragging"
+                checked={checked}
+                onChange={checkHandler}
+                className={classes.check}
+              />
+              <span>
+                I thereby confirm that I am giving the interviews as per my own
+                goodwill and I will be solely responsible for whatever happens
+                in the interviews and will not pose any anti-ragging threats to
+                the interviewers.
+              </span>
+            </div>
 
-        <RowCon>
-          <Button
-            type="solid"
-            text={"Back"}
-            onClick={onClickBackWhy}
-            errorState={errorState}
-          />
-          <Button
-            type="hollow"
-            text={"Next"}
-            onClick={onClickWhy}
-            errorState={errorState}
-          />
-        </RowCon>
-      </ColumnCon>
+            <RowCon>
+              <Button
+                type="solid"
+                text={"Back"}
+                onClick={onClickBackWhy}
+                errorState={errorState}
+              />
+              <Button
+                type="hollow"
+                text={"Next"}
+                onClick={onClickWhy}
+                errorState={errorState}
+              />
+            </RowCon>
+          </ColumnCon>
 
-      <img
-        src="./images/tiltjs/pixonoid.png"
-        className={classes.whyImage}
-        alt=""
-      />
-    </ParentCon>
+          <img
+            src="./images/tiltjs/pixonoid.png"
+            className={classes.whyImage}
+            alt=""
+          />
+        </ParentCon>
+      )}
+    </>
   );
 };
 

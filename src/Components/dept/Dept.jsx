@@ -6,6 +6,8 @@ import RowCon from "../UI/Container/RowCon";
 import Button from "../UI/Button/Button";
 import Radio from "../UI/Radio/Radio";
 import Error from "../UI/Error/Error";
+import Loading from "../loading/Loading";
+
 import classes from "./Dept.module.css";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 
@@ -13,10 +15,14 @@ const Dept = (props) => {
   const [dept, setDept] = useState("");
   //user Session management system
   useEffect(() => {
+    setTimeout(() => setLoading(false), 2000);
+
     setDept(window.sessionStorage.getItem("pixoDept"));
   }, []);
   //states
   const [errorState, setErrorState] = useState(false);
+  const [loading, setLoading] = useState(true);
+
   const [errorMessage, setErrorMessage] = useState("");
   const [userData, setUserData] = useContext(UserDataContext);
   //onclick functions
@@ -38,33 +44,39 @@ const Dept = (props) => {
     window.sessionStorage.setItem("currentPage", "contact");
   };
   return (
-    <ParentCon backgroundURL={"./images/grey-pixo.svg"}>
-      <ColumnCon>
-        <Heading text={"Department for Application"} />
-        <Radio deptHandler={setDept} errorHandler={setErrorState} />
-        {errorState && <Error errorMessage={errorMessage} />}
+    <>
+      {loading ? (
+        <Loading load={loading} />
+      ) : (
+        <ParentCon backgroundURL={"./images/grey-pixo.svg"}>
+          <ColumnCon>
+            <Heading text={"Department for Application"} />
+            <Radio deptHandler={setDept} errorHandler={setErrorState} />
+            {errorState && <Error errorMessage={errorMessage} />}
 
-        <RowCon>
-          <Button
-            type="solid"
-            text={"Back"}
-            onClick={onClickBackDept}
-            errorState={errorState}
+            <RowCon>
+              <Button
+                type="solid"
+                text={"Back"}
+                onClick={onClickBackDept}
+                errorState={errorState}
+              />
+              <Button
+                type="hollow"
+                text={"Next"}
+                onClick={onClickDept}
+                errorState={errorState}
+              />
+            </RowCon>
+          </ColumnCon>
+          <img
+            src="./images/tiltjs/tilt-camera.png"
+            alt=""
+            className={classes.deptImage}
           />
-          <Button
-            type="hollow"
-            text={"Next"}
-            onClick={onClickDept}
-            errorState={errorState}
-          />
-        </RowCon>
-      </ColumnCon>
-      <img
-        src="./images/tiltjs/tilt-camera.png"
-        alt=""
-        className={classes.deptImage}
-      />
-    </ParentCon>
+        </ParentCon>
+      )}
+    </>
   );
 };
 

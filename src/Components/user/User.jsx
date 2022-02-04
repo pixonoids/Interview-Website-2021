@@ -7,6 +7,8 @@ import RowCon from "../UI/Container/RowCon";
 import classes from "./user.module.css";
 import Button from "../UI/Button/Button";
 import Error from "../UI/Error/Error";
+import Loading from "../loading/Loading";
+
 import { useNavigate } from "react-router-dom";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 const User = (props) => {
@@ -14,6 +16,7 @@ const User = (props) => {
 
   const [fName, setFirstName] = useState("");
   const [lName, setLastName] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const [errorState, setErrorState] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -21,8 +24,10 @@ const User = (props) => {
   const navigate = useNavigate();
   //user Session management system
   useEffect(() => {
-    setFirstName(window.sessionStorage.getItem("fName"));
-    setLastName(window.sessionStorage.getItem("lName"));
+    setTimeout(() => setLoading(false), 2000);
+
+    setFirstName(window.sessionStorage.getItem("fName") || "");
+    setLastName(window.sessionStorage.getItem("lName") || "");
   }, []);
   //update state functions
   const firstNameHandler = (e) => {
@@ -67,44 +72,50 @@ const User = (props) => {
     navigate("/");
   };
   return (
-    <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
-      <ColumnCon>
-        <Heading text={"Personal Information"} />
+    <>
+      {loading ? (
+        <Loading load={loading} />
+      ) : (
+        <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
+          <ColumnCon>
+            <Heading text={"Personal Information"} />
 
-        <InputBox
-          placeholder={"First Name"}
-          value={fName}
-          onChangeHandler={firstNameHandler}
-        />
-        <InputBox
-          placeholder={"Last Name"}
-          value={lName}
-          onChangeHandler={lastNameHandler}
-        />
+            <InputBox
+              placeholder={"First Name"}
+              value={fName}
+              onChangeHandler={firstNameHandler}
+            />
+            <InputBox
+              placeholder={"Last Name"}
+              value={lName}
+              onChangeHandler={lastNameHandler}
+            />
 
-        {errorState && <Error errorMessage={errorMessage} />}
-        <RowCon className={classes.container}>
-          <Button
-            type="solid"
-            text={"Back"}
-            onClick={onClickBackPersonal}
-            errorState={errorState}
+            {errorState && <Error errorMessage={errorMessage} />}
+            <RowCon className={classes.container}>
+              <Button
+                type="solid"
+                text={"Back"}
+                onClick={onClickBackPersonal}
+                errorState={errorState}
+              />
+              <Button
+                type="hollow"
+                text={"Next"}
+                onClick={onClickPersonal}
+                errorState={errorState}
+              />
+            </RowCon>
+          </ColumnCon>
+
+          <img
+            src="./images/tiltjs/idcard.png"
+            alt=""
+            className={classes.userImage}
           />
-          <Button
-            type="hollow"
-            text={"Next"}
-            onClick={onClickPersonal}
-            errorState={errorState}
-          />
-        </RowCon>
-      </ColumnCon>
-
-      <img
-        src="./images/tiltjs/idcard.png"
-        alt=""
-        className={classes.userImage}
-      />
-    </ParentCon>
+        </ParentCon>
+      )}
+    </>
   );
 };
 export default User;

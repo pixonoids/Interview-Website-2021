@@ -6,6 +6,7 @@ import ColumnCon from "../UI/Container/ColumnCon";
 import RowCon from "../UI/Container/RowCon";
 import Button from "../UI/Button/Button";
 import Error from "../UI/Error/Error";
+import Loading from "../loading/Loading";
 import classes from "./Contact.module.css";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 
@@ -14,9 +15,13 @@ const Contact = (props) => {
   const [phoneNo, setPhoneNo] = useState("");
   const [errorState, setErrorState] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(true);
+
   const [userData, setUserData] = useContext(UserDataContext);
   //user Session management system
   useEffect(() => {
+    setTimeout(() => setLoading(false), 2000);
+
     setPhoneNo(window.sessionStorage.getItem("phoneNumber"));
   }, []);
   //update state functions
@@ -55,38 +60,44 @@ const Contact = (props) => {
     window.sessionStorage.setItem("currentPage", "college");
   };
   return (
-    <ParentCon backgroundURL={"./images/purple-pixo.svg"}>
-      <ColumnCon>
-        <Heading text={"Contact Details"} />
+    <>
+      {loading ? (
+        <Loading load={loading} />
+      ) : (
+        <ParentCon backgroundURL={"./images/purple-pixo.svg"}>
+          <ColumnCon>
+            <Heading text={"Contact Details"} />
 
-        <InputBox
-          placeholder={"Phone Number"}
-          value={phoneNo}
-          onChangeHandler={phoneNoHandler}
-        ></InputBox>
-        {errorState && <Error errorMessage={errorMessage} />}
+            <InputBox
+              placeholder={"Phone Number"}
+              value={phoneNo}
+              onChangeHandler={phoneNoHandler}
+            ></InputBox>
+            {errorState && <Error errorMessage={errorMessage} />}
 
-        <RowCon>
-          <Button
-            type="solid"
-            text={"Back"}
-            onClick={onClickBackPhone}
-            errorState={errorState}
+            <RowCon>
+              <Button
+                type="solid"
+                text={"Back"}
+                onClick={onClickBackPhone}
+                errorState={errorState}
+              />
+              <Button
+                type="hollow"
+                text={"Next"}
+                onClick={onClickPhone}
+                errorState={errorState}
+              />
+            </RowCon>
+          </ColumnCon>
+          <img
+            src="./images/tiltjs/contact2.png"
+            alt=""
+            className={classes.contactImage}
           />
-          <Button
-            type="hollow"
-            text={"Next"}
-            onClick={onClickPhone}
-            errorState={errorState}
-          />
-        </RowCon>
-      </ColumnCon>
-      <img
-        src="./images/tiltjs/contact2.png"
-        alt=""
-        className={classes.contactImage}
-      />
-    </ParentCon>
+        </ParentCon>
+      )}
+    </>
   );
 };
 
