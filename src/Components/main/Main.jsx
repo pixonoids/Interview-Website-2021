@@ -9,7 +9,7 @@ const Main = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setTimeout(() => setLoading(false), 500);
+    setTimeout(() => setLoading(false), 10000);
     window.sessionStorage.setItem("currentPage", "authen");
   }, []);
   //click functions
@@ -37,6 +37,7 @@ const Main = () => {
               type="solid"
               text={"Start your Application"}
               onClick={onClickMain}
+              className={classes.red}
             ></Button>
           </div>
         </div>

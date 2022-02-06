@@ -18,14 +18,18 @@ export default function Navbar() {
   }, []);
   return (
     <nav className={classes["nav-main"]}>
-      <div className={classes.logo}>
-        <div className={classes.pixo}></div>
+      <div className={classes.brand}>
+        <img
+          src="./images/pixonoid.png"
+          alt="pixo-logo-img"
+          className={classes["pixo-logo"]}
+        ></img>
         <div className={classes["pixo-name"]}>Pixonoids</div>
       </div>
       {(toggleMenu || screenWidth > 900) && (
         <ul>
           <li>
-            <a href="#">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
             <AboutUs />
