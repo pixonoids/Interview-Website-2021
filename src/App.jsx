@@ -9,7 +9,6 @@ import Upload from "./Components/upload/upload";
 import Priority from "./Components/priority/Priority";
 import Why from "./Components/why/why";
 import Footer from "./Components/footer/Footer";
-import Loading from "./Components/loading/Loading";
 import Authentication from "./Components/authentication/authentication";
 import ErrorPage from "./Components/error/ErrorPage";
 //context dependencies
@@ -23,9 +22,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(
     window.sessionStorage.getItem("currentPage") || "authen"
   );
-  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setTimeout(() => setLoading(false), 10000);
     window.sessionStorage.setItem("currentPage", "authen");
   }, []);
   return (
@@ -34,10 +31,7 @@ function App() {
       <UserDataProvider>
         <BrowserRouter>
           <Routes>
-            <Route
-              path="/"
-              element={loading ? <Loading load={loading} /> : <Main />}
-            ></Route>
+            <Route path="/" element={<Main />}></Route>
             <Route
               path="/register"
               element={

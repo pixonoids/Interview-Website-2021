@@ -9,7 +9,7 @@ const Loading = (props) => {
     margin: 2rem;
   `;
   return (
-    <div className="loading-container">
+    <div className={`loading-container ${!props.load && "show"}`}>
       <div className={"pixo-logo-con"}>
         <RingLoader
           loading={props.load}
