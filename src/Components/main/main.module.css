@@ -1,6 +1,6 @@
 .main {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   z-index: 0;
   scroll-behavior: none;
@@ -9,29 +9,31 @@
   top: 0;
 }
 .videotag {
-  height: 120vh;
-  width: 100vw;
-  filter: opacity(0.9);
+  width: 101%;
   position: absolute;
-  top: -2vh;
+  top: 0;
   left: 0vw;
 }
 .parent {
   display: flex;
   width: 100%;
-  margin-top: 20vh;
-  padding: 0 5vw;
+  padding: 5rem 7rem;
 }
 .container {
+  margin-top: 2rem;
   width: 50%;
-  z-index: 2;
   scroll-behavior: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .container h1 {
   font-size: 4rem;
   text-shadow: 2px 2px 5px black;
   color: white;
   word-spacing: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 .container p {
   color: white;
@@ -42,6 +44,20 @@
   text-shadow: 2px 2px 5px black;
   margin-bottom: 3rem;
 }
+.red {
+  color: white;
+  width: fit-content;
+  max-width: none;
+  transition: 200ms;
+  padding: 1.3rem;
+}
+.red:hover {
+  max-width: none;
+  width: fit-content;
+  color: white;
+  border: 2px solid #006ee6;
+  transition: 200ms;
+}
 .threejs {
   border: none;
   position: absolute;
@@ -51,30 +67,49 @@
 
   margin-left: -7rem;
 }
-@media screen and (max-width:900px) {
+@media screen and (max-width: 410px) {
   .videotag {
-    height: 120vh;
-    position: absolute;
+    position: fixed;
+    height: 101%;
+    width: auto;
     top: -2vh;
     left: 0vw;
-    transform: rotate(90deg);
+    transform: rotate(180deg);
+  }
+  .container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
   .container h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     text-shadow: 2px 2px 5px black;
     color: white;
     word-spacing: 2px;
   }
-  .main{
-    overflow: hidden;
+  .main {
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
-  .parent{
+  .red {
+    font-size: 1.5rem;
+  }
+  .parent {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: none;
   }
-  .container p{
-    font-size: 1.2rem;
+  .container p {
+    font-size: 1.7rem;
+    text-align: center;
+    min-width: 18rem;
+  }
+  .threejs {
+    display: none;
   }
 }

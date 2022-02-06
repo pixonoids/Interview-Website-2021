@@ -2,56 +2,54 @@
   position: absolute;
   top: 0;
   display: flex;
-  flex-direction: row;
-  justify-content: left;
   align-items: center;
-  width: 100vw;
-  padding: 0.2rem;
+  justify-content: center;
+  width: 100%;
+  padding: 0.6rem 0;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(12.5px);
   -webkit-backdrop-filter: blur(12.5px);
-  z-index: 1000;
+  z-index: 10;
 }
-.logo {
+.brand {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  margin: 0.5rem 15rem 0.5rem 0.5rem;
+  justify-items: flex-start;
+  position: absolute;
+  left: 10px;
 }
 
 ul {
   list-style: none;
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  justify-self: flex-end;
 }
 li {
-  margin-left: 2rem;
+  margin-right: 1rem;
   font-size: 1.2rem;
   text-transform: uppercase;
   padding: 0.2rem;
   cursor: pointer;
   color: white;
+  transition: 200ms;
 }
-.pixo {
-  height: 2.75rem;
-  width: 2.75rem;
-  background-image: url(./images/pixonoid.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  margin-top: -0.5rem;
-  margin-left: 0.1rem;
-  margin-right: 0.4rem;
-  padding: 0.1rem;
+li:hover {
+  transition: 200ms;
+  text-decoration: underline;
+}
+.pixo-logo {
+  width: 50px;
 }
 .pixo-name {
   font-size: 1.7rem;
   color: white;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-weight: 700;
+  margin-left: 0.5rem;
 }
 a {
   text-decoration: none;
@@ -71,13 +69,15 @@ a {
   .nav-main {
     flex-direction: column;
     justify-content: center;
+    border: 2px solid yellow;
+    padding: 2rem 0;
   }
-  .logo {
-    margin: 1rem 0.3rem 0rem 1rem;
-  }
-  .pixo {
-    height: 2rem;
-    width: 2rem;
+
+  .brand {
+    /* border: 2px solid red; */
+    top: 0.01rem;
+    left: 1px;
+    margin: 0.6rem 0;
   }
   .pixo-name {
     font-size: 1.5rem;
@@ -85,6 +85,7 @@ a {
   ul {
     flex-direction: column;
     height: auto;
+    /* border: 2px solid rgb(9, 201, 159); */
     /* display: none; */
   }
   li:nth-child(1) {
@@ -97,6 +98,7 @@ a {
     border-top: 1px solid white;
     font-size: 1rem;
     padding: 0.5rem;
+    white-space: nowrap;
   }
   .hamburger {
     display: block;

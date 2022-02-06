@@ -8,7 +8,7 @@ import {
 const Button = (props) => {
   return (
     <button
-      className={`button ${props.type}`}
+      className={`button ${props.type} ${props.className}`}
       onClick={props.onClick}
       disabled={props.text === "Next" && props.errorState}
     >
