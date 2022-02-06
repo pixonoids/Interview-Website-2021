@@ -1,16 +1,24 @@
 import classes from "./main.module.css";
 import Button from "../UI/Button/Button";
-import Map from "../UI/map/Map";
 import { useNavigate } from "react-router-dom";
 import Cube from "../three/cube";
+import Loading from "../loading/Loading";
+import { useEffect, useState } from "react";
 
 const Main = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 500);
+    window.sessionStorage.setItem("currentPage", "authen");
+  }, []);
+  //click functions
   const onClickMain = () => {
     navigate("/register");
   };
   return (
     <>
+      <Loading load={loading} />
       <video className={classes.videotag} autoPlay loop muted>
         <source src={"./video/back.mp4"} type="video/mp4" />
       </video>
@@ -35,7 +43,7 @@ const Main = () => {
         <div className={classes.threejs}>
           {/* <Video/> */}
 
-          <Cube />
+          <Cube loading={setLoading} />
         </div>
       </section>
     </>
