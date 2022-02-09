@@ -50,34 +50,32 @@ const Authentication = (props) => {
   };
   return (
     <>
-      {loading ? (
-        <Loading load={loading} />
-      ) : (
-        <ParentCon backgroundURL={"./images/grey-pixo.svg"}>
-          <ColumnCon>
-            <Heading text={"Authenticate with Google"} />
-            <button
-              onClick={signInWithGoogle}
-              className={classes["login-with-google-btn"]}
-              disabled={errorState}
-            >
-              Google Auth button
-            </button>
-            {errorState && <Error errorMessage={errorMessage} />}
-            <Button
-              type="solid"
-              text={"Back"}
-              onClick={onClickBackAuth}
-              errorState={errorState}
-            />
-          </ColumnCon>
-          <img
-            src="./images/tiltjs/Google_Accnt.png"
-            alt=""
-            className={classes.authenImage}
+      {loading && <Loading load={loading} />}
+
+      <ParentCon backgroundURL={"./images/grey-pixo.svg"}>
+        <ColumnCon className={classes["col-authen"]}>
+          <Heading text={"Authenticate with Google"} />
+          <button
+            onClick={signInWithGoogle}
+            className={classes["login-with-google-btn"]}
+            disabled={errorState}
+          >
+            Google Auth button
+          </button>
+          {errorState && <Error errorMessage={errorMessage} />}
+          <Button
+            type="solid"
+            text={"Back"}
+            onClick={onClickBackAuth}
+            errorState={errorState}
           />
-        </ParentCon>
-      )}
+        </ColumnCon>
+        <img
+          src="./images/tiltjs/Google_Accnt.png"
+          alt="pixo-model-google-authen"
+          className={classes.authenImage}
+        />
+      </ParentCon>
     </>
   );
 };

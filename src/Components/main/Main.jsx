@@ -9,7 +9,7 @@ const Main = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setTimeout(() => setLoading(false), 10000);
+    setTimeout(() => setLoading(false), 2000);
     window.sessionStorage.setItem("currentPage", "authen");
   }, []);
   //click functions
@@ -18,32 +18,28 @@ const Main = () => {
   };
   return (
     <>
-      <Loading load={loading} />
+      {loading && <Loading load={loading} />}
       <video className={classes.videotag} autoPlay loop muted>
         <source src={"./video/back.mp4"} type="video/mp4" />
       </video>
       <section className={classes.main}>
-        <div className={classes.parent}>
-          <div className={classes.container}>
-            <h1>Pixonoids Interview 2K22</h1>
-            <p>
-              Team Pixonoids cordially invites you to the Freshmen interviews
-              which gives you a fair chance to connect with people of akin
-              vision and be a part of the team which is driven by the same
-              vigour
-            </p>
+        <div className={classes.container}>
+          <h1>Pixonoids Interview 2K22</h1>
+          <p>
+            Team Pixonoids cordially invites you to the Freshmen interviews
+            which gives you a fair chance to connect with people of akin vision
+            and be a part of the team which is driven by the same vigour
+          </p>
 
-            <Button
-              type="solid"
-              text={"Start your Application"}
-              onClick={onClickMain}
-              className={classes.red}
-            ></Button>
-          </div>
+          <Button
+            type="solid"
+            text={"Start your Application"}
+            onClick={onClickMain}
+            className={classes.red}
+          ></Button>
         </div>
-        <div className={classes.threejs}>
-          {/* <Video/> */}
 
+        <div className={classes.threejs}>
           <Cube loading={setLoading} />
         </div>
       </section>

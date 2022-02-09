@@ -69,7 +69,7 @@ a {
   .nav-main {
     flex-direction: column;
     justify-content: center;
-    border: 2px solid yellow;
+
     padding: 2rem 0;
   }
 

@@ -7,17 +7,14 @@
   overflow: hidden;
   position: absolute;
   top: 0;
+
+  padding: 5rem 7rem;
 }
 .videotag {
   width: 101%;
   position: absolute;
   top: 0;
   left: 0vw;
-}
-.parent {
-  display: flex;
-  width: 100%;
-  padding: 5rem 7rem;
 }
 .container {
   margin-top: 2rem;
@@ -67,45 +64,43 @@
 
   margin-left: -7rem;
 }
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 420px) {
   .videotag {
     position: fixed;
-    height: 101%;
+    height: 105%;
     width: auto;
     top: -2vh;
     left: 0vw;
     transform: rotate(180deg);
   }
   .container {
-    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: fit-content;
+    padding: 2rem;
   }
   .container h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     text-shadow: 2px 2px 5px black;
     color: white;
     word-spacing: 2px;
   }
   .main {
-    overflow-x: hidden;
-    overflow-y: scroll;
-  }
-  .red {
-    font-size: 1.5rem;
-  }
-  .parent {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: none;
   }
+  .red {
+    font-size: 1.3rem;
+
+    padding: 1rem;
+  }
+
   .container p {
-    font-size: 1.7rem;
+    font-size: 1rem;
     text-align: center;
     min-width: 18rem;
   }

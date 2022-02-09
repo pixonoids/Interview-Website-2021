@@ -9,6 +9,7 @@ const InputBox = (props) => {
       onChange={props.onChangeHandler}
       ref={props.refName}
       onBlur={props.onBlurHandler}
+      autoComplete="off"
     ></input>
   );
 };

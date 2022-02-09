@@ -69,9 +69,10 @@ button[disabled] {
     transform: translateX(0px);
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 420px) {
   .button {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
     border-radius: 1.5rem;
     padding: 0.2rem 1.3rem;
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -80,8 +81,6 @@ button[disabled] {
     opacity: 0.9;
     cursor: pointer;
     max-width: 70px;
-    margin-top: 1rem;
-    margin-bottom: -1rem;
   }
   .icon-button {
     font-size: 1.5rem;

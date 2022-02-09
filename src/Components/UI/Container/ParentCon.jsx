@@ -22,7 +22,7 @@ const ParentCon = (props) => {
                 mode: "push",
               },
               onHover: {
-                enable: false,
+                enable: true,
                 mode: "repulse",
               },
               resize: true,
@@ -70,10 +70,10 @@ const ParentCon = (props) => {
                 enable: true,
                 value_area: 1000,
               },
-              value: 20,
+              value: 30,
             },
             opacity: {
-              value: 0.5,
+              value: 0.7,
             },
             shape: {
               type: "circle",
@@ -90,7 +90,9 @@ const ParentCon = (props) => {
           zIndex: -1,
         }}
       ></Particles>
-      <div className={`${classes.main} scale-in-center`}>{props.children}</div>
+      <div className={`${classes.main} scale-in-center ${props.className}`}>
+        {props.children}
+      </div>
     </>
   );
 };

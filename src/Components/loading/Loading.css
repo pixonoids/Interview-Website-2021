@@ -34,3 +34,19 @@
   width: 150px;
   filter: grayscale(20%);
 }
+@media screen and (max-width: 420px) {
+  .loading-container {
+    width: 100vw;
+    height: 105vh;
+    background-color: rgb(36, 36, 36);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    position: absolute;
+    color: white;
+    overflow: hidden;
+    z-index: 10000;
+  }
+}
