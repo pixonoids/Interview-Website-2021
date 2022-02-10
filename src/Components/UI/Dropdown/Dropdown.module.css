@@ -45,8 +45,8 @@
   background: #555;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 420px) {
   .dropdown {
-    width: 65vw;
+    width: 100%;
   }
 }
