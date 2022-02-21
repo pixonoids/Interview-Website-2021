@@ -48,5 +48,6 @@
     color: white;
     overflow: hidden;
     z-index: 10000;
+    transform: translateY(-5%);
   }
 }

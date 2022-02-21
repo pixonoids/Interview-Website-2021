@@ -24,7 +24,7 @@ const Main = () => {
       </video>
       <section className={classes.main}>
         <div className={classes.container}>
-          <h1>Pixonoids Interview 2K22</h1>
+          <h1>Pixonoids Interview's 2k22</h1>
           <p>
             Team Pixonoids cordially invites you to the Freshmen interviews
             which gives you a fair chance to connect with people of akin vision

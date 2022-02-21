@@ -73,48 +73,46 @@ const User = (props) => {
   };
   return (
     <>
-      {loading ? (
-        <Loading load={loading} />
-      ) : (
-        <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
-          <ColumnCon>
-            <Heading text={"Personal Information"} />
+      {loading && <Loading load={loading} />}
 
-            <InputBox
-              placeholder={"First Name"}
-              value={fName}
-              onChangeHandler={firstNameHandler}
-            />
-            <InputBox
-              placeholder={"Last Name"}
-              value={lName}
-              onChangeHandler={lastNameHandler}
-            />
+      <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
+        <ColumnCon>
+          <Heading text={"Personal Information"} />
 
-            {errorState && <Error errorMessage={errorMessage} />}
-            <RowCon className={classes.container}>
-              <Button
-                type="solid"
-                text={"Back"}
-                onClick={onClickBackPersonal}
-                errorState={errorState}
-              />
-              <Button
-                type="hollow"
-                text={"Next"}
-                onClick={onClickPersonal}
-                errorState={errorState}
-              />
-            </RowCon>
-          </ColumnCon>
-
-          <img
-            src="./images/tiltjs/idcard.png"
-            alt=""
-            className={classes.userImage}
+          <InputBox
+            placeholder={"First Name"}
+            value={fName}
+            onChangeHandler={firstNameHandler}
           />
-        </ParentCon>
-      )}
+          <InputBox
+            placeholder={"Last Name"}
+            value={lName}
+            onChangeHandler={lastNameHandler}
+          />
+
+          {errorState && <Error errorMessage={errorMessage} />}
+          <RowCon className={classes.container}>
+            <Button
+              type="solid"
+              text={"Back"}
+              onClick={onClickBackPersonal}
+              errorState={errorState}
+            />
+            <Button
+              type="hollow"
+              text={"Next"}
+              onClick={onClickPersonal}
+              errorState={errorState}
+            />
+          </RowCon>
+        </ColumnCon>
+
+        <img
+          src="./images/tiltjs/idcard.png"
+          alt=""
+          className={classes.userImage}
+        />
+      </ParentCon>
     </>
   );
 };
