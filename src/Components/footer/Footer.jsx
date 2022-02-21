@@ -129,11 +129,6 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <footer>
-            <div className="footer-content">
-              <div className="pixo"> PIXONOIDS © 2022</div>
-            </div>
-          </footer>
         </div>
       )}
     </>

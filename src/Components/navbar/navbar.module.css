@@ -3,9 +3,10 @@
   top: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+
   width: 100%;
   padding: 0.6rem 0;
+  justify-content: center;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(12.5px);
   -webkit-backdrop-filter: blur(12.5px);
@@ -15,19 +16,20 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  justify-items: flex-start;
-  position: absolute;
-  left: 10px;
+  justify-self: center;
 }
 
-ul {
+.list {
   list-style: none;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  justify-self: flex-end;
+  position: absolute;
+
+  position: absolute;
+  right: 10px;
 }
-li {
+.list li {
   margin-right: 1rem;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -36,20 +38,49 @@ li {
   color: white;
   transition: 200ms;
 }
-li:hover {
+.list li:hover {
   transition: 200ms;
   text-decoration: underline;
 }
 .pixo-logo {
-  width: 50px;
+  width: 60px;
+  animation: rotate 7s ease-in-out infinite;
+  position: relative;
 }
+
+.tooltip {
+  opacity: 1;
+  color: transparent;
+  position: absolute;
+  bottom: -30px;
+  cursor: crosshair;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(180deg);
+  }
+  88% {
+    transform: rotate(360deg);
+  }
+  66% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(380deg);
+  }
+  0% {
+    transform: rotate(0deg);
+  }
+}
+
 .pixo-name {
-  font-size: 1.7rem;
+  font-size: 2rem;
   color: white;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 700;
-  margin-left: 0.5rem;
+  position: absolute;
+  left: 15px;
 }
 a {
   text-decoration: none;
@@ -65,40 +96,46 @@ a {
   display: none;
   color: white;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 420px) {
   .nav-main {
     flex-direction: column;
     justify-content: center;
-
-    padding: 2rem 0;
   }
 
   .brand {
-    /* border: 2px solid red; */
-    top: 0.01rem;
-    left: 1px;
-    margin: 0.6rem 0;
+    margin-left: 9rem;
   }
   .pixo-name {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    position: absolute;
+    left: 15px;
+    top: 10px;
   }
-  ul {
+  .list {
+    list-style: none;
+    display: flex;
     flex-direction: column;
-    height: auto;
-    /* border: 2px solid rgb(9, 201, 159); */
-    /* display: none; */
+    justify-content: space-around;
+    align-items: center;
+    position: initial;
+    right: 10px;
+    margin-top: 1rem;
   }
-  li:nth-child(1) {
+  .lis li:nth-child(1) {
     border-top: 1px solid white;
-    margin-top: 40px;
   }
-  li {
+  .list li {
     width: 80%;
     text-align: center;
     border-top: 1px solid white;
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: 0.5rem;
     white-space: nowrap;
+    text-shadow: 0px 0px 5px black;
   }
   .hamburger {
     display: block;
@@ -106,4 +143,6 @@ a {
     top: 1rem;
     right: 2rem;
   }
+}
+@media screen and (max-width: 1010px) and (min-width: 420px) {
 }

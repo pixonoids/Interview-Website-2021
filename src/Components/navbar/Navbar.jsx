@@ -18,23 +18,26 @@ export default function Navbar() {
   }, []);
   return (
     <nav className={classes["nav-main"]}>
+      <div className={classes["pixo-name"]}>
+        <a href="/">Pixonoids</a>
+      </div>
       <div className={classes.brand}>
         <img
           src="./images/pixonoid.png"
           alt="pixo-logo-img"
           className={classes["pixo-logo"]}
         ></img>
-        <div className={classes["pixo-name"]}>Pixonoids</div>
+        <spam className={classes.tooltip}>#WBTPPBTU</spam>
       </div>
       {(toggleMenu || screenWidth > 900) && (
-        <ul>
-          <li>
+        <ul className={classes.list}>
+          <li onClick={() => setToggleMenu(!toggleMenu)}>
             <a href="/">Home</a>
           </li>
-          <li>
+          <li onClick={() => setToggleMenu(!toggleMenu)}>
             <AboutUs />
           </li>
-          <li>
+          <li onClick={() => setToggleMenu(!toggleMenu)}>
             <ContactUs />
           </li>
         </ul>

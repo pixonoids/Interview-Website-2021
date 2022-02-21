@@ -19,7 +19,8 @@
   z-index: -1;
 }
 .videotag {
-  width: 101%;
+  width: 105%;
+  height: auto;
   position: absolute;
   top: 0;
   left: 0vw;
@@ -28,7 +29,7 @@
 .container {
   width: 60%;
   display: flex;
-  padding: 0 2rem;
+
   margin-left: 2rem;
 
   flex-direction: column;
@@ -43,6 +44,9 @@
   text-shadow: 0px 0px 4px rgb(214, 214, 214);
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+.model-face {
+  display: none;
 }
 .container p {
   color: rgb(255, 255, 255);
@@ -84,17 +88,17 @@
     position: fixed;
     height: 105%;
     width: auto;
-    top: -2vh;
-    left: 0vw;
+
     transform: rotate(180deg);
   }
   .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: fit-content;
-    padding: 2rem;
+    margin-left: 0;
+    padding: 5rem 2rem 1rem;
   }
   .container h1 {
     font-size: 2.8rem;
@@ -102,30 +106,30 @@
     color: white;
     word-spacing: 2px;
   }
-  .main {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  .model-face {
+    width: 250px;
+    display: inline;
   }
+
   .red {
     font-size: 1.3rem;
 
-    padding: 1rem;
+    padding: 0.5rem 0.7rem;
   }
 
   .container p {
     font-size: 1rem;
     text-align: center;
-    min-width: 18rem;
   }
   .threejs {
     display: none;
   }
 }
-@media screen and (max-width: 820px) and (min-width: 420px) {
+@media screen and (max-width: 1010px) and (min-width: 420px) {
   .videotag {
-    display: none;
+    position: fixed;
+    height: 105%;
+    width: auto;
   }
   .container {
     display: flex;
@@ -133,10 +137,10 @@
     align-items: center;
     justify-content: space-between;
     width: fit-content;
-    padding: 2rem;
+    padding: 5rem 2rem 0;
   }
   .container h1 {
-    font-size: 2.8rem;
+    font-size: 5vw;
     text-shadow: 2px 2px 5px black;
     color: white;
     word-spacing: 2px;
@@ -147,16 +151,22 @@
     flex-direction: column;
     align-items: center;
   }
+  .model-face {
+    width: 250px;
+    display: inline;
+  }
+
   .red {
     font-size: 1.3rem;
-
-    padding: 1rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.7rem;
   }
 
   .container p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: center;
     min-width: 18rem;
+    margin: 2rem 0;
   }
   .threejs {
     display: none;
