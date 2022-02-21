@@ -13,6 +13,17 @@ export const ContactUs = () => {
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
         className={classes.ContactUsModal}
+        style={
+          {
+            overlay:{
+              backgroundColor:'rgba(20,20,20,0.8)',
+              
+            },
+            content:{
+              color:"white"
+            },
+          }
+        }
       >
         <GrClose
           onClick={() => setModalIsOpen(false)}

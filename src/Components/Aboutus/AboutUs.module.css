@@ -1,19 +1,20 @@
 .AboutUsContent {
   font-size: 1rem;
   padding: 0rem 2rem;
-  margin-top: -0.1rem;
+  margin-top: 1rem;
 }
 .AboutUsModal {
-  height: 50vh;
+  height: fit-content;
   width: 50vw;
-  margin: 13% 25%;
-  background: rgba(255, 255, 255, 0.5);
+margin:-15rem auto;
+  background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: none;
   position: relative;
+  top: -18%;
 }
 .CloseButton {
   font-size: 2rem;

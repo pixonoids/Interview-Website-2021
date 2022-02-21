@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import { GrClose } from "react-icons/gr";
 import classes from "./AboutUs.module.css";
+import { Color } from "three";
 export const AboutUs = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   return (
@@ -11,6 +12,17 @@ export const AboutUs = () => {
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
         className={classes.AboutUsModal}
+        style={
+          {
+            overlay:{
+              backgroundColor:'rgba(20,20,20,0.8)',
+              
+            },
+            content:{
+              color:"white"
+            }
+          }
+        }
       >
         <GrClose
           onClick={() => setModalIsOpen(false)}
