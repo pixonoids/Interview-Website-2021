@@ -17,8 +17,10 @@ function Cube() {
       1000
     );
     camera.position.x = 2;
+
     camera.position.y = -0.5;
     camera.position.z = 5.5;
+
 
     const renderer = new THREE.WebGLRenderer({
       // canvas: canvas,
