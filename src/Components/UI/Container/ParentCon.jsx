@@ -61,7 +61,7 @@ const ParentCon = (props) => {
               direction: "top",
               enable: true,
               outMode: "out",
-              random: false,
+              random: true,
               speed: 2,
               straight: true,
             },
@@ -90,7 +90,7 @@ const ParentCon = (props) => {
           zIndex: -1,
         }}
       ></Particles>
-      <div className={`${classes.main} scale-in-center ${props.className}`}>
+      <div className={`${classes.main} ${props.className}`}>
         {props.children}
       </div>
     </>

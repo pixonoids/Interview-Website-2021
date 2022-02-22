@@ -7,6 +7,7 @@ import RowCon from "../UI/Container/RowCon";
 import classes from "./upload.module.css";
 import Button from "../UI/Button/Button";
 import Loading from "../loading/Loading";
+import Copyright from "../UI/copyright/Copyright";
 
 import Error from "../UI/Error/Error";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
@@ -92,6 +93,7 @@ const Upload = (props) => {
             alt=""
             className={classes.uploadImage}
           />
+          <Copyright />
         </ParentCon>
       )}
     </>

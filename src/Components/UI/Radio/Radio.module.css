@@ -1,8 +1,7 @@
 .radio-grp {
   display: flex;
   flex-wrap: wrap;
-  width: 45vw;
-  height: 25vh;
+
   align-content: space-between;
   justify-content: center;
 }
@@ -12,34 +11,41 @@
   padding: 0.5rem 1rem;
   margin: 0.5rem 0.5rem;
   background-color: rgba(255, 255, 255, 0.74);
-  width: 13vw;
-  text-align: left;
+
+  text-align: center;
   flex-basis: 45%;
   border-radius: 15px;
   font-size: 1.1rem;
   cursor: pointer;
-  color: grey;
+  color: rgb(80, 80, 80);
   opacity: 0.8;
 }
 .radio:hover {
   opacity: 1;
+  border: 3px solid #006ee6;
+  transition: 200ms;
 }
 .active {
   opacity: 1;
   background-color: white;
+  border: 3px solid #006ee6;
+  transition: 200ms;
   box-shadow: 0px 0px 10px rgba(129, 129, 129);
 }
-@media screen and (max-width:900px) {
+@media screen and (max-width: 420px) {
   .radio-grp {
     width: 75vw;
     margin-left: -5vw;
     margin-top: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
   }
-  .radio{
+  .radio {
     width: 12rem;
     padding: 0.5rem 0.5rem;
-    margin:0.35rem;
-    border-radius: 1rem ;
+    margin: 0.35rem;
+    border-radius: 1rem;
     font-size: 0.85rem;
   }
 }

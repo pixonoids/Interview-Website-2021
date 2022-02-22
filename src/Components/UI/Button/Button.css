@@ -5,7 +5,7 @@
   -webkit-backdrop-filter: blur(20px);
   border-radius: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  color: rgb(231, 231, 231);
+  color: rgb(246, 246, 246);
   font-size: 1.5rem;
   letter-spacing: 2px;
   font-weight: 900;
@@ -81,6 +81,7 @@ button[disabled] {
     opacity: 0.9;
     cursor: pointer;
     max-width: 70px;
+    color: white;
   }
   .icon-button {
     font-size: 1.5rem;

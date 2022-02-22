@@ -1,4 +1,13 @@
-.deptImage{
-    margin-top: -2.5rem;
-    height: 33rem;
+.deptImage {
+  margin-top: -2.5rem;
+  height: 33rem;
+}
+.dept-col {
+  height: fit-content;
+  padding: 1rem 0.5rem;
+}
+@media screen and (max-width: 420px) {
+  .dept-col {
+    border: 2px solid white;
+  }
 }

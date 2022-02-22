@@ -8,6 +8,7 @@ import classes from "./user.module.css";
 import Button from "../UI/Button/Button";
 import Error from "../UI/Error/Error";
 import Loading from "../loading/Loading";
+import Copyright from "../UI/copyright/Copyright";
 
 import { useNavigate } from "react-router-dom";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
@@ -112,6 +113,7 @@ const User = (props) => {
           alt=""
           className={classes.userImage}
         />
+        <Copyright />
       </ParentCon>
     </>
   );

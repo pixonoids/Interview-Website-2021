@@ -1,7 +1,3 @@
-.whyImage {
-  height: 20rem;
-  margin-top: 4rem;
-}
 .topping {
   padding: 1rem 0;
   color: rgb(255, 255, 255);
@@ -9,4 +5,13 @@
 }
 .topping span {
   padding-left: 5px;
+}
+.whyImage {
+  height: 200px;
+  transform: scale(1.2);
+}
+@media screen and (max-width: 420px) {
+  .whyImage {
+    transform: scale(1.2);
+  }
 }

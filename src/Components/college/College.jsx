@@ -7,6 +7,7 @@ import RowCon from "../UI/Container/RowCon";
 import classes from "./college.module.css";
 import Button from "../UI/Button/Button";
 import Loading from "../loading/Loading";
+import Copyright from "../UI/copyright/Copyright";
 
 import Dropdown from "../UI/Dropdown/Dropdown";
 import Error from "../UI/Error/Error";
@@ -113,6 +114,7 @@ const College = (props) => {
             alt=""
             className={classes.collegeImage}
           />
+          <Copyright />
         </ParentCon>
       )}
     </>

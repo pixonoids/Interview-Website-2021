@@ -7,6 +7,7 @@ import Button from "../UI/Button/Button";
 import Area from "../UI/Area/Area";
 import Error from "../UI/Error/Error";
 import Loading from "../loading/Loading";
+import Copyright from "../UI/copyright/Copyright";
 
 import { userDb } from "../../firebase";
 import { addDoc, collection } from "firebase/firestore";
@@ -76,7 +77,7 @@ const Why = (props) => {
       setErrorMessage("Cannot be Left Empty !");
     } else if (why.length <= 10) {
       setErrorState(why.length <= 10);
-      setErrorMessage(`More than 50 Words ! ${10 - why.length}/50 Left`);
+      setErrorMessage(`More than 10 letters ! ${10 - why.length}/10 Left`);
     } else if (!checked) {
       setErrorState(true);
       setErrorMessage(`You must Accept the Terms `);
@@ -136,10 +137,12 @@ const Why = (props) => {
           </ColumnCon>
 
           <img
-            src="./images/tiltjs/pixonoid.png"
+            src="./images/pixonoid.png"
             className={classes.whyImage}
             alt=""
+            style={{ transform: "scale(0.7)" }}
           />
+          <Copyright />
         </ParentCon>
       )}
     </>

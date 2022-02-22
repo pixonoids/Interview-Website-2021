@@ -7,12 +7,12 @@ export const AboutUs = () => {
   return (
     <div className={classes.AboutUsBackground}>
       <a onClick={() => setModalIsOpen(true)}>About Us</a>
-      <Modal
+      <div
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
         className={classes.AboutUsModal}
       >
-        <GrClose
+        <div
           onClick={() => setModalIsOpen(false)}
           className={classes.CloseButton}
         />
@@ -26,7 +26,7 @@ export const AboutUs = () => {
           animi reiciendis, deserunt labore voluptatem sequi! Maxime, quisquam
           veniam! Consequatur deserunt esse nostrum blanditiis
         </p>
-      </Modal>
+      </div>
     </div>
   );
 };

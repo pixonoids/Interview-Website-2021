@@ -7,6 +7,7 @@ import Button from "../UI/Button/Button";
 import Radio from "../UI/Radio/Radio";
 import Error from "../UI/Error/Error";
 import Loading from "../loading/Loading";
+import Copyright from "../UI/copyright/Copyright";
 
 import classes from "./Dept.module.css";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
@@ -49,7 +50,7 @@ const Dept = (props) => {
         <Loading load={loading} />
       ) : (
         <ParentCon backgroundURL={"./images/grey-pixo.svg"}>
-          <ColumnCon>
+          <ColumnCon className={classes["dept-col"]}>
             <Heading text={"Department for Application"} />
             <Radio deptHandler={setDept} errorHandler={setErrorState} />
             {errorState && <Error errorMessage={errorMessage} />}
@@ -74,6 +75,7 @@ const Dept = (props) => {
             alt=""
             className={classes.deptImage}
           />
+          <Copyright />
         </ParentCon>
       )}
     </>

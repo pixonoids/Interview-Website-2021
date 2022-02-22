@@ -5,16 +5,52 @@
   background-size: cover;
   background-position: center;
   display: flex;
-  padding: 8rem;
+  padding: 8rem 10rem;
   justify-content: space-between;
   /* align-items: center; */
 }
+.main img {
+  z-index: 1;
+  height: auto;
+  margin: 0;
+
+  transform: scale(1.2);
+}
 @media screen and (max-width: 420px) {
   .main {
+    display: flex;
+
     flex-direction: column;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
-    padding: 1.6rem 0 0 0;
-    justify-content: center;
+  }
+  .main img {
+    height: 50%;
+
+    margin-top: 2.5rem;
+    transform: scale(1.2);
+  }
+}
+@media screen and (max-width: 1010px) and (min-width: 420px) {
+  .main {
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    padding: 8rem 6rem;
+    justify-content: space-between;
+    /* align-items: center; */
+  }
+  .main img {
+    z-index: 1;
+
+    border: 2px solid yellow;
+    margin: 0;
+    height: auto;
+    transform: scale(1.2);
   }
 }

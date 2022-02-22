@@ -8,6 +8,7 @@ import Button from "../UI/Button/Button";
 import Error from "../UI/Error/Error";
 import Loading from "../loading/Loading";
 import classes from "./Contact.module.css";
+import Copyright from "../UI/copyright/Copyright";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 
 const Contact = (props) => {
@@ -95,6 +96,7 @@ const Contact = (props) => {
             alt=""
             className={classes.contactImage}
           />
+          <Copyright />
         </ParentCon>
       )}
     </>

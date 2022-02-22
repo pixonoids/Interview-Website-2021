@@ -5,7 +5,7 @@ const Radio = (props) => {
   const radioItems = [
     {
       id: 1,
-      text: "Web Development",
+      text: "Web",
     },
     {
       id: 2,

@@ -35,10 +35,10 @@ export default function Navbar() {
             <a href="/">Home</a>
           </li>
           <li onClick={() => setToggleMenu(!toggleMenu)}>
-            <AboutUs />
+            About us {toggleMenu && <AboutUs />}
           </li>
           <li onClick={() => setToggleMenu(!toggleMenu)}>
-            <ContactUs />
+            Contact Us {toggleMenu && <ContactUs />}
           </li>
         </ul>
       )}

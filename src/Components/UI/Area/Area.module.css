@@ -8,6 +8,7 @@
   font-size: 1.2rem;
   border-radius: 15px;
   padding: 1rem;
+  resize: none;
 }
 .area:focus {
   border: 2px solid rgb(12, 94, 201);
@@ -15,13 +16,14 @@
 .area::placeholder {
   color: rgba(255, 255, 255, 0.753);
 }
-@media screen and (max-width:900px){
+@media screen and (max-width: 420px) {
   .area {
-    height: 30vh;
-    width: 65vw;
+    width: 100%;
+    height: 50vw;
     font-size: 1rem;
     border-radius: 15px;
     /* padding: 1rem; */
     margin: 1rem 0;
+    text-align: left;
   }
 }

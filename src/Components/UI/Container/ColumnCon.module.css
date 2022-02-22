@@ -14,13 +14,17 @@
   display: flex;
   justify-content: space-around;
 }
+
 @media screen and (max-width: 420px) {
   .flex-col {
-    width: 90%;
-    height: fit-content;
-    padding: 1rem;
+    width: 90vw;
+    margin: 1rem 0;
+
+    padding: 1rem 2rem;
+  }
+  .flex-row {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    margin: 1rem 0;
   }
 }

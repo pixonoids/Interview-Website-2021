@@ -8,13 +8,14 @@ import Button from "../UI/Button/Button";
 import Area from "../UI/Area/Area";
 import Error from "../UI/Error/Error";
 import Loading from "../loading/Loading";
+import Copyright from "../UI/copyright/Copyright";
 
 import classes from "./Priority.module.css";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 
 const Priority = (props) => {
   //states
-  const [prior, setPrior] = useState("");
+  const [prior, setPrior] = useState();
   const [errorState, setErrorState] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [userData, setUserData] = useContext(UserDataContext);
@@ -24,7 +25,7 @@ const Priority = (props) => {
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000);
 
-    setPrior(window.sessionStorage.getItem("clubPrioity"));
+    setPrior(window.sessionStorage.getItem("clubPrioity" || ""));
   }, []);
   //update state functions
   const priorHandler = (e) => {
@@ -64,9 +65,7 @@ const Priority = (props) => {
           <ColumnCon>
             <Heading text={"Club Priority"} />
             <Area
-              placeholder={
-                "If you applying for multiple club then we need to know your priority.."
-              }
+              placeholder={`If you applying for multiple club then we need to know your priority. Example - Club1 > Club2 > Club3 else write Pixonoids.`}
               value={prior}
               onChangeHandler={priorHandler}
             />
@@ -92,6 +91,7 @@ const Priority = (props) => {
             alt=""
             className={classes.priorityImage}
           />
+          <Copyright />
         </ParentCon>
       )}
     </>
