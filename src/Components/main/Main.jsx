@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Cube from "../three/cube";
 import Loading from "../loading/Loading";
 import { useEffect, useState } from "react";
+import Copyright from "../UI/copyright/Copyright";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -46,6 +47,7 @@ const Main = () => {
         <div className={classes.threejs}>
           <Cube loading={setLoading} />
         </div>
+        <Copyright className={classes.homefot} />
       </section>
     </>
   );

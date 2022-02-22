@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { userAuth } from "../../firebase";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import Copyright from "../UI/copyright/Copyright";
 
 const Authentication = (props) => {
   const navigate = useNavigate();
@@ -75,6 +76,7 @@ const Authentication = (props) => {
           alt="pixo-model-google-authen"
           className={classes.authenImage}
         />
+        <Copyright />
       </ParentCon>
     </>
   );
