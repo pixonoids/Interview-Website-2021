@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Footer.css";
-import { SiGooglemeet } from "react-icons/si";
+import { SiGooglemeet,SiWhatsapp } from "react-icons/si";
 import { useNavigate } from "react-router-dom";
 import Loading from "../loading/Loading";
 
@@ -96,17 +96,16 @@ export default function Footer() {
           <div className="para">
             Successfully collected your form responses.
           </div>
-          <br />
-          <br />
+          {/* <br /> */}
+          {/* <br /> */}
           <div className="info-box">
             <div className="all_updates">
               <div className="whatsapp-group-info">
-                <h1 className="whats-app-icon">
-                  <i className="fab fa-whatsapp"></i>
-                </h1>
-                <p>Join the whatsapp group for further updates.</p>
+              <a href="https://chat.whatsapp.com/DzmdNWnB8xPGbcKtFK3TNu" target={'_blank'}>
+                  <SiWhatsapp className="whats-app-icon"/>
+             
+                <p>Click to join the whatsapp group for further updates.</p></a>
               </div>
-              <br />
               <a
                 className="meet"
                 href={
@@ -121,7 +120,6 @@ export default function Footer() {
                 <div>
                   <SiGooglemeet className="meet_img" />
                 </div>
-                &nbsp;&nbsp;&nbsp;&nbsp;
                 <div className="meet_info">
                   Interviews will be held via Google Meet. (link will be shared
                   later on)

@@ -4,11 +4,6 @@
   --color-white: #fff;
   --curve: cubic-bezier(0.42, 0, 0.275, 1.155);
 }
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
 
 .star {
   position: absolute;
@@ -123,10 +118,8 @@
 
 .page-box {
   display: flex;
-  position: absolute;
-  top: 0;
-  height: 100vh;
   width: 100vw;
+  height: 100%;
   padding-top: 20vh;
   flex-direction: column;
   justify-content: center;
@@ -135,25 +128,8 @@
   background: -webkit-linear-gradient(top left, #0676e6, #021c79);
   background: -moz-linear-gradient(top left, #0676e6, #021c79);
   background: linear-gradient(to bottom right, #0676e6, #021c79);
-  overflow: hidden;
   color: white;
-}
-.success-message {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.success-message i {
-  font-size: 5rem;
-  color: white;
-}
-.success-message h1 {
-  font-size: 5rem;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  font-weight: 900;
+  height: fit-content;
 }
 /* form completion heading css */
 .para {
@@ -167,17 +143,17 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 40vh;
+  padding: 5rem 0;
   width: 80vw;
 }
-/* left whatsapp info part */
 .all_updates {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
 }
-.whatsapp-group-info {
+/* left whatsapp info part */
+.whatsapp-group-info a{
   display: flex;
   flex-direction: row;
   width: 28vw;
@@ -187,14 +163,14 @@
   font-size: 1.1rem;
   border: 2px solid white;
   background-color: #25d366;
-  padding: 1rem;
+  padding: 1.3rem;
   border-radius: 15px;
   text-align: center;
   cursor: pointer;
   user-select: none;
   margin-right: 5rem;
 }
-.whatsapp-group-info h1 {
+.whatsapp-group-info .whats-app-icon {
   font-size: 3rem;
 }
 .meet {
@@ -202,139 +178,64 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 30vw;
-  padding: 1rem;
+  width: 28vw;
+  padding: 0.5rem 1rem;
   border: 2px solid white;
   background-color: rgb(218, 83, 83);
   border-radius: 15px;
   cursor: grab;
 }
 .meet_img {
-  height: 3.5rem;
-  width: 3.5rem;
+ font-size: 2.5rem;
 }
 .meet_info {
   font-size: 1.1rem;
 }
 /* for any queries part */
-.other-info {
-  display: flex;
-  flex-direction: column;
-  width: 30vw;
-  height: 25vh;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  /* border: 2px solid white; */
-  border-radius: 15px;
-}
-.query {
-  font-size: 1.5rem;
-  margin: 1rem;
-  padding: 0.4rem;
-  letter-spacing: 0.08rem;
-  font-weight: bold;
-}
-/* the main footer div */
-footer {
-  margin-top: 4rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 80vw;
-  height: 15vh;
-}
-.footer-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  /* margin-top: -50px; */
-}
-/* pixonoids of footer */
-.pixo {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.2rem;
-  padding: 0.5rem;
-}
-/* social links */
-.links {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-.icon-box-insta,
-.icon-box-yt,
-.icon-box-linkedin,
-.icon-box-facebook {
-  padding: 0.5rem;
-  border-radius: 0.9rem;
-  margin: 0.1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.icon-box-insta:hover a {
-  color: rgb(255, 31, 244);
-  text-shadow: 0px 0px 2px rgb(255, 31, 244);
-  transform: scale(1.1);
-}
-.icon-box-yt:hover a {
-  color: red;
-  text-shadow: 0px 0px 2px red;
-  transform: scale(1.1);
-}
-.icon-box-linkedin:hover a {
-  color: rgb(35, 154, 252);
-  text-shadow: 0px 0px 2px rgb(35, 154, 252);
-  transform: scale(1.1);
-}
-.icon-box-facebook:hover a {
-  color: rgb(59, 37, 255);
-  text-shadow: 0px 0px 2px rgb(59, 37, 255);
-  transform: scale(1.1);
-}
-.links a {
-  font-size: 1.5rem;
-  text-decoration: none;
-  transition: 500ms;
-  color: white;
-}
-@media screen and (max-width: 900px) {
+
+
+@media screen and (max-width:900px) {
+  .page-box{
+    height: 100%;
+  }
+  .para{
+    font-size: 3rem;
+  }
   .all_updates {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
   }
-  .whatsapp-group-info {
+  .whatsapp-group-info a{
     display: flex;
     flex-direction: column;
     width: 68vw;
-    height: 15vh;
-    font-size: 1.1rem;
+    height:fit-content;
+    font-size: 1rem;
     padding: 2rem 0;
     border-radius: 15px;
     text-align: center;
     cursor: pointer;
-    margin: 0;
+    margin: 4rem;
+    font-size: 1rem;
+  }
+  .whatsapp-group-info .whats-app-icon{
+    font-size: 2rem;
   }
   .meet {
     display: flex;
     flex-direction: column;
     width: 68vw;
-    height: 18vh;
-    font-size: 0.5rem;
+    height: fit-content;
+    font-size: 0.3rem;
     padding: 1.5rem 1rem;
     border-radius: 15px;
     text-align: center;
     cursor: pointer;
     margin: 0;
   }
-  .pixo {
+  .meet_img{
+    font-size: 2rem;
   }
 }
