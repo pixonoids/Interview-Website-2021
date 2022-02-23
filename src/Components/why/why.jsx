@@ -36,6 +36,8 @@ const Why = (props) => {
     setWhy(e.target.value);
     setUserData((data) => ({
       ...data,
+      signature: `I ${userData.firstName} ${userData.lastName} confirm that I am giving the interviews as per my own goodwill and I will be solely responsible for whatever happens in the interviews and will not pose any anti-ragging threats to the interviewers. `,
+
       whyPixo: why,
       timeStamp: `${
         today.getFullYear() +
@@ -122,10 +124,10 @@ const Why = (props) => {
                 className={classes.check}
               />
               <span>
-                I thereby confirm that I am giving the interviews as per my own
-                goodwill and I will be solely responsible for whatever happens
-                in the interviews and will not pose any anti-ragging threats to
-                the interviewers.
+                I {userData.firstName + " " + userData.lastName} confirm that I
+                am giving the interviews as per my own goodwill and I will be
+                solely responsible for whatever happens in the interviews and
+                will not pose any anti-ragging threats to the interviewers.
               </span>
             </div>
 

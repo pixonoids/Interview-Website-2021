@@ -21,7 +21,6 @@ function Cube() {
     camera.position.y = -0.5;
     camera.position.z = 5.5;
 
-
     const renderer = new THREE.WebGLRenderer({
       // canvas: canvas,
       alpha: true,
@@ -101,7 +100,7 @@ function Cube() {
       },
       //consoleerror function
       function (xhr) {
-        console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+        // console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
       },
       function (error) {
         console.log(error);

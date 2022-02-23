@@ -25,7 +25,7 @@ const Main = () => {
       </video>
       <section className={classes.main}>
         <div className={classes.container}>
-          <h1>Freshman Interview's 2k22</h1>
+          <h1>Freshmen Interviews 2k22</h1>
           <img
             className={classes["model-face"]}
             src="./images/tiltjs/model-face.png"
@@ -33,7 +33,7 @@ const Main = () => {
           <p>
             Team Pixonoids cordially invites you to the Freshmen interviews
             which gives you a fair chance to connect with people of akin vision
-            and be a part of the team which is driven by the same vigour
+            And be a part of the team which is driven by creativity.
           </p>
 
           <Button
