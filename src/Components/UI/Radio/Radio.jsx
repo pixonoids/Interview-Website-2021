@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import classes from "./Radio.module.css";
+import { BsCheckCircleFill } from "react-icons/bs";
 
 const Radio = (props) => {
   const radioItems = [
@@ -42,9 +43,7 @@ const Radio = (props) => {
             onClick={() => onClickHandler(item)}
           >
             {item.text}
-            <div>
-              {active === item.id && <i className="fas fa-check-circle"></i>}
-            </div>
+            <div>{active === item.id && <BsCheckCircleFill />}</div>
           </div>
         );
       })}

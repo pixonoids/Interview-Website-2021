@@ -1,5 +1,5 @@
 .area {
-  height: 50%;
+  height: fit-content;
   width: 45vw;
   border: 2px solid white;
   outline: none;

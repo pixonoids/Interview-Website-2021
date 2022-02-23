@@ -1,6 +1,5 @@
 .deptImage {
-  margin-top: -2.5rem;
-  height: 33rem;
+  padding-left: 4rem;
 }
 .dept-col {
   height: fit-content;
@@ -9,5 +8,8 @@
 @media screen and (max-width: 420px) {
   .dept-col {
     border: 2px solid white;
+  }
+  .deptImage {
+    padding-left: 0;
   }
 }

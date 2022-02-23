@@ -69,6 +69,7 @@
   position: relative;
   padding: 25px;
   animation: checkmark 5m var(--curve) both;
+  z-index: 1;
   /* margin-top: -20px; */
 }
 .checkmark__check {
@@ -124,12 +125,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #0676e6;
-  background: -webkit-linear-gradient(top left, #0676e6, #021c79);
-  background: -moz-linear-gradient(top left, #0676e6, #021c79);
-  background: linear-gradient(to bottom right, #0676e6, #021c79);
+  background-color: #4058ff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%234058ff'/%3E%3Cstop offset='1' stop-color='%234058ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%234058ff'/%3E%3Cstop offset='1' stop-color='%234058ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%234058ff'/%3E%3Cstop offset='1' stop-color='%234058ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%234058FF'/%3E%3Cstop offset='1' stop-color='%234058FF' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%234058FF'/%3E%3Cstop offset='1' stop-color='%234058FF' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%234058FF'/%3E%3Cstop offset='1' stop-color='%234058FF' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
   color: white;
-  
 }
 /* form completion heading css */
 .para {
@@ -151,56 +151,59 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  width: 100%;
 }
 /* left whatsapp info part */
-.whatsapp-group-info a{
+.whatsapp-group-info a {
   display: flex;
-  flex-direction: row;
-  width: 28vw;
-  white-space: normal;
-  justify-content: center;
+
+  justify-content: space-evenly;
   align-items: center;
   font-size: 1.1rem;
   border: 2px solid white;
   background-color: #25d366;
-  padding: 1.3rem;
+  padding: 1rem;
   border-radius: 15px;
   text-align: center;
   cursor: pointer;
   user-select: none;
-  margin-right: 5rem;
 }
-.whatsapp-group-info .whats-app-icon {
-  font-size: 3rem;
+.whats-app-icon {
+  font-size: 2.5rem;
+  margin-right: 0.6rem;
 }
+
 .meet {
   display: flex;
-  flex-direction: row;
+
   justify-content: center;
   align-items: center;
-  width: 28vw;
-  padding: 0.5rem 1rem;
+  width: fit-content;
+  padding: 1rem;
   border: 2px solid white;
   background-color: rgb(218, 83, 83);
   border-radius: 15px;
   cursor: grab;
 }
 .meet_img {
- font-size: 2.5rem;
+  font-size: 2.5rem;
+  margin-right: 1rem;
 }
 .meet_info {
   font-size: 1.1rem;
 }
+.suc-copy {
+  width: 100%;
+}
 /* for any queries part */
 
-
-@media screen and (max-width:450px) {
-  .page-box{
+@media screen and (max-width: 420px) {
+  .page-box {
     height: 100%;
     overflow: scroll;
   }
-  .para{
-    font-size: 3rem;
+  .para {
+    font-size: 2rem;
   }
   .all_updates {
     display: flex;
@@ -208,20 +211,20 @@
     justify-content: space-evenly;
     align-items: center;
   }
-  .whatsapp-group-info a{
+  .whatsapp-group-info a {
     display: flex;
     flex-direction: column;
     width: 68vw;
-    height:fit-content;
+    height: fit-content;
     font-size: 1rem;
     padding: 2rem 0;
     border-radius: 15px;
     text-align: center;
     cursor: pointer;
-    margin: 4rem;
+
     font-size: 1rem;
   }
-  .whatsapp-group-info .whats-app-icon{
+  .whatsapp-group-info .whats-app-icon {
     font-size: 2rem;
   }
   .meet {
@@ -236,19 +239,71 @@
     cursor: pointer;
     margin: 0;
   }
-  .meet_img{
+  .meet_img {
     font-size: 2rem;
   }
 }
-@media screen and (min-width:450px) and (max-width:900px) {
-  .page-box{
+@media screen and (min-width: 420px) and (max-width: 1010px) {
+  .page-box {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 20vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #4058ff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%234058ff'/%3E%3Cstop offset='1' stop-color='%234058ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%234058ff'/%3E%3Cstop offset='1' stop-color='%234058ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%234058ff'/%3E%3Cstop offset='1' stop-color='%234058ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%234058FF'/%3E%3Cstop offset='1' stop-color='%234058FF' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%234058FF'/%3E%3Cstop offset='1' stop-color='%234058FF' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%234058FF'/%3E%3Cstop offset='1' stop-color='%234058FF' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
     overflow: scroll;
-    padding-top: 25rem;
   }
-  .whatsapp-group-info .whats-app-icon{
-    font-size: 5rem;
+  .all_updates {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
-}
-@media screen  and (min-width:768px){
- 
+  /* left whatsapp info part */
+  .whatsapp-group-info a {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.1rem;
+    border: 2px solid white;
+    background-color: #25d366;
+    padding: 1rem;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+  }
+  .whats-app-icon {
+    font-size: 2.5rem;
+    margin-right: 0.6rem;
+  }
+
+  .meet {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 1rem;
+    border: 2px solid white;
+    background-color: rgb(218, 83, 83);
+    border-radius: 15px;
+    cursor: grab;
+  }
+  .meet_img {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+  }
+  .meet_info {
+    font-size: 1.1rem;
+  }
+  .suc-copy {
+    position: inherit;
+  }
+  /* for any queries part */
 }

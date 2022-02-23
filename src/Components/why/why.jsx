@@ -103,7 +103,7 @@ const Why = (props) => {
   return (
     <>
       {loading && <Loading load={loading} />}
-      <ParentCon backgroundURL={"./images/yellow-pixo.svg"}>
+      <ParentCon backgroundURL={"./images/darkgreen-pixo.svg"}>
         <ColumnCon>
           <Heading text={"Why Pixonoids?"} />
           <Area

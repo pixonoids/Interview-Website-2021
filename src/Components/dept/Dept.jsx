@@ -47,7 +47,7 @@ const Dept = (props) => {
   return (
     <>
       {loading && <Loading load={loading} />}
-      <ParentCon backgroundURL={"./images/grey-pixo.svg"}>
+      <ParentCon backgroundURL={"./images/darkblue-pixo.svg"}>
         <ColumnCon className={classes["dept-col"]}>
           <Heading text={"Department for Application"} />
 

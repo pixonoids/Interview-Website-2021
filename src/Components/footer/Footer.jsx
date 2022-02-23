@@ -3,6 +3,7 @@ import "./Footer.css";
 import { SiGooglemeet, SiWhatsapp } from "react-icons/si";
 import { useNavigate } from "react-router-dom";
 import Loading from "../loading/Loading";
+import Copyright from "../UI/copyright/Copyright";
 
 export default function Footer() {
   const navigate = useNavigate();
@@ -103,9 +104,12 @@ export default function Footer() {
               >
                 <SiWhatsapp className="whats-app-icon" />
 
-                <p>Click to join the whatsapp group for further updates.</p>
+                <p>
+                  Click to join the whatsapp <br></br>group for further updates.
+                </p>
               </a>
             </div>
+
             <a
               className="meet"
               href={
@@ -121,12 +125,37 @@ export default function Footer() {
                 <SiGooglemeet className="meet_img" />
               </div>
               <div className="meet_info">
-                Interviews will be held via Google Meet. (link will be shared
-                later on)
+                Google Meet link will be <br></br> shared later on.
               </div>
             </a>
           </div>
         </div>
+
+        {/* <div className="easter-second">
+          <ul className="easter-list">
+            <li>Aarthi Reddy</li>
+            <li>Anand Raj</li>
+            <li>Anirudh Thakur</li>
+            <li>Banita Rana</li>
+            <li>Bhanu Pratap</li>
+            <li>Devanshi Raman</li>
+            <li>Himanshu Sharma</li>
+            <li>Kartikey Saini</li>
+            <li>Kaushik Geyyer</li>
+            <li>Kavya</li>
+            <li>Kshitij Roodkee</li>
+            <li>Mohit Kumar</li>
+            <li>Pranjal Goyal</li>
+            <li>Prateush K Shrey</li>
+            <li>Priyanshoo Singh</li>
+            <li>Sarthak Sood</li>
+            <li>Shambhavi Dogra</li>
+            <li>Shivani Kawade</li>
+            <li>Suryanshu Awasthi</li>
+            <li>Yajat Chaudhary</li>
+          </ul>
+        </div> */}
+        <Copyright className="suc-copy" />
       </div>
     </>
   );

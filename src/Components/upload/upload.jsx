@@ -30,8 +30,8 @@ const Upload = (props) => {
   //update state functions
   const uploadHandler = (e) => {
     setUpload(e.target.value);
-    if (e.target.value.length === 0) {
-      setErrorState(e.target.value.length === 0);
+    if (e.target.value.length === 0 || "") {
+      setErrorState(e.target.value.length === 0 || "");
       setErrorMessage("Cannot be Left Empty !");
     } else {
       setErrorState(false);
@@ -62,7 +62,7 @@ const Upload = (props) => {
   return (
     <>
       {loading && <Loading load={loading} />}
-      <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
+      <ParentCon backgroundURL={"./images/brown-pixo.svg"}>
         <ColumnCon>
           <Heading text={"Upload Documents"} />
 

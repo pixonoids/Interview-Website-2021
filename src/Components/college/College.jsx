@@ -75,7 +75,7 @@ const College = (props) => {
   return (
     <>
       {loading && <Loading load={loading} />}
-      <ParentCon backgroundURL={"./images/yellow-pixo.svg"}>
+      <ParentCon backgroundURL={"./images/darkgreen-pixo.svg"}>
         <ColumnCon className={classes.clgcol}>
           <Heading text={"College Information"} />
           <InputBox
