@@ -66,6 +66,10 @@ const Upload = (props) => {
         <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
           <ColumnCon>
             <Heading text={"Upload Documents"} />
+            <p>
+              This is the tet dbchdschds ihcjuisdc hsbcsgh cjsbdhsb chsdbchsg
+              chusdb chuscb shucbsd v
+            </p>
             <InputBox
               placeholder={"Google Drive Share Link Here"}
               value={upload}

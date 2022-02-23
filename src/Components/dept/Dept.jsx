@@ -52,6 +52,7 @@ const Dept = (props) => {
         <ParentCon backgroundURL={"./images/grey-pixo.svg"}>
           <ColumnCon className={classes["dept-col"]}>
             <Heading text={"Department for Application"} />
+
             <Radio deptHandler={setDept} errorHandler={setErrorState} />
             {errorState && <Error errorMessage={errorMessage} />}
 

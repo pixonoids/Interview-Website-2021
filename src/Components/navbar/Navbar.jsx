@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import classes from "./navbar.module.css";
+import React, { useState } from "react";
+import "./navbar.css";
 import { AboutUs } from "../Aboutus/AboutUs";
 import { ContactUs } from "../Contactus/ContactUs";
 import { VscMenu } from "react-icons/vsc";
@@ -9,44 +9,35 @@ export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [aboutmodal, setAboutModal] = useState(false);
   const [contactmodal, setContactModal] = useState(false);
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const toggleNav = () => {
     setToggleMenu(!toggleMenu);
   };
-  useEffect(() => {
-    const changeWidth = () => {
-      setScreenWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", changeWidth);
-  }, []);
+
   return (
-    <nav className={classes["nav-main"]}>
-      <div className={classes["pixo-name"]}>
+    <nav className="nav-main">
+      <div className="pixo-name">
         <a href="/">Pixonoids</a>
       </div>
-      <div className={classes.brand}>
+      <div className="brand">
         <img
           src="./images/pixonoid.png"
           alt="pixo-logo-img"
-          className={classes["pixo-logo"]}
+          className={["pixo-logo"]}
         ></img>
-        <span className={classes.tooltip}>#WBTPPBTU</span>
+        <span className="tooltip">#WBTPPBTU</span>
       </div>
-      <ul className={classes.list}>
+      <ul className={`${toggleMenu && "list-flex"} list`}>
         <li onClick={() => setToggleMenu(!toggleMenu)}>
           <a href="/">Home</a>
         </li>
         <li
-          
-            onClick={() => {
-              setToggleMenu(!toggleMenu);
-              setAboutModal(!aboutmodal);
-              setContactModal(false);
-            }}>
-          
-            {" "}
-            About us{" "}
-          
+          onClick={() => {
+            setToggleMenu(!toggleMenu);
+            setAboutModal(!aboutmodal);
+            setContactModal(false);
+          }}
+        >
+          About us
           {aboutmodal &&
             createPortal(<AboutUs />, document.getElementById("modal-root"))}
         </li>
@@ -57,13 +48,13 @@ export default function Navbar() {
             setAboutModal(false);
           }}
         >
-          Contact Us{" "}
+          Contact Us
           {contactmodal &&
             createPortal(<ContactUs />, document.getElementById("modal-root"))}
         </li>
       </ul>
-      
-      <button className={classes.hamburger} onClick={toggleNav}>
+
+      <button className="hamburger" onClick={toggleNav}>
         <VscMenu />
       </button>
     </nav>
