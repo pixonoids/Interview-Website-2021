@@ -1,7 +1,8 @@
 # Freshers 2k22 Website 🎉
 A website to collect responses from candinates for Pixonoids interview.
 
-![image](https://user-images.githubusercontent.com/68412756/143841802-d3ef101d-1304-46a1-b266-635436cde814.png)
+![Screenshot (78)](https://user-images.githubusercontent.com/68412756/155383435-0b3ca8fa-0914-45b6-a0c4-797cc69dc2fc.png)
+
 # Installation
 After cloning perform follwing command
 ```
