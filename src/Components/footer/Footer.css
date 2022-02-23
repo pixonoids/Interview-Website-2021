@@ -221,6 +221,7 @@
     border-radius: 15px;
     text-align: center;
     cursor: pointer;
+    margin-bottom: 2rem;
 
     font-size: 1rem;
   }
@@ -248,7 +249,7 @@
     display: flex;
     width: 100vw;
     height: 100vh;
-    padding-top: 20vh;
+    padding-top:20vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -277,6 +278,7 @@
     text-align: center;
     cursor: pointer;
     user-select: none;
+    margin-bottom: 2rem;
   }
   .whats-app-icon {
     font-size: 2.5rem;
@@ -285,7 +287,6 @@
 
   .meet {
     display: flex;
-
     justify-content: center;
     align-items: center;
     width: fit-content;
