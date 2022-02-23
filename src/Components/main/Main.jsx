@@ -10,7 +10,7 @@ const Main = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setTimeout(() => setLoading(false), 2000);
+    setTimeout(() => setLoading(false), 6000);
     window.sessionStorage.setItem("currentPage", "authen");
   }, []);
   //click functions
