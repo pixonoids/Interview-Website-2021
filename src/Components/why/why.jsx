@@ -62,7 +62,6 @@ const Why = (props) => {
       setErrorState(false);
       navigate("/success");
       window.sessionStorage.clear();
-      console.log("success");
     } catch (error) {
       console.log(error);
       setErrorState(true);

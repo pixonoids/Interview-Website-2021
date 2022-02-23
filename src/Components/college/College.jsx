@@ -44,7 +44,6 @@ const College = (props) => {
   };
   //onclick functions
   const onClickCollege = () => {
-    console.log("i got front clicked");
     if (clgId.length === 0 || selected === "Choose Your Branch") {
       setErrorState(true);
       setErrorMessage("Cannot be Left Empty !");

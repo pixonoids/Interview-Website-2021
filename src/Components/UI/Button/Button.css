@@ -1,8 +1,8 @@
 .button {
   border-radius: 1.5rem;
   padding: 0.5rem 1.4rem;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border-radius: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: rgb(246, 246, 246);

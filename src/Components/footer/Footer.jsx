@@ -118,7 +118,6 @@ export default function Footer() {
               target="blank"
               onClick={() => {
                 setRickRoll((rickroll = rickroll + 1));
-                console.log(rickroll);
               }}
             >
               <div>

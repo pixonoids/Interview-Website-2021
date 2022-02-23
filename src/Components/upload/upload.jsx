@@ -39,7 +39,6 @@ const Upload = (props) => {
   };
   //onclick functions
   const onClickUpload = () => {
-    console.log("i got front clicked");
     if (upload.length === 0) {
       setErrorState(true);
       setErrorMessage("Cannot be Left Empty !");
