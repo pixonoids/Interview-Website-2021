@@ -1,31 +1,22 @@
 import React, { useState } from "react";
-import Modal from "react-modal";
+
 import { GrClose } from "react-icons/gr";
 import { MdMail } from "react-icons/md";
 import { BsInstagram, BsFacebook, BsLinkedin, BsYoutube } from "react-icons/bs";
 import classes from "./ContactUs.module.css";
 export const ContactUs = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
   return (
-    <div>
-      <a onClick={() => setModalIsOpen(true)}>Contact Us</a>
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={() => setModalIsOpen(false)}
-        className={classes.ContactUsModal}
-      >
-        <GrClose
-          onClick={() => setModalIsOpen(false)}
-          className={classes.CloseButton}
-        />
+    <div className={classes.overlay}>
+      <div className={classes.ContactUsModal}>
+        <h3> Contact Us</h3>
         <div className={classes["name-container"]}>
           <div>
-            <p>Harsh Srivastava</p>
-            <p>9992533244</p>
+            <p>Vishwajeet Singh</p>
+            <p>+91 75250 06682</p>
           </div>
           <div>
             <p>Smile Guleria</p>
-            <p>9992533244</p>
+            <p>+91 98829 16993</p>
           </div>
         </div>
         <div className={classes["meeting-container"]}>
@@ -46,7 +37,7 @@ export const ContactUs = () => {
             <BsFacebook />
           </a>
         </div>
-      </Modal>
+      </div>
     </div>
   );
 };

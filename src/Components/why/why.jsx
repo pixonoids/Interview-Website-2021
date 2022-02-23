@@ -8,6 +8,7 @@ import Area from "../UI/Area/Area";
 import Error from "../UI/Error/Error";
 import Loading from "../loading/Loading";
 import Copyright from "../UI/copyright/Copyright";
+import axios from "axios";
 
 import { userDb } from "../../firebase";
 import { addDoc, collection } from "firebase/firestore";
@@ -65,6 +66,14 @@ const Why = (props) => {
       setErrorState(true);
       setErrorMessage("Try Again or Contact Us");
     }
+    axios
+      .post(
+        "https://pixo-interviews-default-rtdb.firebaseio.com/interviews.json",
+        userData
+      )
+      .catch((error) => {
+        console.error(error);
+      });
   };
   const checkHandler = () => {
     setChecked(!checked);

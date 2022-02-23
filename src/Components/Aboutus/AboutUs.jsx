@@ -1,30 +1,22 @@
 import React, { useState } from "react";
-import Modal from "react-modal";
+
 import { GrClose } from "react-icons/gr";
 import classes from "./AboutUs.module.css";
-export const AboutUs = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+export const AboutUs = (props) => {
   return (
-    <div className={classes.AboutUsBackground}>
-      <a onClick={() => setModalIsOpen(true)}>About Us</a>
-      <div
-        isOpen={modalIsOpen}
-        onRequestClose={() => setModalIsOpen(false)}
-        className={classes.AboutUsModal}
-      >
-        <div
-          onClick={() => setModalIsOpen(false)}
-          className={classes.CloseButton}
-        />
-
-        <p className={classes.AboutUsContent}>
-          Lorem ipsum dolor sdolor sit amet, consectetur adipisicing elit. Cum,
-          amet sed sint deserunt accusantium aspernatur nihil minima tempore
-          modi accusamus ab odio officia dolorem asperiores tenetur saepe
-          pariatur perferendis sequi aliquid quae, numquam debitis voluptatibus!
-          Eaque quam quibusdam non, ipsum id, accusamus dolore atque quidem
-          animi reiciendis, deserunt labore voluptatem sequi! Maxime, quisquam
-          veniam! Consequatur deserunt esse nostrum blanditiis
+    <div className={classes.overlay}>
+      <div className={classes.aboutus}>
+        <h3>About Us</h3>
+        <iframe
+          src="https://www.youtube.com/embed/ZVpBwoLhzEE"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <p>
+          A group of budding animators, graphic designers. photographers, video
+          editors and web developers.
         </p>
       </div>
     </div>

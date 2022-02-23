@@ -3,9 +3,12 @@ import classes from "./navbar.module.css";
 import { AboutUs } from "../Aboutus/AboutUs";
 import { ContactUs } from "../Contactus/ContactUs";
 import { VscMenu } from "react-icons/vsc";
+import { createPortal } from "react-dom";
 
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [aboutmodal, setAboutModal] = useState(false);
+  const [contactmodal, setContactModal] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const toggleNav = () => {
     setToggleMenu(!toggleMenu);
@@ -27,22 +30,39 @@ export default function Navbar() {
           alt="pixo-logo-img"
           className={classes["pixo-logo"]}
         ></img>
-        <spam className={classes.tooltip}>#WBTPPBTU</spam>
+        <span className={classes.tooltip}>#WBTPPBTU</span>
       </div>
-      {(toggleMenu || screenWidth > 900) && (
-        <ul className={classes.list}>
-          <li onClick={() => setToggleMenu(!toggleMenu)}>
-            <a href="/">Home</a>
-          </li>
-          <li onClick={() => setToggleMenu(!toggleMenu)}>
-            About us {toggleMenu && <AboutUs />}
-          </li>
-          <li onClick={() => setToggleMenu(!toggleMenu)}>
-            Contact Us {toggleMenu && <ContactUs />}
-          </li>
-        </ul>
+      <ul className={classes.list}>
+        <li onClick={() => setToggleMenu(!toggleMenu)}>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <div
+            onClick={() => {
+              setToggleMenu(!toggleMenu);
+              setAboutModal(!aboutmodal);
+              setContactModal(false);
+            }}
+          >
+            {" "}
+            About us{" "}
+          </div>
+          {aboutmodal &&
+            createPortal(<AboutUs />, document.getElementById("modal-root"))}
+        </li>
+        <li
+          onClick={() => {
+            setToggleMenu(!toggleMenu);
+            setContactModal(!contactmodal);
+            setAboutModal(false);
+          }}
+        >
+          Contact Us{" "}
+          {contactmodal &&
+            createPortal(<ContactUs />, document.getElementById("modal-root"))}
+        </li>
+      </ul>
       )}
-
       <button className={classes.hamburger} onClick={toggleNav}>
         <VscMenu />
       </button>
