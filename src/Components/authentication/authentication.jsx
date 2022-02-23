@@ -34,8 +34,14 @@ const Authentication = (props) => {
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(userAuth, provider);
-      setUserData((data) => ({ ...data, googleAuth: true }));
+      setUserData((data) => ({
+        ...data,
+        googleAuth: userAuth.currentUser.emailVerified,
+        uGoogleId: userAuth.currentUser.uid,
+        photoUrl: userAuth.currentUser.photoURL,
+      }));
       setErrorState(false);
+      console.log(userAuth);
       props.page("user");
       window.sessionStorage.setItem("currentPage", "user");
       window.sessionStorage.setItem("googleAuth", true);

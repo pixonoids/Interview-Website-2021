@@ -1,10 +1,13 @@
 .topping {
-  padding: 1rem 0;
   color: rgb(255, 255, 255);
   font-weight: 400;
+
+  margin: 1rem 0;
+}
+.check {
+  width: 30px;
 }
 .topping span {
-  padding-left: 5px;
 }
 .whyImage {
   height: 200px;

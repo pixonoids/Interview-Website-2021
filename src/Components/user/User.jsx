@@ -12,6 +12,7 @@ import Copyright from "../UI/copyright/Copyright";
 
 import { useNavigate } from "react-router-dom";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
+import DisplayP from "../UI/DisplayP/DisplayP";
 const User = (props) => {
   //states
 
@@ -79,7 +80,7 @@ const User = (props) => {
       <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
         <ColumnCon>
           <Heading text={"Personal Information"} />
-
+          <DisplayP imageUrl={userData.photoUrl} />
           <InputBox
             placeholder={"First Name"}
             value={fName}

@@ -1,6 +1,7 @@
 .radio-grp {
   display: flex;
   flex-wrap: wrap;
+  margin: 1rem 0;
 
   align-content: space-between;
   justify-content: center;

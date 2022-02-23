@@ -1,18 +1,21 @@
-input{
-    font-size: 1.5rem;
-    border: none;
-    outline: none;
-    background: transparent;
-    border-bottom: 2px solid white;
-    color: white;
+input {
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  width: 80%;
+  background: transparent;
+  border-bottom: 2px solid white;
+  color: white;
+  margin: 0.6rem auto;
 }
-input::placeholder{
-    color: white;
-    opacity: 0.5;
+input::placeholder {
+  color: white;
+  opacity: 0.5;
 }
-@media screen and (max-width: 900px)  {
-    input{
-        font-size: 1.1rem;
-        margin: 1rem 0rem;
-    }
+@media screen and (max-width: 900px) {
+  input {
+    font-size: 1.1rem;
+    margin: 1rem 0rem;
+    width: 100%;
+  }
 }

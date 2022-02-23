@@ -1,0 +1,11 @@
+.display-picture img {
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+@media screen and (max-width: 420px) {
+  .display-picture img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+}

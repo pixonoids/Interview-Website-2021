@@ -1,6 +1,6 @@
 .dropdown {
   width: 45vw;
-
+  margin: 1rem 0;
   position: relative;
 }
 .dropdown-btn {

@@ -33,7 +33,7 @@ const Dropdown = (props) => {
       </div>
       {active && (
         <div className={classes["dropdown-content"]}>
-          {options.map((data) => (
+          {options.map((data, i) => (
             <div
               className={classes["dropdown-item"]}
               onClick={(e) => {
@@ -41,6 +41,7 @@ const Dropdown = (props) => {
                 setactive(!active);
                 props.errorState(false);
               }}
+              key={i}
             >
               {data}
             </div>
