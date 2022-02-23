@@ -67,8 +67,10 @@ const Upload = (props) => {
         <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
           <ColumnCon>
             <Heading text={"Upload Documents"} />
+
             <a href="https://youtu.be/Cc3M1zfAJIU" target={'_blank'}><AiOutlineInfoCircle className={classes["i-button"]}/></a>
             <p className={classes["upload-info"]}>Upload your CV and your previous work (if any)</p>
+
             <InputBox
               placeholder={"Google Drive Share Link Here"}
               value={upload}

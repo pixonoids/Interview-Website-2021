@@ -87,6 +87,9 @@
   width: 100%;
 }
 @media screen and (max-width: 420px) {
+  .main {
+    height: auto;
+  }
   .videotag {
     position: fixed;
     height: 105%;
@@ -102,6 +105,7 @@
     width: fit-content;
     margin-left: 0;
     padding: 5rem 2rem 1rem;
+    margin-bottom: 2rem;
   }
   .container h1 {
     font-size: 2.8rem;
@@ -126,6 +130,9 @@
   }
   .threejs {
     display: none;
+  }
+  .homefot {
+    width: 100%;
   }
 }
 @media screen and (max-width: 1010px) and (min-width: 420px) {

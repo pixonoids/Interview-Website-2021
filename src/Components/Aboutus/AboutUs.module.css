@@ -45,30 +45,75 @@
   text-shadow: 0px 0px 3px black;
   font-weight: 400;
 }
-.closebutton {
+.clsbtn {
   position: absolute;
   right: 20px;
   top: 20px;
-  transform: scale(1.5);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.clsbtn:hover {
+  color: red;
+  transition: 200ms;
 }
 @media screen and (max-width: 420px) {
-  .AboutUsContent {
-    font-size: 1rem;
-    padding: 0rem;
-    margin-top: 2rem;
+  .overlay {
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.6);
   }
-  .AboutUsModal {
-    width: 90%;
-    height: fit-content;
-    padding: 1rem;
-    margin: 15rem 1rem;
-  }
-  .CloseButton {
-    font-size: 2rem;
+  .aboutus {
+    background: rgba(255, 255, 255, 0.377);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    width: fit-content;
     position: absolute;
-    right: 1rem;
-    padding: 0.4rem;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding: 0.5rem;
+  }
+  .aboutus iframe {
+    width: 90%;
+    height: 10rem;
+  }
+  .aboutus h3 {
+    width: fit-content;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 0px 0px 3px black;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .aboutus p {
+    width: 90%;
+    margin: 1rem 0;
+    color: whitesmoke;
+    text-shadow: 0px 0px 3px black;
+    font-weight: 400;
+  }
+  .clsbtn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 1rem;
     cursor: pointer;
+  }
+  .clsbtn:hover {
+    color: red;
+    transition: 200ms;
   }
 }
 @media screen and (max-width: 420px) and (min-width: 1010px) {
