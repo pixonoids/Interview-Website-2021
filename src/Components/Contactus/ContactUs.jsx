@@ -4,10 +4,23 @@ import { GrClose } from "react-icons/gr";
 import { MdMail } from "react-icons/md";
 import { BsInstagram, BsFacebook, BsLinkedin, BsYoutube } from "react-icons/bs";
 import classes from "./ContactUs.module.css";
-export const ContactUs = () => {
+export const ContactUs = ({ closebtn }) => {
+  const toggleMenu = false;
+  const aboutmodal = false;
+  const contactmodal = false;
   return (
     <div className={classes.overlay}>
       <div className={classes.ContactUsModal}>
+        <div
+          className={classes.clsbtn}
+          onClick={() => {
+            closebtn.setToggleMenu(!toggleMenu);
+            closebtn.setAboutModal(!aboutmodal);
+            closebtn.setContactModal(false);
+          }}
+        >
+          X{" "}
+        </div>
         <h3> Contact Us</h3>
         <div className={classes["name-container"]}>
           <div>
@@ -19,7 +32,10 @@ export const ContactUs = () => {
             <p>+91 98829 16993</p>
           </div>
         </div>
-        <a href="mailto:pixonoids@gmail.com" className={classes["meeting-container"]}>
+        <a
+          href="mailto:pixonoids@gmail.com"
+          className={classes["meeting-container"]}
+        >
           <MdMail className={classes.mailimg} /> You can also email us for
           suggestions and queries.
         </a>

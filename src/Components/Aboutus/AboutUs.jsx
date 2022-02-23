@@ -2,10 +2,23 @@ import React, { useState } from "react";
 
 import { GrClose } from "react-icons/gr";
 import classes from "./AboutUs.module.css";
-export const AboutUs = (props) => {
+export const AboutUs = ({ closebtn }) => {
+  const toggleMenu = false;
+  const aboutmodal = false;
+  const contactmodal = false;
   return (
     <div className={classes.overlay}>
       <div className={classes.aboutus}>
+        <div
+          className={classes.clsbtn}
+          onClick={() => {
+            closebtn.setToggleMenu(!toggleMenu);
+            closebtn.setAboutModal(!aboutmodal);
+            closebtn.setContactModal(false);
+          }}
+        >
+          X
+        </div>
         <h3>About Us</h3>
         <iframe
           src="https://www.youtube.com/embed/ZVpBwoLhzEE"

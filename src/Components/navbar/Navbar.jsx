@@ -39,7 +39,12 @@ export default function Navbar() {
         >
           About us
           {aboutmodal &&
-            createPortal(<AboutUs />, document.getElementById("modal-root"))}
+            createPortal(
+              <AboutUs
+                closebtn={{ setAboutModal, setContactModal, setToggleMenu }}
+              />,
+              document.getElementById("modal-root")
+            )}
         </li>
         <li
           onClick={() => {
@@ -50,7 +55,12 @@ export default function Navbar() {
         >
           Contact Us
           {contactmodal &&
-            createPortal(<ContactUs />, document.getElementById("modal-root"))}
+            createPortal(
+              <ContactUs
+                closebtn={{ setAboutModal, setContactModal, setToggleMenu }}
+              />,
+              document.getElementById("modal-root")
+            )}
         </li>
       </ul>
 
