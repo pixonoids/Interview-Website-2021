@@ -1,8 +1,9 @@
 .overlay {
   width: 100vw;
   height: 100vh;
+  position: absolute;
 
-  position: relative;
+  top: 0;
   overflow: hidden;
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.6);
@@ -84,6 +85,9 @@
   transition: 200ms;
 }
 @media screen and (max-width: 420px) {
+  .overlay {
+    position: fixed;
+  }
   .ContactUsModal {
     background: rgba(255, 255, 255, 0.4);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);

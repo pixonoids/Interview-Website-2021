@@ -2,6 +2,9 @@
   height: 25rem;
   margin-top: 2rem;
 }
+.clgcol {
+  z-index: 2;
+}
 @media screen and (max-width: 420px) {
   .collegeImage {
     width: 55%;

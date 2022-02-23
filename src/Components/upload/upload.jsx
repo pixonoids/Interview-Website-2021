@@ -8,7 +8,7 @@ import classes from "./upload.module.css";
 import Button from "../UI/Button/Button";
 import Loading from "../loading/Loading";
 import Copyright from "../UI/copyright/Copyright";
-import {AiOutlineInfoCircle} from 'react-icons/ai'
+import { AiOutlineInfoCircle } from "react-icons/ai";
 
 import Error from "../UI/Error/Error";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
@@ -61,46 +61,47 @@ const Upload = (props) => {
   };
   return (
     <>
-      {loading ? (
-        <Loading load={loading} />
-      ) : (
-        <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
-          <ColumnCon>
-            <Heading text={"Upload Documents"} />
+      {loading && <Loading load={loading} />}
+      <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
+        <ColumnCon>
+          <Heading text={"Upload Documents"} />
 
-            <a href="https://youtu.be/Cc3M1zfAJIU" target={'_blank'}><AiOutlineInfoCircle className={classes["i-button"]}/></a>
-            <p className={classes["upload-info"]}>Upload your CV and your previous work (if any)</p>
+          <a href="https://youtu.be/Cc3M1zfAJIU" target={"_blank"}>
+            <AiOutlineInfoCircle className={classes["i-button"]} />
+          </a>
+          <p className={classes["upload-info"]}>
+            Upload your CV and your previous work (if any)
+          </p>
 
-            <InputBox
-              placeholder={"Google Drive Share Link Here"}
-              value={upload}
-              onChangeHandler={uploadHandler}
-            />
-            {errorState && <Error errorMessage={errorMessage} />}
-
-            <RowCon>
-              <Button
-                type="solid"
-                text={"Back"}
-                onClick={onClickBackUpload}
-                errorState={errorState}
-              />
-              <Button
-                type="hollow"
-                text={"Next"}
-                onClick={onClickUpload}
-                errorState={errorState}
-              />
-            </RowCon>
-          </ColumnCon>
-          <img
-            src="./images/tiltjs/contact.png"
-            alt=""
-            className={classes.uploadImage}
+          <InputBox
+            placeholder={"Google Drive Share Link Here"}
+            value={upload}
+            onChangeHandler={uploadHandler}
           />
-          <Copyright />
-        </ParentCon>
-      )}
+          {errorState && <Error errorMessage={errorMessage} />}
+
+          <RowCon>
+            <Button
+              type="solid"
+              text={"Back"}
+              onClick={onClickBackUpload}
+              errorState={errorState}
+            />
+            <Button
+              type="hollow"
+              text={"Next"}
+              onClick={onClickUpload}
+              errorState={errorState}
+            />
+          </RowCon>
+        </ColumnCon>
+        <img
+          src="./images/tiltjs/contact.png"
+          alt=""
+          className={classes.uploadImage}
+        />
+        <Copyright />
+      </ParentCon>
     </>
   );
 };

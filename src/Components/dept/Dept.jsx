@@ -46,39 +46,36 @@ const Dept = (props) => {
   };
   return (
     <>
-      {loading ? (
-        <Loading load={loading} />
-      ) : (
-        <ParentCon backgroundURL={"./images/grey-pixo.svg"}>
-          <ColumnCon className={classes["dept-col"]}>
-            <Heading text={"Department for Application"} />
+      {loading && <Loading load={loading} />}
+      <ParentCon backgroundURL={"./images/grey-pixo.svg"}>
+        <ColumnCon className={classes["dept-col"]}>
+          <Heading text={"Department for Application"} />
 
-            <Radio deptHandler={setDept} errorHandler={setErrorState} />
-            {errorState && <Error errorMessage={errorMessage} />}
+          <Radio deptHandler={setDept} errorHandler={setErrorState} />
+          {errorState && <Error errorMessage={errorMessage} />}
 
-            <RowCon>
-              <Button
-                type="solid"
-                text={"Back"}
-                onClick={onClickBackDept}
-                errorState={errorState}
-              />
-              <Button
-                type="hollow"
-                text={"Next"}
-                onClick={onClickDept}
-                errorState={errorState}
-              />
-            </RowCon>
-          </ColumnCon>
-          <img
-            src="./images/tiltjs/tilt-camera.png"
-            alt=""
-            className={classes.deptImage}
-          />
-          <Copyright />
-        </ParentCon>
-      )}
+          <RowCon>
+            <Button
+              type="solid"
+              text={"Back"}
+              onClick={onClickBackDept}
+              errorState={errorState}
+            />
+            <Button
+              type="hollow"
+              text={"Next"}
+              onClick={onClickDept}
+              errorState={errorState}
+            />
+          </RowCon>
+        </ColumnCon>
+        <img
+          src="./images/tiltjs/tilt-camera.png"
+          alt=""
+          className={classes.deptImage}
+        />
+        <Copyright />
+      </ParentCon>
     </>
   );
 };

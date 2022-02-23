@@ -62,43 +62,40 @@ const Contact = (props) => {
   };
   return (
     <>
-      {loading ? (
-        <Loading load={loading} />
-      ) : (
-        <ParentCon backgroundURL={"./images/purple-pixo.svg"}>
-          <ColumnCon>
-            <Heading text={"Contact Details"} />
+      {loading && <Loading load={loading} />}
+      <ParentCon backgroundURL={"./images/purple-pixo.svg"}>
+        <ColumnCon>
+          <Heading text={"Contact Details"} />
 
-            <InputBox
-              placeholder={"Phone Number"}
-              value={phoneNo}
-              onChangeHandler={phoneNoHandler}
-            ></InputBox>
-            {errorState && <Error errorMessage={errorMessage} />}
+          <InputBox
+            placeholder={"Phone Number"}
+            value={phoneNo}
+            onChangeHandler={phoneNoHandler}
+          ></InputBox>
+          {errorState && <Error errorMessage={errorMessage} />}
 
-            <RowCon>
-              <Button
-                type="solid"
-                text={"Back"}
-                onClick={onClickBackPhone}
-                errorState={errorState}
-              />
-              <Button
-                type="hollow"
-                text={"Next"}
-                onClick={onClickPhone}
-                errorState={errorState}
-              />
-            </RowCon>
-          </ColumnCon>
-          <img
-            src="./images/tiltjs/contact2.png"
-            alt=""
-            className={classes.contactImage}
-          />
-          <Copyright />
-        </ParentCon>
-      )}
+          <RowCon>
+            <Button
+              type="solid"
+              text={"Back"}
+              onClick={onClickBackPhone}
+              errorState={errorState}
+            />
+            <Button
+              type="hollow"
+              text={"Next"}
+              onClick={onClickPhone}
+              errorState={errorState}
+            />
+          </RowCon>
+        </ColumnCon>
+        <img
+          src="./images/tiltjs/contact2.png"
+          alt=""
+          className={classes.contactImage}
+        />
+        <Copyright />
+      </ParentCon>
     </>
   );
 };

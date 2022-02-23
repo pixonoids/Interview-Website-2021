@@ -1,8 +1,9 @@
 .overlay {
   width: 100vw;
   height: 100vh;
+  position: absolute;
 
-  position: relative;
+  top: 0;
   overflow: hidden;
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.6);
@@ -24,6 +25,7 @@
   align-items: center;
   width: 50%;
   padding: 1rem;
+  z-index: 101;
 }
 .aboutus iframe {
   width: 90%;
@@ -60,8 +62,9 @@
   .overlay {
     width: 100vw;
     height: 100vh;
+    position: fixed;
 
-    position: relative;
+    top: 0;
     overflow: hidden;
     z-index: 100;
     background-color: rgba(0, 0, 0, 0.6);

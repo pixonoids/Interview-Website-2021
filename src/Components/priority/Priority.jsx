@@ -58,42 +58,39 @@ const Priority = (props) => {
   };
   return (
     <>
-      {loading ? (
-        <Loading load={loading} />
-      ) : (
-        <ParentCon backgroundURL={"./images/purple-pixo.svg"}>
-          <ColumnCon>
-            <Heading text={"Club Priority"} />
-            <Area
-              placeholder={`If you applying for multiple club then we need to know your priority. Example - Club1 > Club2 > Club3 else write Pixonoids.`}
-              value={prior}
-              onChangeHandler={priorHandler}
-            />
-            {errorState && <Error errorMessage={errorMessage} />}
-
-            <RowCon>
-              <Button
-                type="solid"
-                text={"Back"}
-                onClick={onClickBackPrior}
-                errorState={errorState}
-              />
-              <Button
-                type="hollow"
-                text={"Next"}
-                onClick={onClickPrior}
-                errorState={errorState}
-              />
-            </RowCon>
-          </ColumnCon>
-          <img
-            src="./images/tiltjs/prior.png"
-            alt=""
-            className={classes.priorityImage}
+      {loading && <Loading load={loading} />}
+      <ParentCon backgroundURL={"./images/purple-pixo.svg"}>
+        <ColumnCon>
+          <Heading text={"Club Priority"} />
+          <Area
+            placeholder={`If you applying for multiple club then we need to know your priority. Example - Club1 > Club2 > Club3 else write Pixonoids.`}
+            value={prior}
+            onChangeHandler={priorHandler}
           />
-          <Copyright />
-        </ParentCon>
-      )}
+          {errorState && <Error errorMessage={errorMessage} />}
+
+          <RowCon>
+            <Button
+              type="solid"
+              text={"Back"}
+              onClick={onClickBackPrior}
+              errorState={errorState}
+            />
+            <Button
+              type="hollow"
+              text={"Next"}
+              onClick={onClickPrior}
+              errorState={errorState}
+            />
+          </RowCon>
+        </ColumnCon>
+        <img
+          src="./images/tiltjs/prior.png"
+          alt=""
+          className={classes.priorityImage}
+        />
+        <Copyright />
+      </ParentCon>
     </>
   );
 };

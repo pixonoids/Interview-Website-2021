@@ -102,60 +102,57 @@ const Why = (props) => {
   };
   return (
     <>
-      {loading ? (
-        <Loading load={loading} />
-      ) : (
-        <ParentCon backgroundURL={"./images/yellow-pixo.svg"}>
-          <ColumnCon>
-            <Heading text={"Why Pixonoids?"} />
-            <Area
-              placeholder={"We want to know what makes you join pixo."}
-              value={why}
-              onChangeHandler={whyHandler}
-            />
-            {errorState && <Error errorMessage={errorMessage} />}
-            <div className={classes.topping}>
-              <input
-                type="checkbox"
-                name="anti-ragging"
-                value="No aniti Ragging"
-                checked={checked}
-                onChange={checkHandler}
-                className={classes.check}
-              />
-              <span>
-                I {userData.firstName + " " + userData.lastName} confirm that I
-                am giving the interviews as per my own goodwill and I will be
-                solely responsible for whatever happens in the interviews and
-                will not pose any anti-ragging threats to the interviewers.
-              </span>
-            </div>
-
-            <RowCon>
-              <Button
-                type="solid"
-                text={"Back"}
-                onClick={onClickBackWhy}
-                errorState={errorState}
-              />
-              <Button
-                type="hollow"
-                text={"Next"}
-                onClick={onClickWhy}
-                errorState={errorState}
-              />
-            </RowCon>
-          </ColumnCon>
-
-          <img
-            src="./images/pixonoid.png"
-            className={classes.whyImage}
-            alt=""
-            style={{ transform: "scale(0.7)" }}
+      {loading && <Loading load={loading} />}
+      <ParentCon backgroundURL={"./images/yellow-pixo.svg"}>
+        <ColumnCon>
+          <Heading text={"Why Pixonoids?"} />
+          <Area
+            placeholder={"We want to know what makes you join pixo."}
+            value={why}
+            onChangeHandler={whyHandler}
           />
-          <Copyright />
-        </ParentCon>
-      )}
+          {errorState && <Error errorMessage={errorMessage} />}
+          <div className={classes.topping}>
+            <input
+              type="checkbox"
+              name="anti-ragging"
+              value="No aniti Ragging"
+              checked={checked}
+              onChange={checkHandler}
+              className={classes.check}
+            />
+            <span>
+              I {userData.firstName + " " + userData.lastName} confirm that I am
+              giving the interviews as per my own goodwill and I will be solely
+              responsible for whatever happens in the interviews and will not
+              pose any anti-ragging threats to the interviewers.
+            </span>
+          </div>
+
+          <RowCon>
+            <Button
+              type="solid"
+              text={"Back"}
+              onClick={onClickBackWhy}
+              errorState={errorState}
+            />
+            <Button
+              type="hollow"
+              text={"Next"}
+              onClick={onClickWhy}
+              errorState={errorState}
+            />
+          </RowCon>
+        </ColumnCon>
+
+        <img
+          src="./images/pixonoid.png"
+          className={classes.whyImage}
+          alt=""
+          style={{ transform: "scale(0.7)" }}
+        />
+        <Copyright />
+      </ParentCon>
     </>
   );
 };

@@ -29,6 +29,7 @@ const Main = () => {
           <img
             className={classes["model-face"]}
             src="./images/tiltjs/model-face.png"
+            alt="YP2k2"
           ></img>
           <p>
             Team Pixonoids cordially invites you to the Freshmen interviews

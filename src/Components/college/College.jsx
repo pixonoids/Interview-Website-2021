@@ -74,49 +74,46 @@ const College = (props) => {
   };
   return (
     <>
-      {loading ? (
-        <Loading load={loading} />
-      ) : (
-        <ParentCon backgroundURL={"./images/yellow-pixo.svg"}>
-          <ColumnCon>
-            <Heading text={"College Information"} />
-            <InputBox
-              placeholder={
-                "College Email Id                                     @nith.ac.in"
-              }
-              value={clgId}
-              onChangeHandler={clgIdHandler}
-            />
-            <Dropdown
-              selected={selected}
-              setSelected={setSelected}
-              errorState={setErrorState}
-            />
-            {errorState && <Error errorMessage={errorMessage} />}
-
-            <RowCon>
-              <Button
-                type="solid"
-                text={"Back"}
-                onClick={onClickBackCollege}
-                errorState={errorState}
-              />
-              <Button
-                type="hollow"
-                text={"Next"}
-                onClick={onClickCollege}
-                errorState={errorState}
-              />
-            </RowCon>
-          </ColumnCon>
-          <img
-            src="./images/tiltjs/cap.png"
-            alt=""
-            className={classes.collegeImage}
+      {loading && <Loading load={loading} />}
+      <ParentCon backgroundURL={"./images/yellow-pixo.svg"}>
+        <ColumnCon className={classes.clgcol}>
+          <Heading text={"College Information"} />
+          <InputBox
+            placeholder={
+              "College Email Id                                     @nith.ac.in"
+            }
+            value={clgId}
+            onChangeHandler={clgIdHandler}
           />
-          <Copyright />
-        </ParentCon>
-      )}
+          <Dropdown
+            selected={selected}
+            setSelected={setSelected}
+            errorState={setErrorState}
+          />
+          {errorState && <Error errorMessage={errorMessage} />}
+
+          <RowCon>
+            <Button
+              type="solid"
+              text={"Back"}
+              onClick={onClickBackCollege}
+              errorState={errorState}
+            />
+            <Button
+              type="hollow"
+              text={"Next"}
+              onClick={onClickCollege}
+              errorState={errorState}
+            />
+          </RowCon>
+        </ColumnCon>
+        <img
+          src="./images/tiltjs/cap.png"
+          alt=""
+          className={classes.collegeImage}
+        />
+        <Copyright />
+      </ParentCon>
     </>
   );
 };
