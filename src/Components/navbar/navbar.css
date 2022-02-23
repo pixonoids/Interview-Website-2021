@@ -96,7 +96,7 @@ a {
   display: none;
   color: white;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 768px) {
   .nav-main {
     flex-direction: column;
     justify-content: center;

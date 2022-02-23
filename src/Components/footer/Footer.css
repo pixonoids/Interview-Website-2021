@@ -119,7 +119,7 @@
 .page-box {
   display: flex;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   padding-top: 20vh;
   flex-direction: column;
   justify-content: center;
@@ -129,7 +129,7 @@
   background: -moz-linear-gradient(top left, #0676e6, #021c79);
   background: linear-gradient(to bottom right, #0676e6, #021c79);
   color: white;
-  height: fit-content;
+  
 }
 /* form completion heading css */
 .para {
@@ -194,9 +194,10 @@
 /* for any queries part */
 
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:450px) {
   .page-box{
     height: 100%;
+    overflow: scroll;
   }
   .para{
     font-size: 3rem;
@@ -238,4 +239,16 @@
   .meet_img{
     font-size: 2rem;
   }
+}
+@media screen and (min-width:450px) and (max-width:900px) {
+  .page-box{
+    overflow: scroll;
+    padding-top: 25rem;
+  }
+  .whatsapp-group-info .whats-app-icon{
+    font-size: 5rem;
+  }
+}
+@media screen  and (min-width:768px){
+ 
 }
