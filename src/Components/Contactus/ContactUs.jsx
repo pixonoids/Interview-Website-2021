@@ -19,10 +19,10 @@ export const ContactUs = () => {
             <p>+91 98829 16993</p>
           </div>
         </div>
-        <div className={classes["meeting-container"]}>
+        <a href="mailto:pixonoids@gmail.com" className={classes["meeting-container"]}>
           <MdMail className={classes.mailimg} /> You can also email us for
           suggestions and queries.
-        </div>
+        </a>
         <div className={classes["social-icon-container"]}>
           <a href="https://www.linkedin.com/company/pixonoids/" target="_blank">
             <BsLinkedin />
