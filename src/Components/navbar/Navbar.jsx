@@ -36,17 +36,17 @@ export default function Navbar() {
         <li onClick={() => setToggleMenu(!toggleMenu)}>
           <a href="/">Home</a>
         </li>
-        <li>
-          <div
+        <li
+          
             onClick={() => {
               setToggleMenu(!toggleMenu);
               setAboutModal(!aboutmodal);
               setContactModal(false);
-            }}
-          >
+            }}>
+          
             {" "}
             About us{" "}
-          </div>
+          
           {aboutmodal &&
             createPortal(<AboutUs />, document.getElementById("modal-root"))}
         </li>
@@ -62,7 +62,7 @@ export default function Navbar() {
             createPortal(<ContactUs />, document.getElementById("modal-root"))}
         </li>
       </ul>
-      )}
+      
       <button className={classes.hamburger} onClick={toggleNav}>
         <VscMenu />
       </button>
