@@ -8,6 +8,7 @@ import classes from "./upload.module.css";
 import Button from "../UI/Button/Button";
 import Loading from "../loading/Loading";
 import Copyright from "../UI/copyright/Copyright";
+import {AiOutlineInfoCircle} from 'react-icons/ai'
 
 import Error from "../UI/Error/Error";
 import { UserDataContext } from "../../Context/UserData/UserDataContext";
@@ -66,10 +67,10 @@ const Upload = (props) => {
         <ParentCon backgroundURL={"./images/teal-pixo.svg"}>
           <ColumnCon>
             <Heading text={"Upload Documents"} />
-            <p>
-              This is the tet dbchdschds ihcjuisdc hsbcsgh cjsbdhsb chsdbchsg
-              chusdb chuscb shucbsd v
-            </p>
+
+            <a href="https://youtu.be/Cc3M1zfAJIU" target={'_blank'}><AiOutlineInfoCircle className={classes["i-button"]}/></a>
+            <p className={classes["upload-info"]}>Upload your CV and your previous work (if any)</p>
+
             <InputBox
               placeholder={"Google Drive Share Link Here"}
               value={upload}
