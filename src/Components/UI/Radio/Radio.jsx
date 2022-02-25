@@ -18,7 +18,7 @@ const Radio = (props) => {
     },
     {
       id: 4,
-      text: "Pre-Production",
+      text: "Photography",
     },
     {
       id: 5,
