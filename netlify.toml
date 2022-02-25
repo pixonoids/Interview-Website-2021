@@ -1,8 +1,5 @@
-[[redirects]]
-  from = "/*"
-  to = "/error"
-  status = 200
+
   [[redirects]]
-  from = "/register"
-  to = "/register"
+  from = "/*"
+  to = "/"
   status = 200
