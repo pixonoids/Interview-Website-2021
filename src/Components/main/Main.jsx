@@ -32,17 +32,16 @@ const Main = () => {
             alt="YP2k2"
           ></img>
           <p>
-            Team Pixonoids cordially invites you to the Freshmen interviews
-            which gives you a fair chance to connect with people of akin vision
-            And be a part of the team which is driven by creativity.
+            You are Late !, we are no longer accepting entries anymore. See you
+            at the next Interviews.
           </p>
 
-          <Button
+          {/* <Button
             type="solid"
             text={"Start your Application"}
             onClick={onClickMain}
             className={classes.red}
-          ></Button>
+          ></Button> */}
         </div>
 
         <div className={classes.threejs}>

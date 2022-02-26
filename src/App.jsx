@@ -32,7 +32,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Main />}></Route>
-            <Route
+            {/* <Route
               path="/register"
               element={
                 <>
@@ -54,8 +54,8 @@ function App() {
                   {currentPage === "why" && <Why page={setCurrentPage} />}
                 </>
               }
-            ></Route>
-            <Route path="/success" element={<Footer />}></Route>
+            ></Route> */}
+            {/* <Route path="/success" element={<Footer />}></Route> */}
             {/* <Route path="/college" element={}></Route>
             <Route path="/contact" element={}></Route>
             <Route path="/dept" element={}></Route>
