@@ -36,12 +36,12 @@ const Main = () => {
             at the next Interviews.
           </p>
 
-          {/* <Button
+          <Button
             type="solid"
             text={"Start your Application"}
             onClick={onClickMain}
             className={classes.red}
-          ></Button> */}
+          ></Button>
         </div>
 
         <div className={classes.threejs}>
